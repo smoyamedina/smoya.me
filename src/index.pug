@@ -1,3 +1,5 @@
+
+
 doctype html
 html(lang="en")
     head
@@ -10,18 +12,7 @@ html(lang="en")
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js") 
     body
         .container
-            header.header 
-                span.logo-type 
-                    a(href='/') smoya.me 
-                span.logo-mk &#10022;
-            nav.nav-contain 
-                ul.nav-list 
-                    li.nav-item 
-                        a(href="#projects") Projects
-                    li.nav-item 
-                        a(href="#aboutme") About Me
-                    li.nav-item 
-                        a(href="#") LinkedIn
+            include /partials/_headerwithnav.pug
             main.main
                 section.slide.hero
                     h1 A Designer who's here to help create change.
@@ -90,20 +81,7 @@ html(lang="en")
                             h3 LinkedIn 
                         a.about-extlink(href="mailto:smoyamedina@outlook.com")
                             h3 Contact 
-            footer.footer
-                span.overline.ol-nav Nav
-                .locat
-                    span.overline.ol-locat Based in 
-                    .locat-title DC + Bmore ❤
-                .finds
-                    span.overline.ol-finds Latest Interesting Finds 
-                    article.finds-card 
-                        cite.finds-title
-                            h3 Creative Director and Teacher Forest Young on Designing a More Inclusive Future.
-                        span.finds-by By Ksenya Samarskaya 
-                .stamp
-                    span.overline.ol-stamp Made with love &copy; 2021
-                    span.overline.ol-stamp Have fun. Stay safe. 
+            include /partials/_footer.pug
         script. 
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
