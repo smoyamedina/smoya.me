@@ -12,7 +12,7 @@ projsFtImg: https://picsum.photos/500
     include partials/_headerwithnav.pug
     main.main
         section.slide.hero
-            h1 A Designer who's here to help create change.
+            h1 A Designer who's here to help create test.
         section.slide.intro
             img.introimg.introimg-a(src="https://picsum.photos/600", alt="", srcset="") 
             img.introimg.introimg-b(src="https://picsum.photos/600", alt="", srcset="") 
@@ -25,7 +25,7 @@ projsFtImg: https://picsum.photos/500
         section.slide.projs
             h1 Some Projects
             .projs-slide-gall
-                //- each project in collections.project
+                //- each `${project}` in `${collections.project}`
                 include partials/_projsCard.pug
                 //- else 
                     .oops THERE WAS SOMETHING WRONG WITH #{projsName}!
