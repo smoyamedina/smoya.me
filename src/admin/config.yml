@@ -9,7 +9,7 @@ collections:
     label: "Projects"
     folder: "src/p"
     create: true
-    slug: {{projsName}}
+    slug: "{{projsName}}"
     fields:
       - {label: "Project Name", name: "projsName", widget: "string"}
       - {label: "Medium, Discipline, or Type", name: "projsDscplne", widget: "string"}
