@@ -10,9 +10,9 @@ collections:
     folder: "src/p"
     create: true
     fields:
-      - {label: "Project Name", name: "projName", widget: "string"}
-      - {label: "Medium, Discipline, or Type", name: "projDscplne", widget: "string"}
-      - {label: "Feature Image", name: "projFtImg", widget: "image"}
-      - {label: "Hero Image for project page.", name: "projHeroImg", widget: "image"}
+      - {label: "Project Name", name: "projsName", widget: "string"}
+      - {label: "Medium, Discipline, or Type", name: "projsDscplne", widget: "string"}
+      - {label: "Feature Image", name: "projsFtImg", widget: "image"}
+      - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image"}
       - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
       - {label: "Leading summary", name: "projDesc", widget: "markdown"}
