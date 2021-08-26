@@ -1,5 +1,5 @@
 ---
-projsName: rrr
+projsName: 2 Redf Proj
 projsDscplne: Beb Designy
 projsFtImg: https://picsum.photos/600
 projsHeroImg: https://picsum.photos/600
