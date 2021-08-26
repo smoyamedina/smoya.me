@@ -9,7 +9,7 @@ collections:
     label: "Projects"
     folder: "src/p"
     create: true
-    slug: {{projsName}}
+    slug: "{{projsName}}"
     fields:
       - {label: "Project Name", name: "projsName", widget: "string"}
       - {label: "Medium, Discipline, or Type", name: "projsDscplne", widget: "string"}
@@ -17,3 +17,4 @@ collections:
       - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image"}
       - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
       - {label: "Leading summary", name: "projDesc", widget: "markdown"}
+      - {label: "Tag", name: "projTag", widget: "string"}

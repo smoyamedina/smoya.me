@@ -17,3 +17,4 @@ collections:
       - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image"}
       - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
       - {label: "Leading summary", name: "projDesc", widget: "markdown"}
+      - {label: "Tag", name: "projTag", widget: "string"}
