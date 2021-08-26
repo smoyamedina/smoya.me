@@ -1,94 +1,51 @@
+---
+title: GRAPHIC DESIGNER
+layout: 'base.pug'
+projsName: Eleventy Website 
+projsDscplne: Web Deslagna 
+projsFtImg: https://picsum.photos/500
+---
 
 
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="https://use.typekit.net/elt1mrq.css")
-        link(rel="stylesheet", href="style.css")
-        title SMOYA.ME
-        script(src="https://identity.netlify.com/v1/netlify-identity-widget.js") 
-    body
-        .container
-            include /partials/_headerwithnav.pug
-            main.main
-                section.slide.hero
-                    h1 A Designer who's here to help create change.
-                section.slide.intro
-                    img.introimg.introimg-a(src="https://picsum.photos/600", alt="", srcset="") 
-                    img.introimg.introimg-b(src="https://picsum.photos/600", alt="", srcset="") 
-                    img.introimg.introimg-c(src="https://picsum.photos/600", alt="", srcset="") 
-                    .slide-text-all 
-                        h3 ready to learn + create 
-                        .slide-text-pwrap
-                            p I’m a designer with an illustration background who’s interested in  pushing for worthy causes while developing her digital skillset.
-                            p I constantly ask questions and seek out answers to best inform my practice and process. I am currently learning JS animation libraries and front-end development practices to inform my digital design!
-                section.slide.projs
-                    h1 Some Projects
-                    .projs-slide-gall
-                        .projs-card
-                            .projs-overline-all 
-                                span.overline.projs-dscplne Publication
-                                span.overline.projs-order 01 / 08
-                            a.projs-titlelink(href='/the-valivaryus-project')
-                                h2.projs-name.projs-name The Valivaryus Project
-                                //- proj-arrow will be taken care of with pseudo after element
-                            img.projs-img(src='https://picsum.photos/600' alt="A white background with an all-in-one desktop computer.")
-                        //- after pseudo element will take care of next feature picture... but maybe only the images should be in flow and the rest should be styled to be fixed and animate typing in later?
-                        .projs-card
-                            .projs-overline-all 
-                                span.overline.projs-dscplne Publication
-                                span.overline.projs-order 01 / 08
-                            a.projs-titlelink(href='/the-valivaryus-project')
-                                h2.projs-name.projs-name The Valivaryus Project
-                                //- proj-arrow will be taken care of with pseudo after element
-                            img.projs-img(src='https://picsum.photos/600' alt="A white background with an all-in-one desktop computer.")
-                        .projs-card
-                            .projs-overline-all 
-                                span.overline.projs-dscplne Publication
-                                span.overline.projs-order 01 / 08
-                            a.projs-titlelink(href='/the-valivaryus-project')
-                                h2.projs-name.projs-name The Valivaryus Project
-                                //- proj-arrow will be taken care of with pseudo after element
-                            img.projs-img(src='https://picsum.photos/600' alt="A white background with an all-in-one desktop computer.")
-                        .projs-card
-                            .projs-overline-all 
-                                span.overline.projs-dscplne Publication
-                                span.overline.projs-order 01 / 08
-                            a.projs-titlelink(href='/the-valivaryus-project')
-                                h2.projs-name.projs-name The Valivaryus Project 
-                                //- proj-arrow will be taken care of with pseudo after element
-                            img.projs-img(src='https://picsum.photos/600' alt="A white background with an all-in-one desktop computer.")
-                    .projs-slide-misc
-                        h3.projs-slide-misc-txt I also explore other disciplines to carry through my curiosity into techniques I can use in future projects.
-                        .projs-slide-misc-img-all 
-                            img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-                            img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-                            img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-                            img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-                            img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-                            
-                section.slide.aboutme 
-                    h1 Who are you again?
-                    .slide-text-all 
-                        h2 I'm Samanta Moya Medina! 
-                        .slide-text-pwrap 
-                            p I’m interested in using my skills to disseminate information for the greater good. My passion for design stems from my cross-sectional experiences and from being a witness to people in need over the course of my life. 
-                            p There is no design consideration that’s too nitpicky if it means improving the experience for those who need it most. This can mean many things, but nothing is too big or too small.
-                        a.about-extlink(href="http://www.linkedin.com/")
-                            h3 LinkedIn 
-                        a.about-extlink(href="mailto:smoyamedina@outlook.com")
-                            h3 Contact 
-            include /partials/_footer.pug
-        script. 
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                    });
-                }
-                });
-            }
+.container
+    include partials/_headerwithnav.pug
+    main.main
+        section.slide.hero
+            h1 A Designer who's here to help create change.
+        section.slide.intro
+            img.introimg.introimg-a(src="https://picsum.photos/600", alt="", srcset="") 
+            img.introimg.introimg-b(src="https://picsum.photos/600", alt="", srcset="") 
+            img.introimg.introimg-c(src="https://picsum.photos/600", alt="", srcset="") 
+            .slide-text-all 
+                h3 ready to learn + create 
+                .slide-text-pwrap
+                    p I’m a designer with an illustration background who’s interested in  pushing for worthy causes while developing her digital skillset.
+                    p I constantly ask questions and seek out answers to best inform my practice and process. I am currently learning JS animation libraries and front-end development practices to inform my digital design!
+        section.slide.projs
+            h1 Some Projects
+            .projs-slide-gall
+                each project in collections.project
+                    include partials/_projsCard.pug
+                else 
+                    .oops THERE WAS SOMETHING WRONG WITH #{projsName}!
+            .projs-slide-misc
+                h3.projs-slide-misc-txt I also explore other disciplines to carry through my curiosity into techniques I can use in future projects.
+                .projs-slide-misc-img-all 
+                    img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+                    img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+                    img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+                    img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+                    img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+                    
+        section.slide.aboutme 
+            h1 Who are you again?
+            .slide-text-all 
+                h2 I'm Samanta Moya Medina! 
+                .slide-text-pwrap 
+                    p I’m interested in using my skills to disseminate information for the greater good. My passion for design stems from my cross-sectional experiences and from being a witness to people in need over the course of my life. 
+                    p There is no design consideration that’s too nitpicky if it means improving the experience for those who need it most. This can mean many things, but nothing is too big or too small.
+                a.about-extlink(href="http://www.linkedin.com/")
+                    h3 LinkedIn 
+                a.about-extlink(href="mailto:smoyamedina@outlook.com")
+                    h3 Contact
+    include partials/_footer.pug
