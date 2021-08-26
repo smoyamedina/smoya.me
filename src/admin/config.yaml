@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+publish_mode: editorial_workflow
+media_folder: "public/assets" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/assets" # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "project"
+    label: "Projects"
+    folder: "src/p"
+    create: true
+    slug: {{slug}}
+    fields:
+      - {label: "Project Name", name: "projName", widget: "string"}
+      - {label: "Medium, Discipline, or Type", name: "projDscplne", widget: "string"}
+      - {label: "Feature Image", name: "projFtImg", widget: "image"}
+      - {label: "Hero Image for project page.", name: "projHeroImg", widget: "image"}
+      - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
+      - {label: "Leading summary", name: "projDesc", widget: "markdown"}
