@@ -1,0 +1,299 @@
+
+//layout vars
+$mb-grid-col-tmplt: repeat(6, 1fr);
+$dsk-grid-col-num: repeat(12, 1fr);
+$mb-grid-row-tmplt: minmax(20vw, auto);
+$grid-col-gap: 1rem;
+
+// palette
+$main-dark: #0f1330;
+// $main-dark: #000;
+$accent-warm: #ee4266;
+$acc-jolly: #ffd23f;
+$acc-proud: #42d1b7;
+$main-bright: #fff7f8; 
+
+//type style vars
+
+$mb-fontsize: 18px;
+$dsk-fontsize: 20px;
+
+$main-f-display: degular-display, 'Helvetica', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$main-f-reg: degular, 'Helvetica', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+$h1-wt: 800;
+$h2-wt: 600;
+$h3-wt: 500;
+
+// Resets and base
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: $mb-fontsize;
+    color: $main-dark;
+    text-decoration: none;
+    font-family: $main-f-reg;
+}
+
+body {
+    background: $main-bright;
+}
+
+.header {
+    z-index: 90;
+}
+
+
+
+// ----- Base Styles
+
+//container
+.container {
+    padding: 1rem;
+}
+
+// header
+.header {
+    position: sticky;
+    top: .75rem;
+    margin-bottom: .75rem;
+    display: flex;
+    justify-content: space-between;
+    mix-blend-mode: difference;
+}
+
+.logo-type {
+    text-transform: uppercase;
+    line-height: $mb-fontsize;
+    display: inline-block;
+}
+
+.logo-type a {
+    font-weight: $h1-wt;
+    font-family: $main-f-display;
+}
+
+// nav
+
+.nav-contain {
+    display: none;
+    //temp
+}
+
+.nav-list {
+    list-style-type: none;
+    text-transform: uppercase;
+    line-height: $mb-fontsize;
+}
+
+.nav-item a {
+    display: block;
+    padding: .25rem 0;
+}
+
+// headers and hierarchy in general
+
+// h1, h2, h3, .overline, p {
+//     //text bg animation debug option
+//     // background: $main-bright;
+//     color: $main-dark;
+// }
+
+
+h1, h2 {
+    font-family: $main-f-display;
+}
+
+h1 {
+    font-weight: $h1-wt;
+    text-transform: uppercase;
+    font-size: 11vw;
+    line-height: 8.5vw;
+    margin: 25vh 0;
+}
+
+h2 {
+    font-weight: $h2-wt;
+    font-size: 9.15vw;
+    line-height: 9.15vw;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-weight: $h3-wt;
+    font-size: 6.125vw;
+    line-height: 6.125vw;
+    letter-spacing: -.03em;
+    margin-bottom: 2rem;
+}
+
+.overline {
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+p {
+    margin-bottom: .5rem;
+    line-height: 133%;
+    letter-spacing: 1%;
+}
+
+// images
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+
+// slide sizing
+
+.slide {
+    min-height: 50vh;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: $mb-grid-col-tmplt;
+    grid-auto-rows: $mb-grid-row-tmplt;
+}
+
+// ------ layout
+
+
+
+.slide h1{
+    grid-column: 1 / -1;
+}
+
+img {
+    grid-column: 1 / -1;
+}
+
+.slide-text-all, .projs-slide-misc-txt {
+    grid-column: 2 / -1;
+}
+
+// __ hero
+
+.hero h1 {
+    margin: -.5rem 0 auto 0;
+    vertical-align: text-bottom;
+}
+
+.introimg:nth-child(2) {
+    grid-column-end: 5;
+}
+
+.introimg:nth-child(3) {
+    grid-column-start: 4;
+}
+
+
+// __ proj cards
+
+.projs-card:not(.projs-card:last-of-type) {
+    margin-bottom: 20vh;
+}
+
+.projs-slide-gall {
+    grid-column: 1 / -1;
+}
+
+.projs-overline-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8vh;
+}
+
+.projs-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.projs-name::after {
+    display: inline-block;
+    content: '→';
+    // text-align: right;
+}
+
+.projs-img {
+    height: 60vh;
+}
+// misc projs section
+.projs-slide-misc {
+    min-height: 100vh;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: $mb-grid-col-tmplt;
+    gap: $grid-col-gap;
+    position: relative;
+    place-items: center;
+}
+
+.projs-slide-misc-img-all {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    // ^ might be able to change explicit height when animating with js
+    z-index: -5;
+    //grid inside grid
+    display: grid;
+    grid-template-columns: $mb-grid-col-tmplt;
+    grid-auto-rows: minmax(1vh, auto);
+    gap: $grid-col-gap;
+}
+
+.projs-sm-img-indiv {
+    height: 100%;
+}
+
+.projs-sm-img-indiv:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 3 / span 2;
+    margin-left: -1rem;
+}
+
+.projs-sm-img-indiv:nth-child(2) {
+    grid-column: 3 / 6;
+    grid-row: 1 / span 2;
+}
+
+.projs-sm-img-indiv:nth-child(3) {
+    grid-column: 2 / 5;
+    grid-row: 5 / span 2;
+}
+
+.projs-sm-img-indiv:nth-child(4) {
+    grid-column: 1 / 4;
+    grid-row: 7 / span 2;
+}
+
+.projs-sm-img-indiv:nth-child(5) {
+    grid-column: 3 / -2;
+    grid-row: 9 / span 1;
+    margin-left: -1rem;
+}
+
+// __ about
+
+.aboutme .slide-text-all .slide-text-pwrap {
+    margin-bottom: 2rem;
+}
+
+.about-extlink h3 {
+    margin-bottom: 0;
+}
+
+.about-extlink h3::after {
+    content: '➚';
+    font-size: .75em;
+    position: relative;
+    top: -.1em;
+}
