@@ -1,5 +1,3 @@
-
-
 doctype html
 html(lang="en")
     head
@@ -11,7 +9,7 @@ html(lang="en")
         title SMOYA.ME | #{title}
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js") 
     body
-        #{content}
+        !=content
         script. 
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
