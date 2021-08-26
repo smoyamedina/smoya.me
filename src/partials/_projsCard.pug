@@ -2,7 +2,7 @@
     .projs-overline-all 
         span.overline.projs-dscplne #{project.data.projsDscplne}
         span.overline.projs-order 01 / 08
-    a.projs-titlelink(href='/#')
+    a.projs-titlelink(href=`${project.data.url}`)
         h2.projs-name #{project.data.projsName} 
         //- proj-arrow will be taken care of with pseudo after element
     img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
