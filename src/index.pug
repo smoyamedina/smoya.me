@@ -10,9 +10,10 @@ layout: 'base.pug'
         section.slide.hero
             h1 A Designer who's here to help create change.
         section.slide.intro
-            img.introimg.introimg-a(src="https://picsum.photos/600", alt="", srcset="") 
-            img.introimg.introimg-b(src="https://picsum.photos/600", alt="", srcset="") 
-            img.introimg.introimg-c(src="https://picsum.photos/600", alt="", srcset="") 
+            each introImg in collections.introImg 
+                include partials/_introimg.pug
+            else 
+                .imgerror  
             .slide-text-all 
                 h3 ready to learn + create 
                 .slide-text-pwrap
