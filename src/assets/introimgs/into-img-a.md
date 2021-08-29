@@ -1,3 +1,3 @@
 ---
-introImg: https://picsum.photos/410
+introimg: https://picsum.photos/410
 ---
