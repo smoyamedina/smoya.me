@@ -22,9 +22,9 @@ collections:
     label: "Intro Images"
     folder: "src/assets/introimgs"
     fields: 
-      - {label: "Image 1 ", name: "introimg", widget: "image"}
-      - {label: "Image 2 ", name: "introimg", widget: "image"}
-      - {label: "Image 3 ", name: "introimg", widget: "image"}
+      - {label: "Image 1 ", name: "introimg1", widget: "image"}
+      - {label: "Image 2 ", name: "introimg2", widget: "image"}
+      - {label: "Image 3 ", name: "introimg3", widget: "image"}
   - name: "finds"
     label: "Interesting Finds"
     folder: "src/assets/misc"
