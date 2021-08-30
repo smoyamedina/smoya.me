@@ -1,4 +1,5 @@
 ---
+tags: saminfo
 myName: Samanta Moya Medina
 myDescription: This is a test description.
 myLinks: https://www.google.com/
