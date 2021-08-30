@@ -10,7 +10,7 @@ layout: 'base.pug'
         section.slide.hero
             h1 A Designer who's here to help create ctestere.
         section.slide.intro
-            .testerdiv hahaahahahahhahaahh It's #{collections.saminfo.data.myName}!
+            .testerdiv hahaahahahahhahaahh It's #{saminfo.data.myName}!
             each introimg in collections.introimgs
                 img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
                 img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
