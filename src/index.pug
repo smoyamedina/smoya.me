@@ -24,11 +24,11 @@ layout: 'base.pug'
         section.slide.projs
             h1 Some Projects
             .projs-slide-gall
-                each project in collections.project
+                each project, projNum in collections.project
                     .projs-card
                         .projs-overline-all 
                             span.overline.projs-dscplne #{project.data.projsDscplne}
-                            span.overline.projs-order 01 / 08
+                            span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
                         a.projs-titlelink(href='/#')
                             h2.projs-name #{project.data.projsName} 
                             //- proj-arrow will be taken care of with pseudo after element
@@ -44,7 +44,6 @@ layout: 'base.pug'
                     img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
                     img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
                     img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-                    
         section.slide.aboutme 
             h1 Who are you again?
             .slide-text-all 

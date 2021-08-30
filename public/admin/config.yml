@@ -5,6 +5,30 @@ publish_mode: editorial_workflow
 media_folder: "public/assets" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/assets" # The src attribute for uploaded media will begin with /images/uploads
 collections:
+  - name: "saminfo"
+    label: "Sami's Info"
+    file: "src/copy/saminfo.md"
+    fields:
+      - {label: "Whatever your name is right now.", name: "myName", widget: "string"}
+      - {label: "Tell them something about you!", name: "myDescription", widget: "markdown"}
+      - label: "Your links to your online presence on other sites, if relevant."
+        name: "myLinks"
+        widget: "list"
+        allow_add: true
+        add-to-top: true
+        label_singular: "Add a link"
+        field:
+          - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
+          - {label: "Paste the permalink to your corresponding profile page on that website!", name: "smyPlatformLink", widget: "string"}
+      - label: "Certifications so far."
+        name: "certification"
+        widget: "list"
+        allow_add: true
+        add-to-top: true
+        label_singular: "Add a certification"
+        field:
+          - {label: "I've earned a...", name: "certItem", widget: "string"}
+
   - name: "project"
     label: "Projects"
     folder: "src/p"
