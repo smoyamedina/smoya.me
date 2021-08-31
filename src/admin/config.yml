@@ -10,7 +10,7 @@ collections:
     files:
     - name: "saminfo"
       label: "Sami's Info"
-      file: "src/copy/saminfo.md"
+      file: "src/copy/saminfo.yml"
       fields:
         - {label: "Whatever your name is right now.", name: "myName", widget: "string"}
         - {label: "Tell them something about you!", name: "myDescription", widget: "markdown"}
@@ -34,7 +34,7 @@ collections:
     - name: "samFinds"
       label: "Interesting Finds"
       widget: "list"
-      file: "src/copy/samFind.md"
+      file: "src/copy/samFind.yml"
       allow_add: true
       add-to-top: true
       label_singular: "Add something you found"
