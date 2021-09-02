@@ -12,8 +12,8 @@ collections:
       - name: "myInfo"
         label: "Let's fill out your information."
         file: 'src/copy/myinfo.yml'
-          - { label: "Your current name", name: "myName", widget: "string"}
-          - { label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
+          - {label: "Your current name", name: "myName", widget: "string"}
+          - {label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
           - label: "Your links to your online presence on other sites, if relevant."
             name: "myLinks"
             widget: "list"
