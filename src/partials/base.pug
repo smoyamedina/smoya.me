@@ -9,7 +9,8 @@ html(lang="en")
         title SMOYA.ME | #{title}
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js") 
     body
-        !=content
+        .container
+            !=content
         script. 
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
