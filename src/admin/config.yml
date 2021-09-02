@@ -7,7 +7,7 @@ public_folder: "/assets" # The src attribute for uploaded media will begin with 
 collections:
   - name: "myInfoCollection"
     label: "Your information and background!"
-    file: "copy/saminfo.yml"
+    file: "src/copy/saminfo.yml"
     fields:
       - { label: "Your current name", name: "myName", widget: "string"}
       - { label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
