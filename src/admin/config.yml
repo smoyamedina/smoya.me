@@ -19,10 +19,10 @@ collections:
             widget: "list"
             allow_add: true
             add_to_top: true
-            label_singular: "Add a link to an online presence"
+            label_singular: "profile"
             fields:
-              - label: "Online Presence"
-                name: "myLinkPresence"
+              - label: "{{fields.myPlatform}}"
+                name: "myLinkInfo"
                 widget: object
                 fields:
                   - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
@@ -32,7 +32,7 @@ collections:
             widget: "list"
             allow_add: true
             add_to_top: true
-            label_singular: "Add a new certification"
+            label_singular: "certification"
             fields: 
               - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
   - name: "project"

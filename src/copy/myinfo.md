@@ -4,7 +4,7 @@ myDescription: This is a test description.
 myDesc: This is a test description.
 myLinks:
   - myPlatform: Facebook
-    myLinkPresence:
+    myLinkInfo:
       myPlatform: Facebook
       myPlatformLink: https://www.facebook.com/
 myCert:
