@@ -6,32 +6,35 @@ media_folder: "public/assets" # Media files will be stored in the repo under sta
 public_folder: "/assets" # The src attribute for uploaded media will begin with /images/uploads
 collections:
   - name: "myInfoCollection"
-    label: "Your information and background!"
-    file: "src/copy/saminfo.yml"
-    fields:
-      - { label: "Your current name", name: "myName", widget: "string"}
-      - { label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
-      - label: "Your links to your online presence on other sites, if relevant."
-        name: "myLinks"
-        widget: "list"
-        allow_add: true
-        add_to_top: true
-        label_singular: "Add a link to an online presence"
-        fields:
-          - label: "Online Presence"
-            name: "myLinkPresence"
-            widget: object
-            fields:
-              - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
-              - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
-      - name: "myCert"
-        label: "Certifications"
-        widget: "list"
-        allow_add: true
-        add_to_top: true
-        label_singular: "Add a new certification"
-        fields: 
-          - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
+    label: "Your information, interests, and background!"
+    folder: "src/copy"
+    files:
+    - name: "myInfo"
+      label: "Let's fill out your information."
+      file: 'src/copy/myinfo.yml'
+        - { label: "Your current name", name: "myName", widget: "string"}
+        - { label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
+        - label: "Your links to your online presence on other sites, if relevant."
+          name: "myLinks"
+          widget: "list"
+          allow_add: true
+          add_to_top: true
+          label_singular: "Add a link to an online presence"
+          fields:
+            - label: "Online Presence"
+              name: "myLinkPresence"
+              widget: object
+              fields:
+                - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
+                - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
+        - name: "myCert"
+          label: "Certifications"
+          widget: "list"
+          allow_add: true
+          add_to_top: true
+          label_singular: "Add a new certification"
+          fields: 
+            - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
   - name: "project"
     label: "Projects"
     folder: "src/p"
