@@ -31,7 +31,7 @@ collections:
         add_to_top: true
         label_singular: "Add a new certification"
         fields: 
-          - {name: "myCert", label: "What'd you earn?", widget: "string"}
+          - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
   - name: "project"
     label: "Projects"
     folder: "src/p"
