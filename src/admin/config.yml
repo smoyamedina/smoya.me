@@ -17,9 +17,13 @@ collections:
         allow_add: true
         add_to_top: true
         label_singular: "Add a link to an online presence"
-        field:
-          - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
-          - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
+        fields:
+          - label: "Online Presence"
+            name: "myLinkPresence"
+            widget: object
+            fields:
+              - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
+              - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
       - name: "myCert"
         label: "Certifications"
         widget: "list"
