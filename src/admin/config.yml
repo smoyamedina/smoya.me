@@ -12,7 +12,7 @@ collections:
     files:
       - name: "myInfo"
         label: "Let's fill out your information."
-        file: "src/copy/myinfo.json"
+        file: "src/copy/myInfo.json"
         fields:
           - {label: "Your current name", name: "myName", widget: "string"}
           - {label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
@@ -36,7 +36,7 @@ collections:
               - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
       - name: "finds"
         label: "Finds"
-        file: "src/copy/myfinds.md"
+        file: "src/copy/myFinds.md"
         fields:
           - label: "Your links to interesting finds around the web"
             name: "myFinds"
