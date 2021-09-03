@@ -1,3 +1,3 @@
 ---
-miscimg: https://picsum.photos/405
+exImg: https://picsum.photos/405
 ---
