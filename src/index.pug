@@ -35,7 +35,7 @@ main.main
             else 
                 .oops THERE WAS SOMETHING WRONG WITH the NAME!
         .projs-slide-misc
-            h3.projs-slide-misc-txt I also explore other disciplines to carry through my curiosity into techniques I can use in future projects.
+            h3.projs-slide-misc-txt I also explore other discilines to carry through my curiosity into techniques I can use in future projects.
             .projs-slide-misc-img-all 
                 img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
                 img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
@@ -49,9 +49,9 @@ main.main
             .slide-text-pwrap 
                 p I’m interested in using my skills to disseminate information for the greater good. My passion for design stems from my cross-sectional experiences and from being a witness to people in need over the course of my life. 
                 p There is no design consideration that’s too nitpicky if it means improving the experience for those who need it most. This can mean many things, but nothing is too big or too small.
-            each infoLink in myInfo.myLinks
-                a.about-extlink(href=`${infoLink.myPlatformLink}`)
-                    h3 #{infoLink.myPlatform} test
-            else 
-                .oops SOMETHING WENT WRONG!!!!
+            //- //- each infoLink in myInfo.myLinks
+            //- //-     a.about-extlink(href=`${infoLink.myPlatformLink}`)
+            //- //-         h3 #{infoLink.myPlatform} test
+            //- //- else 
+            //-     .oops SOMETHING WENT WRONG!!!!
 include partials/_footer.pug
