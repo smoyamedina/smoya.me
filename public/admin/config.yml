@@ -8,6 +8,7 @@ collections:
   - name: "myInfoCollection"
     label: "Your information, interests, and background!"
     format: json
+    extension: json
     files:
       - name: "myInfo"
         label: "Let's fill out your information."
