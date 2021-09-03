@@ -35,15 +35,18 @@ collections:
       - name: "myFinds"
         label: "Finds"
         file: "src/copy/myfinds.md"
-        widget: "list"
-        summary: '{{fields.myFindTitle}}, {{fields.myFindAuthor}}'
-        allow_add: true
-        add_to_top: true
-        label_singular: "profile"
         fields:
-          - {label: "The Title", name: "myFindTitle", widget: "string"}
-          - {label: "Author or Creator", name: "myFindAuthor", widget: "string"}
-          - {label: "Link to resource mentioned.", name: "myFindLink", widget: "string"}
+          - label: "Your links to interesting finds around the web"
+            name: "finds"
+            widget: "list"
+            summary: '{{fields.myFindTitle}}, {{fields.myFindAuthor}}'
+            allow_add: true
+            add_to_top: true
+            label_singular: "find"
+            fields:
+              - {label: "The Title", name: "myFindTitle", widget: "string"}
+              - {label: "Author or Creator", name: "myFindAuthor", widget: "string"}
+              - {label: "Link to resource mentioned.", name: "myFindLink", widget: "string"}
   - name: "project"
     label: "Projects"
     folder: "src/p"
