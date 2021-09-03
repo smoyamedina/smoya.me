@@ -17,17 +17,13 @@ collections:
           - label: "Your links to your online presence on other sites, if relevant."
             name: "myLinks"
             widget: "list"
+            summary: '{{fields.myPlatform}}'
             allow_add: true
             add_to_top: true
             label_singular: "profile"
             fields:
-              - label: "Profile Info"
-                name: "myLinkInfo"
-                summary: '{{fields.myPlatform}}'
-                widget: object
-                fields:
-                  - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
-                  - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
+              - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
+              - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
           - name: "myCert"
             label: "Certifications"
             widget: "list"
@@ -36,6 +32,18 @@ collections:
             label_singular: "certification"
             fields: 
               - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
+      - name: "myFinds"
+        label: "Finds"
+        file: "src/copy/myfinds.md"
+        widget: "list"
+        summary: '{{fields.myFindTitle}}, {{fields.myFindAuthor}}'
+        allow_add: true
+        add_to_top: true
+        label_singular: "profile"
+        fields:
+          - {label: "The Title", name: "myFindTitle", widget: "string"}
+          - {label: "Author or Creator", name: "myFindAuthor", widget: "string"}
+          - {label: "Link to resource mentioned.", name: "myFindLink", widget: "string"}
   - name: "project"
     label: "Projects"
     folder: "src/p"
