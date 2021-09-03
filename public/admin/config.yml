@@ -21,7 +21,7 @@ collections:
             add_to_top: true
             label_singular: "profile"
             fields:
-              - label: "{{fields.myPlatform}}"
+              - label: "Profile Info"
                 name: "myLinkInfo"
                 widget: object
                 fields:
