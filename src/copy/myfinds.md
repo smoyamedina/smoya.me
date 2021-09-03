@@ -1,9 +1,11 @@
 ---
-myFinds:
+tags: find
+permalink: false
+finds:
   - myFindTitle: Here's these 10 wacky things you should know.
     myFindAuthor: Jane Smith
     myFindLink: https://eyeondesign.aiga.com/
-finds:
+myFinds:
   - myFindTitle: "Search for fonts by personality! "
     myFindLink: https://www.fontbrief.com/
     myFindAuthor: kore

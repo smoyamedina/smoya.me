@@ -1,4 +1,5 @@
 ---
+permalink: false
 projsName: First Test Project
 projsDscplne: Publication
 projsFtImg: https://picsum.photos/400

@@ -51,6 +51,10 @@ body {
   display: none;
 }
 
+.test-class {
+  color: black;
+}
+
 .nav-list {
   list-style-type: none;
   text-transform: uppercase;

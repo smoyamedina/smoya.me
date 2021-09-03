@@ -32,12 +32,12 @@ collections:
             label_singular: "certification"
             fields: 
               - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
-      - name: "myFinds"
+      - name: "finds"
         label: "Finds"
         file: "src/copy/myfinds.md"
         fields:
           - label: "Your links to interesting finds around the web"
-            name: "finds"
+            name: "myFinds"
             widget: "list"
             summary: '{{fields.myFindTitle}}, {{fields.myFindAuthor}}'
             allow_add: true

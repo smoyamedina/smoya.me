@@ -1,4 +1,6 @@
 ---
+tags: info
+permalink: false
 myName: Samanta Moya Medina
 myDesc: This is some information about me as of now.
 myLinks:
