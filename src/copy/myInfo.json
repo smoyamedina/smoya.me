@@ -1,0 +1,22 @@
+{
+  "myName": "Samanta Moya Medina",
+  "myDesc": "This is an example description for myself on my new website.",
+  "myLinks": [
+    {
+      "myPlatform": "LinkedIn",
+      "myPlatformLink": "https://www.linkedin.com/in/smoyamedina/"
+    },
+    {
+      "myPlatform": "Contact",
+      "myPlatformLink": "mailto:smoyamedina@outlook.com"
+    }
+  ],
+  "myCert": [
+    {
+      "myCertItem": "B.F.A in Graphic Design"
+    },
+    {
+      "myCertItem": "AAA in Graphic Design"
+    }
+  ]
+}
