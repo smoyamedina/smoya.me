@@ -1,6 +1,6 @@
 {
   "myName": "Samanta Moya Medina",
-  "myDesc": "This is an example description for myself on my new website.",
+  "myDesc": "This is an example description for myself on my new website.",
   "myLinks": [
     {
       "myPlatform": "LinkedIn",
@@ -16,7 +16,7 @@
       "myCertItem": "B.F.A in Graphic Design"
     },
     {
-      "myCertItem": "AAS in Graphic Design"
+      "myCertItem": "AAA in Graphic Design"
     }
   ]
 }
