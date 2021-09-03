@@ -9,5 +9,6 @@ myLinks:
       myPlatform: LinkedIn
       myPlatformLink: https://www.linkedin.com/smoyamedina
 myCert:
+  - myCertItem: B.F.A. in Graphic Design
   - myCertItem: A.A.S. in Graphic Design
 ---
