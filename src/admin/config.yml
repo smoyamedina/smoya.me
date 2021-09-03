@@ -7,6 +7,7 @@ public_folder: "/assets" # The src attribute for uploaded media will begin with 
 collections:
   - name: "myInfoCollection"
     label: "Your information, interests, and background!"
+    format: json
     files:
       - name: "myInfo"
         label: "Let's fill out your information."
