@@ -23,6 +23,7 @@ collections:
             fields:
               - label: "Profile Info"
                 name: "myLinkInfo"
+                summary: '{{fields.myPlatform}}'
                 widget: object
                 fields:
                   - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
