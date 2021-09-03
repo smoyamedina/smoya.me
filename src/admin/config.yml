@@ -17,17 +17,13 @@ collections:
           - label: "Your links to your online presence on other sites, if relevant."
             name: "myLinks"
             widget: "list"
+            summary: '{{fields.myPlatform}}'
             allow_add: true
             add_to_top: true
             label_singular: "profile"
             fields:
-              - label: "Profile Info"
-                name: "myLinkInfo"
-                summary: '{{fields.myPlatform}}'
-                widget: object
-                fields:
-                  - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
-                  - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
+              - {label: "What's the website or platform?", name: "myPlatform", widget: "string"}
+              - {label: "Paste the permalink to your corresponding profile page on that website!", name: "myPlatformLink", widget: "string"}
           - name: "myCert"
             label: "Certifications"
             widget: "list"
