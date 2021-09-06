@@ -6,7 +6,7 @@ layout: 'base.pug'
 include partials/_headerwithnav.pug
 main.main
     section.slide.hero
-        h1 A Designer who's here to help create ctestere.
+        h1 A Designer who's here to help create change.
     section.slide.intro
         each introimg in collections.introimgs
             img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
@@ -45,13 +45,13 @@ main.main
     section.slide.aboutme 
         h1 Who are you again?
         .slide-text-all 
-            h2 I'm #{myInfo.myDesc}!
+            h2 I'm #{myInfo.myName}!
             .slide-text-pwrap 
                 p I’m interested in using my skills to disseminate information for the greater good. My passion for design stems from my cross-sectional experiences and from being a witness to people in need over the course of my life. 
                 p There is no design consideration that’s too nitpicky if it means improving the experience for those who need it most. This can mean many things, but nothing is too big or too small.
-            //- //- each infoLink in myInfo.myLinks
-            //- //-     a.about-extlink(href=`${infoLink.myPlatformLink}`)
-            //- //-         h3 #{infoLink.myPlatform} test
-            //- //- else 
-            //-     .oops SOMETHING WENT WRONG!!!!
+            each infoLink in myInfo.myLinks
+                a.about-extlink(href=`${infoLink.myPlatformLink}`)
+                    h3 #{infoLink.myPlatform} test
+            else 
+                .oops SOMETHING WENT WRONG!!!!
 include partials/_footer.pug
