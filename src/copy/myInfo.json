@@ -1,0 +1,22 @@
+{
+  "myName": "Samanta Moya Medina",
+  "myDesc": "I’m interested in using my skills to disseminate information for the greater good. My passion for design stems from my cross-sectional experiences and from being a witness to people in need over the course of my life.\n\nThere is no design consideration that’s too nitpicky if it means improving the experience for those who need it most. This can mean many things, but nothing is too big or too small.",
+  "myLinks": [
+    {
+      "myPlatform": "LinkedIn",
+      "myPlatformLink": "https://www.linkedin.com/in/smoyamedina/"
+    },
+    {
+      "myPlatform": "Contact",
+      "myPlatformLink": "mailto:smoyamedina@outlook.com"
+    }
+  ],
+  "myCert": [
+    {
+      "myCertItem": "B.F.A in Graphic Design"
+    },
+    {
+      "myCertItem": "A.A.S. in Graphic Design"
+    }
+  ]
+}
