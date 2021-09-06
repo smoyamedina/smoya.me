@@ -8,7 +8,7 @@ $grid-col-gap: 1rem;
 // palette
 $main-dark: #0f1330;
 // $main-dark: #000;
-$accent-warm: #ee4266;
+$acc-warm: #ee4266;
 $acc-jolly: #ffd23f;
 $acc-proud: #42d1b7;
 $main-bright: #fff7f8; 
@@ -20,6 +20,8 @@ $dsk-fontsize: 20px;
 
 $main-f-display: degular-display, 'Helvetica', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 $main-f-reg: degular, 'Helvetica', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+$h3-sz: 6.125vw;
 
 $h1-wt: 800;
 $h2-wt: 600;
@@ -49,10 +51,10 @@ body {
 
 // ----- Base Styles
 
-//container
-.container {
-    padding: 1rem;
-}
+// __ container
+// .container {
+//     padding: 1rem;
+// }
 
 // header
 .header {
@@ -75,7 +77,7 @@ body {
     font-family: $main-f-display;
 }
 
-// nav
+// __ nav
 
 .nav-contain {
     display: none;
@@ -97,14 +99,13 @@ body {
     padding: .25rem 0;
 }
 
+// __ overall padding on sides
+
+.header, .footer, .slide {
+    padding: 0 1rem;
+}
+
 // headers and hierarchy in general
-
-// h1, h2, h3, .overline, p {
-//     //text bg animation debug option
-//     // background: $main-bright;
-//     color: $main-dark;
-// }
-
 
 h1, h2 {
     font-family: $main-f-display;
@@ -300,4 +301,68 @@ img {
     font-size: .75em;
     position: relative;
     top: -.1em;
+}
+
+.aboutme .slide-text-all {
+    min-height: 80vh;
+}
+
+
+
+// __ footer
+
+.footer {
+    background-color: $main-dark;
+    height: 100%;
+}
+
+.footer * {
+    color: $main-bright;
+}
+
+.footer > * {
+    display: block;
+    padding-bottom: 2.5rem;
+}
+
+.footer > *:first-child {
+    padding-top: 2rem;
+}
+
+.overline {
+    display: block;
+}
+
+// colors for each footer section
+
+.locat .overline {
+    color:$acc-jolly;
+}
+
+.finds .overline {
+    color:$acc-proud;
+}
+
+.stamp .overline {
+    color:$acc-warm;
+}
+
+.overline {
+    margin-bottom: .125rem;
+}
+
+// footer sec specific
+.locat-title {
+    color: $acc-jolly;
+    font-size: $h3-sz;
+    font-weight: $h3-wt;
+}
+
+.finds-title h3 {
+    margin-bottom: 0;    
+    font-style: normal;
+}
+
+.finds-card:not(:first-of-type) {
+    margin-top: 1rem;
 }
