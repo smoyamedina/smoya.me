@@ -69,9 +69,12 @@ collections:
       - {label: "Image 1 ", name: "introimg1", widget: "image"}
       - {label: "Image 2 ", name: "introimg2", widget: "image"}
       - {label: "Image 3 ", name: "introimg3", widget: "image"}
-  - name: "exprojects"
+  - name: "extraimgs"
     label: "Extra Projects or Experiments"
-    folder: "src/assets/misc"
-    create: true
+    folder: "src/assets/extra"
+    media_folder: "src/assets/extra"
+    media_library:
+      config:
+        multiple: true
     fields:
       - {label: "Extra Project", name: "exImg", widget: "image"}
