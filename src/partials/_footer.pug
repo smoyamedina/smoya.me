@@ -4,11 +4,15 @@ footer.footer
         span.overline.ol-locat Based in 
         .locat-title DC + Bmore ❤
     .finds
-        span.overline.ol-finds Latest Interesting Finds 
-        article.finds-card 
-            cite.finds-title
-                h3 Creative Director and Teacher Forest Young on Designing a More Inclusive Future.
-            span.finds-by By Ksenya Samarskaya 
+        span.overline.ol-finds Latest Interesting Finds
+        each find in myFinds.myFinds
+            article.finds-card 
+                cite.finds-title
+                    a(href=`${find.myFindLink}`)
+                        h3 #{find.myFindTitle}
+                span.finds-by #{find.myFindAuthor}
+        else 
+            h3 Are being used right now! So busy... 
     .stamp
         span.overline.ol-stamp Made with love &copy; 2021
         span.overline.ol-stamp Have fun. Stay safe. 
