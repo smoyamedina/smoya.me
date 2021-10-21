@@ -13,27 +13,29 @@ main.main
             img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
             img.introimg(src=`${introimg.data.introimg3}`, alt="", srcset="")
         else
-            .emptydiv oops!
+            .emptydiv oops! someone needs to let sami know it messed up.
+    section.slide.intro-text
         .slide-text-all 
-            h3 ready to learn + create 
+            h2 Hi, there! <br>I go by Sami. 
             .slide-text-pwrap
-                p I’m a designer with an illustration style background who’s interested in  pushing for worthy causes while developing her digital skillset.
-                p I constantly ask questions and seek out answers to best inform my practice and process. I am currently learning JS animation libraries and front-end development practices to inform my digital design!
+                p I’m a designer with an illustration background who’s interested in pushing for worthy causes while developing her digital skillset.
+                p I constantly ask questions and seek out answers to best inform my practice and process. I am learning JS animation libraries and front-end dev practices to inform my digital design!
+                p.proj-leadin Some of my projects include...
     section.slide.projs
-        h1 Some Projects
         .projs-slide-gall
             each project, projNum in collections.project
                 .projs-card
-                    .projs-overline-all 
-                        span.overline.projs-dscplne #{project.data.projsDscplne}
+                    //- .projs-overline-all
+                    .projs-text 
                         span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
-                    a.projs-titlelink(href='/#')
-                        h2.projs-name #{project.data.projsName} 
-                        //- proj-arrow will be taken care of with pseudo after element
+                        span.overline.projs-dscplne #{project.data.projsDscplne}
+                        a.projs-titlelink(href='/#')
+                            h1.projs-name #{project.data.projsName} 
+                            //- proj-arrow will be taken care of with pseudo after element
                     img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
                 //- include partials/_projsCard.pug
             else 
-                .oops THERE WAS SOMETHING WRONG WITH the NAME!
+                .oops THERE WAS SOMETHING WRONG WITH the NAME! someone tell sami!
         .projs-slide-misc
             h3.projs-slide-misc-txt I also explore other disciplines to carry through my curiosity into techniques I can use in future projects.
             .projs-slide-misc-img-all 

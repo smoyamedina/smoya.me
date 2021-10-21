@@ -1,9 +1,9 @@
-
 //layout vars
-$mb-grid-col-tmplt: repeat(6, 1fr);
-$dsk-grid-col-num: repeat(12, 1fr);
+$mb-grid-col-tmplt: repeat(12, minmax(0, 1fr));
+$dsk-grid-col-num: repeat(12, minmax(0, 1fr));
 $mb-grid-row-tmplt: minmax(20vw, auto);
 $grid-col-gap: 1rem;
+$mb-gap: .5rem;
 
 // palette
 $main-dark: #0f1330;
@@ -11,15 +11,25 @@ $main-dark: #0f1330;
 $acc-warm: #ee4266;
 $acc-jolly: #ffd23f;
 $acc-proud: #42d1b7;
-$main-bright: #fff7f8; 
+$main-bright: #ECE7E4;
 
 //type style vars
 
-$mb-fontsize: 18px;
-$dsk-fontsize: 20px;
+$mb-fontsize: 22px;
+$dsk-fontsize: 24px;
 
-$main-f-display: degular-display, 'Helvetica', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-$main-f-reg: degular, 'Helvetica', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$main-f-display: degular-display,
+'Helvetica',
+'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+$main-f-reg: degular,
+'Helvetica',
+'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
 
 $h3-sz: 6.125vw;
 
@@ -61,15 +71,22 @@ body {
     position: sticky;
     top: .75rem;
     margin-bottom: .75rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: $mb-grid-col-tmplt;
+    gap: $mb-gap;
+    // justify-content: space-between;
     mix-blend-mode: difference;
 }
 
-.logo-type {
+.logo-type,
+.logo-mk {
     text-transform: uppercase;
     line-height: $mb-fontsize;
     display: inline-block;
+}
+
+.logo-type {
+    grid-column: 1 / 5;
 }
 
 .logo-type a {
@@ -77,11 +94,15 @@ body {
     font-family: $main-f-display;
 }
 
+.logo-mk {
+    grid-column: -1 / -2;
+    text-align: right;
+}
+
 // __ nav
 
 .nav-contain {
-    display: none;
-    //temp
+    grid-column: -2 / -9;
 }
 
 .test-class {
@@ -92,38 +113,60 @@ body {
     list-style-type: none;
     text-transform: uppercase;
     line-height: $mb-fontsize;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: $mb-gap;
 }
 
-.nav-item a {
+.nav-item a,
+.nav-item {
     display: block;
-    padding: .25rem 0;
+    text-align: right;
+}
+
+.nav-item:first-of-type {
+    grid-column: 1 / 5;
+
+}
+
+.nav-item:last-of-type {
+    grid-column: 5 / 8;
+
+
 }
 
 // __ overall padding on sides
 
-.header, .footer, .slide {
+.header,
+.footer,
+.slide {
     padding: 0 1rem;
+}
+
+img {
+    border-radius: .5rem;
 }
 
 // headers and hierarchy in general
 
-h1, h2 {
+h1,
+h2 {
     font-family: $main-f-display;
 }
 
 h1 {
     font-weight: $h1-wt;
     text-transform: uppercase;
-    font-size: 11vw;
+    font-size: 10.50vw;
     line-height: 8.5vw;
-    margin: 25vh 0;
+    // margin: 25vh 0;
 }
 
 h2 {
     font-weight: $h2-wt;
     font-size: 9.15vw;
-    line-height: 9.15vw;
-    margin-bottom: 2rem;
+    line-height: 8vw;
+    margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -141,8 +184,8 @@ h3 {
 
 p {
     margin-bottom: .5rem;
-    line-height: 133%;
-    letter-spacing: 1%;
+    line-height: 120%;
+    letter-spacing: .001rem;
 }
 
 // images
@@ -159,12 +202,12 @@ img {
 .slide {
     min-height: 50vh;
     display: grid;
-    gap: 1rem;
+    gap: $mb-gap;
     grid-template-columns: $mb-grid-col-tmplt;
     grid-auto-rows: $mb-grid-row-tmplt;
 }
 
-.intro .slide-text-all {
+.intro-text .slide-text-all {
     min-height: 60vh;
     //just to center vertically
     display: flex;
@@ -175,9 +218,7 @@ img {
 
 // ------ layout
 
-
-
-.slide h1{
+.slide h1 {
     grid-column: 1 / -1;
 }
 
@@ -185,23 +226,44 @@ img {
     grid-column: 1 / -1;
 }
 
-.slide-text-all, .projs-slide-misc-txt {
-    grid-column: 2 / -1;
+.slide-text-all,
+.projs-slide-misc-txt {
+    grid-column: 2 / -2;
 }
 
-// __ hero
+// __ hero + intro area
 
 .hero h1 {
     margin: -.5rem 0 auto 0;
     vertical-align: text-bottom;
 }
 
+.intro {
+    row-gap: 1rem;
+    position: relative;
+}
+
+.intro::after {
+    content: "";
+    z-index: -50;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    margin: 2rem 0 0 0;
+    background: $main-dark;
+}
+
+.introimg:nth-child(1) {
+    max-height: 35vh;
+}
+
 .introimg:nth-child(2) {
-    grid-column-end: 5;
+    grid-column-end: 9;
 }
 
 .introimg:nth-child(3) {
-    grid-column-start: 4;
+    grid-column-start: 7;
+    aspect-ratio: 1;
 }
 
 
@@ -211,22 +273,33 @@ img {
     margin-bottom: 20vh;
 }
 
+.projs-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: $mb-grid-col-tmplt;
+}
+
 .projs-slide-gall {
     grid-column: 1 / -1;
 }
 
-.projs-overline-all {
+.projs-text {
+    position: absolute;
+    height: min-content;
+    bottom: -2.6rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 8vh;
+    flex-direction: column;
+}
+
+.projs-dscplne {
+    order: 4;
 }
 
 .projs-name {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin: .25rem 0;
 }
 
 .projs-name::after {
@@ -236,8 +309,10 @@ img {
 }
 
 .projs-img {
-    height: 60vh;
+    height: clamp(40vh, 100%, 70vh);
+    grid-column: 2 / -2;
 }
+
 // misc projs section
 .projs-slide-misc {
     min-height: 100vh;
@@ -316,8 +391,6 @@ img {
     min-height: 80vh;
 }
 
-
-
 // __ footer
 
 .footer {
@@ -329,12 +402,12 @@ img {
     color: $main-bright;
 }
 
-.footer > * {
+.footer>* {
     display: block;
     padding-bottom: 2.5rem;
 }
 
-.footer > *:first-child {
+.footer>*:first-child {
     padding-top: 2rem;
 }
 
@@ -345,15 +418,15 @@ img {
 // colors for each footer section
 
 .locat .overline {
-    color:$acc-jolly;
+    color: $acc-jolly;
 }
 
 .finds .overline {
-    color:$acc-proud;
+    color: $acc-proud;
 }
 
 .stamp .overline {
-    color:$acc-warm;
+    color: $acc-warm;
 }
 
 .ol-stamp:first-of-type {
@@ -369,7 +442,7 @@ img {
 }
 
 .finds-title h3 {
-    margin-bottom: 0;    
+    margin-bottom: 0;
     font-style: normal;
 }
 
