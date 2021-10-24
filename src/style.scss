@@ -15,7 +15,7 @@ $main-bright: #ECE7E4;
 
 //type style vars
 
-$mb-fontsize: 22px;
+$mb-fontsize: 20px;
 $dsk-fontsize: 24px;
 
 $main-f-display: degular-display,
@@ -157,23 +157,23 @@ h2 {
 h1 {
     font-weight: $h1-wt;
     text-transform: uppercase;
-    font-size: 10.50vw;
-    line-height: 8.5vw;
+    font-size: 2.025rem;
+    line-height: 1.5rem;
     // margin: 25vh 0;
 }
 
 h2 {
     font-weight: $h2-wt;
-    font-size: 9.15vw;
-    line-height: 8vw;
+    font-size: 2rem;
+    line-height: 1.6rem;
     margin-bottom: 1.5rem;
 }
 
 h3 {
     font-weight: $h3-wt;
-    font-size: 6.125vw;
-    line-height: 6.125vw;
-    letter-spacing: -.03em;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -.015em;
     margin-bottom: 2rem;
 }
 
@@ -389,6 +389,63 @@ img {
 
 .aboutme .slide-text-all {
     min-height: 80vh;
+}
+
+// __ Finds
+
+.finds {
+    background: $main-dark;
+    padding: 4rem 0 0rem 0;
+
+    h3,
+    p {
+        color: $main-bright;
+    }
+}
+
+.finds>div {
+    grid-column: 2 / -2;
+}
+
+.finds-intro {
+    margin-bottom: 2rem;
+}
+
+.finds-card {
+    display: flex;
+    flex-direction: column;
+
+    .overline .finds-pub,
+    .overline .finds-auth,
+    .finds-title {
+        color: $main-bright;
+    }
+}
+
+.finds-pub::after {
+    content: ' ✧ ';
+}
+
+.finds-title {
+    font-weight: $h3-wt;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    letter-spacing: -.015em;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+
+.finds-header {
+    position: relative;
+}
+
+.finds-header::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 3rem;
+    bottom: -1.1rem;
+    border-top: 1.55px solid $main-bright;
 }
 
 // __ footer

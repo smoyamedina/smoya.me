@@ -1,0 +1,15 @@
+section.slide.finds 
+    .finds-intro 
+        h3.finds-header Interesting Finds 
+        p.finds-desc Sometimes I come across a resource or article that helps me improve as a designer or as a person. Maybe you'll find them interesting, too. I'll be updating this casually as I come across them.
+    .finds-card-contain 
+        .finds-card 
+            .overline 
+                span.finds-pub #{myFinds.myFinds[0].myFindPublisher}
+                span.finds-auth #{myFinds.myFinds[0].myFindAuthor}
+            a.finds-title(href=`${myFinds.myFinds[0].myFindLink}`) #{myFinds.myFinds[0].myFindTitle}
+        .finds-card 
+            .overline 
+                span.finds-pub #{myFinds.myFinds[1].myFindPublisher}
+                span.finds-auth #{myFinds.myFinds[1].myFindAuthor}
+            a.finds-title(href=`${myFinds.myFinds[1].myFindLink}`) #{myFinds.myFinds[1].myFindTitle}
