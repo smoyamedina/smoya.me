@@ -414,18 +414,6 @@ img {
           animation: marquee 20s linear infinite;
 }
 
-.marquee-b {
-  display: inline-block;
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-.marquee-double {
-  display: inline-block;
-}
-
 .footer:hover > div {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
@@ -435,37 +423,5 @@ img {
   content: "✦";
   display: inline-block;
   padding: 1rem 2rem;
-}
-
-.locat .overline {
-  color: #ffd23f;
-}
-
-.finds .overline {
-  color: #42d1b7;
-}
-
-.stamp .overline {
-  color: #ee4266;
-}
-
-.ol-stamp:first-of-type {
-  margin-bottom: 0rem;
-  line-height: .75rem;
-}
-
-.locat-title {
-  color: #ffd23f;
-  font-size: 6.125vw;
-  font-weight: 500;
-}
-
-.finds-title h3 {
-  margin-bottom: 0;
-  font-style: normal;
-}
-
-.finds-card:not(:first-of-type) {
-  margin-top: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

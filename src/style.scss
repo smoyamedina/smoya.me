@@ -423,17 +423,6 @@ img {
     // position: relative;
 }
 
-.marquee-b {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-    animation-delay: 0s;
-    // width: max-content;
-    // position: relative;
-}
-
-.marquee-double {
-    display: inline-block;
-}
 
 .footer:hover>div {
     animation-play-state: paused;
@@ -444,40 +433,4 @@ img {
     display: inline-block;
     // margin-left: 2rem;
     padding: 1rem 2rem;
-}
-
-
-// colors for each footer section
-
-.locat .overline {
-    color: $acc-jolly;
-}
-
-.finds .overline {
-    color: $acc-proud;
-}
-
-.stamp .overline {
-    color: $acc-warm;
-}
-
-.ol-stamp:first-of-type {
-    margin-bottom: 0rem;
-    line-height: .75rem;
-}
-
-// footer sec specific
-.locat-title {
-    color: $acc-jolly;
-    font-size: $h3-sz;
-    font-weight: $h3-wt;
-}
-
-.finds-title h3 {
-    margin-bottom: 0;
-    font-style: normal;
-}
-
-.finds-card:not(:first-of-type) {
-    margin-top: 1rem;
 }
