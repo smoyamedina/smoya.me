@@ -15,7 +15,8 @@ $main-bright: #ECE7E4;
 
 //type style vars
 
-$mb-fontsize: 20px;
+$mb-fontsize: 18px;
+// $mb-fontsize: 1rem;
 $dsk-fontsize: 24px;
 
 $main-f-display: degular-display,
@@ -266,6 +267,7 @@ img {
 
 .introimg:nth-child(2) {
     grid-column-end: 9;
+    aspect-ratio: 4 / 3;
 }
 
 .introimg:nth-child(3) {

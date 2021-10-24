@@ -4,7 +4,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 20px;
+  font-size: 18px;
   color: #0f1330;
   text-decoration: none;
   font-family: degular, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -38,7 +38,7 @@ body {
 .logo-type,
 .logo-mk {
   text-transform: uppercase;
-  line-height: 20px;
+  line-height: 18px;
   display: inline-block;
 }
 
@@ -69,7 +69,7 @@ body {
 .nav-list {
   list-style-type: none;
   text-transform: uppercase;
-  line-height: 20px;
+  line-height: 18px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(0, 1fr))[7];
@@ -219,6 +219,7 @@ img {
 
 .introimg:nth-child(2) {
   grid-column-end: 9;
+  aspect-ratio: 4 / 3;
 }
 
 .introimg:nth-child(3) {
