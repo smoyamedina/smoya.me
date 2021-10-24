@@ -48,6 +48,7 @@ collections:
             fields:
               - {label: "The Title", name: "myFindTitle", widget: "string"}
               - {label: "Author or Creator", name: "myFindAuthor", widget: "string"}
+              - {label: "Publisher or Company", name: "myFindPublisher", widget: "string"}
               - {label: "Link to resource mentioned.", name: "myFindLink", widget: "string"}
   - name: "project"
     label: "Projects"
