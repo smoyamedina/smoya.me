@@ -18,6 +18,10 @@ body {
   z-index: 90;
 }
 
+.nobreak {
+  display: inline-block;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -28,7 +32,7 @@ body {
   -ms-grid-columns: (minmax(0, 1fr))[12];
       grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 0.5rem;
-  mix-blend-mode: difference;
+  mix-blend-mode: hard-light;
 }
 
 .logo-type,
@@ -183,9 +187,15 @@ img {
   grid-column: 2 / -2;
 }
 
+.hero {
+  -ms-flex-line-pack: end;
+      align-content: end;
+  margin-bottom: 2rem;
+  min-height: 70vh;
+}
+
 .hero h1 {
   margin: -.5rem 0 auto 0;
-  vertical-align: text-bottom;
 }
 
 .intro {
@@ -217,20 +227,33 @@ img {
   aspect-ratio: 1;
 }
 
+.projs {
+  margin: 2rem 0 4rem 0;
+}
+
 .projs-card:not(.projs-card:last-of-type) {
-  margin-bottom: 20vh;
+  margin-bottom: 10%;
 }
 
 .projs-card {
   position: relative;
+  display: block;
   display: -ms-grid;
   display: grid;
+  margin: 30% 0;
   -ms-grid-columns: (minmax(0, 1fr))[12];
       grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .projs-slide-gall {
   grid-column: 1 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .projs-text {
@@ -238,7 +261,7 @@ img {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  bottom: -2.6rem;
+  bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,6 +275,7 @@ img {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
+  display: inline-block;
 }
 
 .projs-name {
@@ -274,7 +298,8 @@ img {
 }
 
 .projs-img {
-  height: clamp(40vh, 100%, 70vh);
+  display: block;
+  height: 100%;
   grid-column: 2 / -2;
 }
 
@@ -354,23 +379,35 @@ img {
   margin-left: -1rem;
 }
 
-.aboutme .slide-text-all .slide-text-pwrap {
+.about {
+  margin: 2rem 0;
+  padding-top: 3rem;
+  border-top: 1px solid #0f1330;
+}
+
+.about > div {
+  grid-column: 2 / -2;
+}
+
+.about-intro {
+  margin-bottom: 1rem;
+}
+
+.about-header > span {
+  font-size: inherit;
+}
+
+.about-links > p {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  letter-spacing: -.015em;
   margin-bottom: 2rem;
 }
 
-.about-extlink h3 {
-  margin-bottom: 0;
-}
-
-.about-extlink h3::after {
-  content: '➚';
-  font-size: .75em;
-  position: relative;
-  top: -.1em;
-}
-
-.aboutme .slide-text-all {
-  min-height: 80vh;
+.about-links > p a {
+  font-size: inherit;
+  text-decoration: underline;
 }
 
 .finds {
