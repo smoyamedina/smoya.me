@@ -396,24 +396,56 @@ img {
 .footer {
     background-color: $main-dark;
     height: 100%;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .footer * {
     color: $main-bright;
+    text-transform: uppercase;
 }
 
-.footer>* {
-    display: block;
-    padding-bottom: 2.5rem;
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
-.footer>*:first-child {
-    padding-top: 2rem;
+.marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    // width: max-content;
+    // position: relative;
 }
 
-.overline {
-    display: block;
+.marquee-b {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    animation-delay: 0s;
+    // width: max-content;
+    // position: relative;
 }
+
+.marquee-double {
+    display: inline-block;
+}
+
+.footer:hover>div {
+    animation-play-state: paused;
+}
+
+.marquee-txt::after {
+    content: "✦";
+    display: inline-block;
+    // margin-left: 2rem;
+    padding: 1rem 2rem;
+}
+
 
 // colors for each footer section
 

@@ -376,23 +376,65 @@ img {
 .footer {
   background-color: #0f1330;
   height: 100%;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .footer * {
   color: #ECE7E4;
+  text-transform: uppercase;
 }
 
-.footer > * {
-  display: block;
-  padding-bottom: 2.5rem;
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
-.footer > *:first-child {
-  padding-top: 2rem;
+@keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
-.overline {
-  display: block;
+.marquee {
+  display: inline-block;
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
+}
+
+.marquee-b {
+  display: inline-block;
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.marquee-double {
+  display: inline-block;
+}
+
+.footer:hover > div {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.marquee-txt::after {
+  content: "✦";
+  display: inline-block;
+  padding: 1rem 2rem;
 }
 
 .locat .overline {

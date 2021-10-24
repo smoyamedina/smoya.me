@@ -1,18 +1,21 @@
 footer.footer
-    span.overline.ol-nav Nav
-    .locat
-        span.overline.ol-locat Based in 
-        .locat-title DC + Bmore ❤
-    .finds
-        span.overline.ol-finds Latest Interesting Finds
-        each find in myFinds.myFinds
-            article.finds-card 
-                cite.finds-title
-                    a(href=`${find.myFindLink}`)
-                        h3 #{find.myFindTitle}
-                span.finds-by #{find.myFindAuthor}
-        else 
-            h3 Are being used right now! So busy... 
-    .stamp
-        span.overline.ol-stamp Made with love &copy; 2021
-        span.overline.ol-stamp Have fun. Stay safe. 
+    .marquee 
+        span.marquee-txt DC + Bmore
+        span.marquee-txt hi@smoya.me
+        span.marquee-txt Made with TLC &copy; 2021
+        span.marquee-txt Have fun and stay safe!
+        .marquee-double(aria-hidden="true")
+            span.marquee-txt DC + Bmore
+            span.marquee-txt hi@smoya.me
+            span.marquee-txt Made with TLC &copy; 2021
+            span.marquee-txt Have fun and stay safe!
+    .marquee-b(aria-hidden="true") 
+        span.marquee-txt DC + Bmore
+        span.marquee-txt hi@smoya.me
+        span.marquee-txt Made with TLC &copy; 2021
+        span.marquee-txt Have fun and stay safe!
+        .marquee-double(aria-hidden="true")
+            span.marquee-txt DC + Bmore
+            span.marquee-txt hi@smoya.me
+            span.marquee-txt Made with TLC &copy; 2021
+            span.marquee-txt Have fun and stay safe!
