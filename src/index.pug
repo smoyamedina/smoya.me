@@ -3,47 +3,46 @@ title: GRAPHIC DESIGNER
 layout: 'base.pug'
 ---
 
-include partials/_headerwithnav.pug
-main.main
-    section.slide.hero
-        h1 A Designer who's here to help create change.
-    section.slide.intro
-        each introimg in collections.introimgs
-            img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
-            img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
-            img.introimg(src=`${introimg.data.introimg3}`, alt="", srcset="")
-        else
-            .emptydiv oops! someone needs to let sami know it messed up.
-    section.slide.intro-text
-        .slide-text-all 
-            h2 Hi, there! <br>I go by Sami. 
-            .slide-text-pwrap
-                p I’m a designer with an illustration background who’s interested in pushing for worthy causes while developing her digital skillset.
-                p I constantly ask questions and seek out answers to best inform my practice and process. I am learning JS animation libraries and front-end dev practices to inform my digital design!
-                p.proj-leadin Some of my projects include...
-    section.slide.projs
-        .projs-slide-gall
-            each project, projNum in collections.project
-                .projs-card
-                    //- .projs-overline-all
-                    .projs-text 
-                        span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
-                        span.overline.projs-dscplne #{project.data.projsDscplne}
-                        a.projs-titlelink(href='/#')
-                            h1.projs-name #{project.data.projsName} 
-                            //- proj-arrow will be taken care of with pseudo after element
-                    img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
-                //- include partials/_projsCard.pug
-            else 
-                .oops THERE WAS SOMETHING WRONG WITH the NAME! someone tell sami!
-        //- .projs-slide-misc
-        //-     h3.projs-slide-misc-txt I also explore other disciplines to carry through my curiosity into techniques I can use in future projects.
-        //-     .projs-slide-misc-img-all 
-        //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-        //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-        //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-        //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-        //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-    include partials/_about.pug
-    include partials/_finds.pug
-include partials/_footer.pug
+
+section.slide.hero
+    h1 A Designer who's here to help create change.
+section.slide.intro
+    each introimg in collections.introimgs
+        img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
+        img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
+        img.introimg(src=`${introimg.data.introimg3}`, alt="", srcset="")
+    else
+        .emptydiv oops! someone needs to let sami know it messed up.
+section.slide.intro-text
+    .slide-text-all 
+        h2 Hi, there! <br>I go by Sami. 
+        .slide-text-pwrap
+            p I’m a designer with an illustration background who’s interested in pushing for worthy causes while developing her digital skillset.
+            p I constantly ask questions and seek out answers to best inform my practice and process. I am learning JS animation libraries and front-end dev practices to inform my digital design!
+            p.proj-leadin Some of my projects include...
+section.slide.projs(id="projects")
+    .projs-slide-gall
+        each project, projNum in collections.project
+            .projs-card
+                //- .projs-overline-all
+                .projs-text 
+                    //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
+                    span.overline.projs-dscplne #{project.data.projsDscplne}
+                    a.projs-titlelink(href=`${project.url}`)
+                        h1.projs-name #{project.data.projsName} 
+                        //- proj-arrow will be taken care of with pseudo after element
+                img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
+            //- include partials/_projsCard.pug
+        else 
+            .oops THERE WAS SOMETHING WRONG WITH the NAME! someone tell sami!
+    //- .projs-slide-misc
+    //-     h3.projs-slide-misc-txt I also explore other disciplines to carry through my curiosity into techniques I can use in future projects.
+    //-     .projs-slide-misc-img-all 
+    //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+    //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+    //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+    //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+    //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
+include partials/_about.pug
+include partials/_finds.pug
+

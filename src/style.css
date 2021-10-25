@@ -5,6 +5,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 18px;
+  font-size: calc(14px + 1.1vw);
   color: #0f1330;
   text-decoration: none;
   font-family: degular, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -38,7 +39,7 @@ body {
 .logo-type,
 .logo-mk {
   text-transform: uppercase;
-  line-height: 18px;
+  line-height: calc(14px + 1.1vw);
   display: inline-block;
 }
 
@@ -69,7 +70,7 @@ body {
 .nav-list {
   list-style-type: none;
   text-transform: uppercase;
-  line-height: 18px;
+  line-height: calc(14px + 1.1vw);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(0, 1fr))[7];
@@ -521,5 +522,62 @@ img {
   content: "✦";
   display: inline-block;
   padding: 1rem 2rem;
+}
+
+.projhero {
+  padding-top: 1rem;
+  overflow-x: hidden;
+}
+
+.proj-pg-desc,
+.p-heroimg {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  height: 100%;
+}
+
+.p-heroimg {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  width: calc(100% + 2rem);
+  min-height: 50vh;
+  display: block;
+  margin-right: -2rem;
+}
+
+.proj-pg-desc {
+  grid-column: 1 / -1;
+  z-index: 50;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  margin-bottom: 1rem;
+}
+
+.proj-pg-desc .projs-name::after {
+  content: none;
+}
+
+.proj-prompt-txt {
+  grid-column: 2 / -1;
+  margin-bottom: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.p-img-lead {
+  display: block;
+  width: calc(100% + 2rem);
+  margin-left: -2rem;
+}
+
+.proj-desc {
+  grid-column: 2 / -2;
+  margin: 30% 0;
 }
 /*# sourceMappingURL=style.css.map */

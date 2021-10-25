@@ -2,8 +2,15 @@
 layout: 'base.pug'
 ---
 
-.projhero
-    .p-num
-    .p-title
-    .p-disc
-    img.p-heroimg(src="#")
+section.slide.projhero
+    .proj-pg-desc
+        //- span.overline.projs-order #{(x + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
+        h1.projs-name  #{projsName}
+        span.overline.projs-dscplne #{projsDscplne}
+    img.p-heroimg(src=`${projsFtImg}`)
+section.slide.proj-prompt 
+    h2.proj-prompt-txt #{projPrompt}
+section.slide.proj-outcome
+    img.p-img-lead(src=`${projsFtImg}`) 
+    .proj-desc #{projDesc}
+include _about.pug

@@ -15,7 +15,7 @@ $main-bright: #ECE7E4;
 
 //type style vars
 
-$mb-fontsize: 18px;
+$mb-fontsize: calc(14px + 1.1vw);
 // $mb-fontsize: 1rem;
 $dsk-fontsize: 24px;
 
@@ -44,6 +44,7 @@ $h3-wt: 500;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 18px;
     font-size: $mb-fontsize;
     color: $main-dark;
     text-decoration: none;
@@ -523,4 +524,55 @@ img {
     display: inline-block;
     // margin-left: 2rem;
     padding: 1rem 2rem;
+}
+
+// indiv project pages
+
+.projhero {
+    padding-top: 1rem;
+    overflow-x: hidden;
+}
+
+.proj-pg-desc,
+.p-heroimg {
+    grid-row: 1 / 2;
+    height: 100%;
+}
+
+.p-heroimg {
+    grid-column-start: 2;
+    width: calc(100% + 2rem);
+    min-height: 50vh;
+    display: block;
+    margin-right: -2rem;
+}
+
+.proj-pg-desc {
+    grid-column: 1 / -1;
+    z-index: 50;
+    height: min-content;
+    align-self: end;
+    margin-bottom: 1rem;
+
+}
+
+.proj-pg-desc .projs-name::after {
+    content: none;
+}
+
+.proj-prompt-txt {
+    grid-column: 2 / -1;
+    margin-bottom: 0;
+    align-self: center;
+}
+
+.p-img-lead {
+    display: block;
+    width: calc(100% + 2rem);
+    margin-left: -2rem;
+}
+
+.proj-desc {
+    grid-column: 2 / -2;
+    margin: 30% 0;
 }
