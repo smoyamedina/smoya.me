@@ -7,7 +7,9 @@ const locoScroll = new LocomotiveScroll({
 });
 
 document.onreadystatechange = function () {
+    // because loco inits before all heights are rendered completely. need to refresh it.
     if (document.readyState === 'complete') {
         locoScroll.update();
     }
   }
+
