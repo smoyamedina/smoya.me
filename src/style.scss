@@ -65,10 +65,11 @@ body {
     display: inline-block;
 }
 
+
 // /*! locomotive-scroll v4.1.2 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
-html.has-scroll-smooth {
-    overflow: hidden;
-}
+// html.has-scroll-smooth {
+//     overflow: hidden;
+// }
 
 html.has-scroll-dragging {
     -webkit-user-select: none;
@@ -154,6 +155,7 @@ html.has-scroll-dragging {
     bottom: 0;
 }
 
+// end locomotive scroll styles
 
 // ----- Base Styles
 

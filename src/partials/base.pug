@@ -8,10 +8,10 @@ html(lang="en")
         link(rel="stylesheet", href="/style.css")
         title SMOYA.ME | #{title}
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js")
-    body
-        .container(data-scroll-container)
+    body(data-scroll-container)
+        .container
             include _headerwithnav.pug
-            main.main
+            main.main(data-scroll-section)
                 !=content
             include _footer.pug
         script. 
