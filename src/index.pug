@@ -15,7 +15,7 @@ section.slide.intro
         .emptydiv oops! someone needs to let sami know it messed up.
 section.slide.intro-text
     .slide-text-all 
-        h2 Hi, there! <br>I go by Sami. 
+        h4 Hi, there! <br>I go by Sami. 
         .slide-text-pwrap
             p I’m a designer with an illustration background who’s interested in pushing for worthy causes while developing her digital skillset.
             p I constantly ask questions and seek out answers to best inform my practice and process. I am learning JS animation libraries and front-end dev practices to inform my digital design!
@@ -29,7 +29,7 @@ section.slide.projs
                     //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
                     span.overline.projs-dscplne #{project.data.projsDscplne}
                     a.projs-titlelink(href=`${project.url}`)
-                        h1.projs-name #{project.data.projsName} 
+                        h2.projs-name #{project.data.projsName} 
                         //- proj-arrow will be taken care of with pseudo after element
                 img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
             //- include partials/_projsCard.pug
