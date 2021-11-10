@@ -5,21 +5,15 @@ layout: 'base.pug'
 
 
 section.slide.hero
-    h1 I'm a Graphic Designer who's here to help create change.
-section.slide.intro
-    each introimg in collections.introimgs
-        img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
-        img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
-        img.introimg(src=`${introimg.data.introimg3}`, alt="", srcset="")
-    else
-        .emptydiv oops! someone needs to let sami know it messed up.
-section.slide.intro-text
-    .slide-text-all 
-        h4 Hi, there! <br>I go by Sami. 
-        .slide-text-pwrap
-            p I’m a designer with an illustration background who’s interested in pushing for worthy causes while developing her digital skillset.
-            p I constantly ask questions and seek out answers to best inform my practice and process. I am learning JS animation libraries and front-end dev practices to inform my digital design!
-            p.proj-leadin Some of my projects include...
+    h1 A Designer who's here to help create & deliver change.
+//- section.slide.intro
+//-     each introimg in collections.introimgs
+//-         img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
+//-         img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
+//-         img.introimg(src=`${introimg.data.introimg3}`, alt="", srcset="")
+//-     else
+//-         .emptydiv oops! someone needs to let sami know it messed up.
+include partials/_about.pug
 section.slide.projs
     .projs-slide-gall(id="projects")
         each project, projNum in collections.project
@@ -43,6 +37,6 @@ section.slide.projs
     //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
     //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
     //-         img.projs-sm-img-indiv(src="https://picsum.photos/600", alt="", srcset="")
-include partials/_about.pug
+//- include partials/_about.pug
 include partials/_finds.pug
 

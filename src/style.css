@@ -6,16 +6,14 @@
           box-sizing: border-box;
   font-size: 18px;
   font-size: calc(14px + 1.1vw);
-  font-size: clamp(18px, calc(14px + 1.1vw), 24px);
-  color: #0f1330;
+  font-size: clamp(22px, calc(14px + 1.1vw), 26px);
+  color: #e0e0e0;
   text-decoration: none;
-  font-family: degular, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: roc-grotesk, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 body {
-  background: #ECE7E4;
+  background: #000000;
 }
 
 .header {
@@ -31,10 +29,6 @@ html.has-scroll-dragging {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
 }
 
 .has-scroll-smooth [data-scroll-container] {
@@ -101,7 +95,7 @@ html.has-scroll-dragging {
   background-color: black;
   opacity: 0.5;
   width: 7px;
-  border-radius: 10px;
+  border-radius: .5rem;
   margin: 2px;
   cursor: -webkit-grab;
   cursor: grab;
@@ -119,15 +113,15 @@ html.has-scroll-dragging {
 
 .header {
   position: fixed;
-  top: .75rem;
+  top: 1rem;
   margin-bottom: .75rem;
   display: -ms-grid;
   display: grid;
   width: 100%;
-  -ms-grid-columns: (minmax(0, 1fr))[12];
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 0.5rem;
-  mix-blend-mode: hard-light;
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  mix-blend-mode: difference;
 }
 
 .logo-type,
@@ -139,25 +133,20 @@ html.has-scroll-dragging {
 
 .logo-type {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-column: 1 / 5;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
 }
 
 .logo-type a {
-  font-weight: 800;
-  font-family: degular-display, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.logo-mk {
-  grid-column: -1 / -2;
-  text-align: right;
+  font-weight: 600;
+  font-family: roc-grotesk, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .nav-contain {
-  grid-column: -2 / -9;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  grid-column: -1 / -3;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .test-class {
@@ -168,11 +157,13 @@ html.has-scroll-dragging {
   list-style-type: none;
   text-transform: uppercase;
   line-height: calc(14px + 1.1vw);
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(0, 1fr))[7];
-      grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 1rem;
 }
 
 .nav-item a,
@@ -189,12 +180,18 @@ html.has-scroll-dragging {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1 / 5;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
 }
 
 .nav-item:last-of-type {
   -ms-grid-column: 5;
   -ms-grid-column-span: 3;
   grid-column: 5 / 8;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
 }
 
 .header,
@@ -208,41 +205,55 @@ img {
 }
 
 h1,
-h2 {
-  font-family: degular-display, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+h2,
+h3,
+h4 {
+  font-family: roc-grotesk-wide, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 h1,
 h2 {
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 2.025rem;
   line-height: 1.5rem;
 }
 
+h1 {
+  font-size: clamp(2.75rem, 7.145vw, 7.155vw);
+  line-height: 78%;
+  letter-spacing: -.025em;
+}
+
+h2 {
+  font-size: clamp(2rem, 7.145vw, 7.155vw);
+  line-height: 78%;
+  letter-spacing: -.025em;
+}
+
 h3 {
   font-weight: 600;
-  font-size: 2rem;
-  line-height: 1.6rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 100%;
   margin-bottom: 1.5rem;
 }
 
 h4 {
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: clamp(1.46rem, 3vw, 1.65rem);
+  line-height: 115%;
   letter-spacing: -.015em;
-  margin-bottom: 2rem;
 }
 
 .overline {
   text-transform: uppercase;
   display: inline-block;
+  letter-spacing: .03em;
 }
 
 p {
   margin-bottom: .5rem;
-  line-height: 120%;
+  line-height: 135%;
   letter-spacing: .001rem;
 }
 
@@ -254,12 +265,11 @@ img {
 }
 
 .slide {
-  min-height: 50vh;
   display: -ms-grid;
   display: grid;
-  gap: 0.5rem;
-  -ms-grid-columns: (minmax(0, 1fr))[12];
-      grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: minmax(20vw, auto);
 }
 
@@ -281,7 +291,8 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100vh - 6rem);
+  min-height: 100vh;
+  padding: 1rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
@@ -297,8 +308,10 @@ img {
 }
 
 .slide-text-all,
-.projs-slide-misc-txt {
-  grid-column: 2 / -2;
+.projs-slide-misc-txt,
+.finds-intro,
+.finds-card-contain {
+  grid-column: 1 / -1;
 }
 
 .hero {
@@ -323,7 +336,7 @@ img {
   width: 100%;
   height: 90%;
   margin: 2rem 0 0 0;
-  background: #0f1330;
+  background: #000000;
 }
 
 .introimg:nth-child(1) {
@@ -342,7 +355,8 @@ img {
 }
 
 .projs {
-  margin: 2rem 0 4rem 0;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .projs-card:not(.projs-card:last-of-type) {
@@ -352,11 +366,13 @@ img {
 .projs-card {
   position: relative;
   display: block;
-  display: -ms-grid;
-  display: grid;
-  margin: 30% 0;
-  -ms-grid-columns: (minmax(0, 1fr))[12];
-      grid-template-columns: repeat(12, minmax(0, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .projs-slide-gall {
@@ -371,11 +387,9 @@ img {
 }
 
 .projs-text {
-  position: absolute;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  bottom: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -383,12 +397,12 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
 }
 
 .projs-dscplne {
-  -webkit-box-ordinal-group: 5;
-      -ms-flex-order: 4;
-          order: 4;
   display: inline-block;
 }
 
@@ -408,55 +422,39 @@ img {
 
 .projs-img {
   display: block;
-  height: 100%;
-  grid-column: 2 / -2;
-}
-
-.about {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  border-top: 1px solid #0f1330;
-  justify-items: center;
-}
-
-.about-intro,
-.about-links {
-  grid-column: 2 / -2;
-}
-
-.about-header > span {
-  font-size: inherit;
-}
-
-.about-links > p {
-  font-size: 1.5rem;
-  line-height: 1.7rem;
-  font-weight: 400;
-  letter-spacing: -.015em;
-}
-
-.about-links > p a {
-  font-size: inherit;
-  text-decoration: underline;
+  margin-bottom: 1rem;
+  grid-column: 1 / -1;
 }
 
 .finds {
-  background: #0f1330;
-  padding: 4rem 0 0rem 0;
-}
-
-.finds h3,
-.finds p {
-  color: #ECE7E4;
-}
-
-.finds-intro,
-.finds-card-contain {
-  grid-column: 2 / -2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #e0e0e0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .finds-intro {
   margin-bottom: 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 29ch;
+          flex: 1 1 29ch;
+}
+
+.finds-card-contain {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 29ch;
+          flex: 1 1 29ch;
 }
 
 .finds-card {
@@ -467,42 +465,34 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 2px solid #e0e0e0;
+  border-radius: .5rem;
+  padding: 2.5rem 1rem 2rem 1rem;
 }
 
-.finds-card .overline .finds-pub,
-.finds-card .overline .finds-auth,
-.finds-card .finds-title {
-  color: #ECE7E4;
+.finds-card:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.finds-card .overline {
+  margin-bottom: .75rem;
 }
 
 .finds-pub::after {
-  content: ' ✧ ';
+  content: ' + ';
 }
 
 .finds-title {
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.7rem;
   letter-spacing: -.015em;
-  margin-bottom: 2rem;
-  text-decoration: underline;
 }
 
 .finds-header {
   position: relative;
 }
 
-.finds-header::before {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  width: 3rem;
-  bottom: -1.1rem;
-  border-top: 1.55px solid #ECE7E4;
-}
-
 .footer {
-  background-color: #0f1330;
+  background-color: #000000;
   height: 100%;
   padding: 0;
   overflow: hidden;
@@ -510,7 +500,7 @@ img {
 }
 
 .footer * {
-  color: #ECE7E4;
+  color: #e0e0e0;
   text-transform: uppercase;
 }
 
@@ -614,11 +604,11 @@ img {
   .header,
   .slide,
   .projs-card {
-    -ms-grid-columns: (minmax(0, 1fr))[9];
-        grid-template-columns: repeat(9, minmax(0, 1fr));
+    -ms-grid-columns: (minmax(0, 1fr))[8];
+        grid-template-columns: repeat(8, minmax(0, 1fr));
   }
   .header {
-    top: 1.5rem;
+    top: 1.75rem;
   }
   .logo-type {
     -ms-grid-column: 1;
@@ -627,9 +617,6 @@ img {
   }
   .logo-mk {
     grid-column: -1 / -2;
-  }
-  .nav-contain {
-    grid-column: -4 / -2;
   }
   .nav-items {
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -652,33 +639,29 @@ img {
     text-align: left;
   }
   h1,
-  h2 {
-    font-family: degular-display, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  h2,
+  h3 {
+    font-family: roc-grotesk-wide, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
-  h1 {
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 5rem;
-    line-height: 3.5rem;
-  }
+  h1,
   h2 {
+    font-family: roc-grotesk-wide, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: 600;
-    font-size: 2.75rem;
-    line-height: 2.25rem;
-    margin-bottom: 1.5rem;
+    text-transform: uppercase;
   }
   h3 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  h4 {
     font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
     letter-spacing: -.015em;
-    margin-bottom: 2rem;
   }
   .header,
   .footer,
   .slide {
-    padding-left: 4.125rem;
-    padding-right: 4.125rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .header,
   .nav-list,
@@ -718,10 +701,10 @@ img {
     height: 100%;
     width: 100vw;
     margin: 0;
-    padding: 0 4.125rem;
+    padding: 0 2rem;
   }
   .projs-text {
-    left: 4.125rem;
+    left: 2rem;
   }
   .projs-name {
     margin-bottom: 1rem;
@@ -742,24 +725,6 @@ img {
   }
   .about-links {
     grid-column: -1 / -4;
-  }
-  .finds-intro {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / 3;
-  }
-  .finds-card-contain {
-    grid-column: 4 / -1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 1.667rem;
-  }
-  .finds-card {
-    width: 50%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
