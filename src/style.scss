@@ -8,9 +8,10 @@ $pd-t-b: 6rem;
 // palette
 $main-dark: #000000;
 // $main-dark: #000;
-$acc-warm: #ee4266;
-$acc-jolly: #ffd23f;
-$acc-proud: #42d1b7;
+$dark-warm: #EF476F;
+$light-warm: #FDEB9B;
+$dark-cool: #5448C8;
+$light-cool: #76E0AF;
 $main-bright: #e0e0e0;
 
 //type style vars
@@ -68,7 +69,7 @@ body {
 // html.has-scroll-smooth {
 //     overflow: hidden;
 // }
-
+/*
 html.has-scroll-dragging {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -152,7 +153,7 @@ html.has-scroll-dragging {
     right: auto;
     bottom: 0;
 }
-
+*/
 // end locomotive scroll styles
 
 // ----- Base Styles
@@ -252,8 +253,6 @@ img {
 
 // headers and hierarchy in general
 
-
-
 h1,
 h2,
 h3,
@@ -271,7 +270,8 @@ h2 {
     line-height: 1.5rem;
 }
 
-h1 {
+h1,
+.cta {
     font-size: clamp(2.75rem, 7.145vw, 7.155vw);
     line-height: 78%;
     letter-spacing: -.025em;
@@ -290,7 +290,8 @@ h3 {
     margin-bottom: 1.5rem;
 }
 
-h4 {
+h4,
+.fi-link a {
     font-weight: $headerC-wt;
     font-size: clamp(1.46rem, 3vw, 1.65rem);
     line-height: 115%;
@@ -330,7 +331,7 @@ img {
 }
 
 .intro-text .slide-text-all {
-    min-height: 60vh;
+    // min-height: 60vh;
     //just to center vertically
     display: flex;
     flex-direction: column;
@@ -498,15 +499,19 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start; // use this to prevent flex items from stretching to fill entire height
     gap: $mb-gap;
     border-width: 2px 0;
     border-style: solid;
     border-color: $main-bright;
     padding-top: $pd-t-b;
     padding-bottom: $pd-t-b;
+    position: relative;
 }
 
 .finds-intro {
+    display: inline-block;
+
     margin-bottom: 2rem;
     flex: 1 1 29ch;
 }
@@ -544,6 +549,8 @@ img {
     position: relative;
 }
 
+
+
 // __ footer
 
 .footer {
@@ -557,6 +564,40 @@ img {
 .footer * {
     color: $main-bright;
     text-transform: uppercase;
+}
+
+.footer-info {
+    padding: 0 $mb-gap;
+    padding-top: $pd-t-b;
+    padding-bottom: $pd-t-b;
+}
+
+.flinks-overline,
+.fcta-overline {
+    margin-bottom: .75rem;
+}
+
+.flinks-overline {
+    color: $dark-warm;
+}
+
+.fi-links {
+    margin-bottom: 2rem;
+}
+
+.fi-link a {
+    font-family: $main-f-display;
+    text-transform: none;
+}
+
+.fcta-overline {
+    color: $light-cool;
+}
+
+.cta {
+    font-family: $main-f-display;
+    font-weight: $headerA-wt;
+    white-space: normal;
 }
 
 @keyframes marquee {
@@ -577,7 +618,7 @@ img {
 }
 
 
-.footer:hover>div {
+.footer-bar:hover>div {
     animation-play-state: paused;
 }
 
@@ -638,6 +679,8 @@ img {
     grid-column: 2 / -2;
     margin: 30% 0;
 }
+
+
 
 @media (min-width: 1200px) {
     $dsk-padding: 2rem;
