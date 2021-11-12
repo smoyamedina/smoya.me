@@ -316,41 +316,16 @@ img {
 .hero {
   -ms-flex-line-pack: end;
       align-content: end;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 
 .hero h1 {
-  vertical-align: bottom;
+  padding-bottom: 2rem;
 }
 
-.intro {
-  row-gap: 1rem;
-  position: relative;
-}
-
-.intro::after {
-  content: "";
-  z-index: -50;
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  margin: 2rem 0 0 0;
-  background: #000000;
-}
-
-.introimg:nth-child(1) {
-  aspect-ratio: 4 / 3;
-}
-
-.introimg:nth-child(2) {
-  grid-column-end: 9;
-  aspect-ratio: 4 / 3;
-}
-
-.introimg:nth-child(3) {
-  -ms-grid-column: 7;
-      grid-column-start: 7;
-  aspect-ratio: 1;
+.about {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .projs {
