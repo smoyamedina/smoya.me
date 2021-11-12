@@ -256,14 +256,16 @@ img {
 h1,
 h2,
 h3,
-h4 {
+h4,
+.proj-next-link {
     font-family: $main-f-display;
 }
 
 
 
 h1,
-h2 {
+h2,
+.proj-next-link {
     font-weight: $headerA-wt;
     text-transform: uppercase;
     font-size: 2.025rem;
@@ -271,7 +273,8 @@ h2 {
 }
 
 h1,
-.cta {
+.cta,
+.proj-next-link {
     font-size: clamp(2.75rem, 7.145vw, 7.155vw);
     line-height: 78%;
     letter-spacing: -.025em;
@@ -291,7 +294,8 @@ h3 {
 }
 
 h4,
-.fi-link a {
+.fi-link a,
+.proj-next-ol {
     font-weight: $headerC-wt;
     font-size: clamp(1.46rem, 3vw, 1.65rem);
     line-height: 115%;
@@ -307,7 +311,7 @@ h4,
 
 p {
     margin-bottom: .5rem;
-    line-height: 135%;
+    line-height: 130%;
     letter-spacing: .001rem;
 }
 
@@ -420,6 +424,7 @@ img {
 .projs-dscplne {
     // order: 1;
     display: inline-block;
+    margin-bottom: .75rem;
 }
 
 .projs-name {
@@ -609,52 +614,67 @@ img {
 // indiv project pages
 
 .projhero {
-    padding-top: 1rem;
     overflow-x: hidden;
+    grid-template-columns: 1 / -1;
+    padding-top: 3.75rem;
 }
 
 .proj-pg-desc,
 .p-heroimg {
-    grid-row: 1 / 2;
+    grid-column: 1 / -1;
     height: 100%;
 }
 
-.p-heroimg {
-    grid-column-start: 2;
-    width: calc(100% + 2rem);
-    min-height: 50vh;
-    display: block;
-    margin-right: -2rem;
+.proj-pg-desc {
+    grid-row-start: 2;
+    padding-top: 1.5rem;
 }
 
-.proj-pg-desc {
-    grid-column: 1 / -1;
-    z-index: 50;
-    height: min-content;
-    align-self: end;
-    margin-bottom: 1rem;
-
+.p-heroimg {
+    min-height: 55vh;
 }
 
 .proj-pg-desc .projs-name::after {
     content: none;
 }
 
+.proj-prompt {
+    padding-top: $pd-t-b;
+    padding-bottom: $pd-t-b;
+}
+
 .proj-prompt-txt {
-    grid-column: 2 / -1;
+    grid-column: 1 / -1;
+    font-weight: 600;
     margin-bottom: 0;
     align-self: center;
 }
 
-.p-img-lead {
-    display: block;
-    width: calc(100% + 2rem);
-    margin-left: -2rem;
+.proj-next .slide-text-all {
+    padding-top: $pd-t-b;
+    padding-bottom: $pd-t-b;
+    border-top: 2px solid $main-bright;
+    border-bottom: 2px solid $main-bright;
 }
 
+.proj-next-ol,
+.proj-next-link {
+    display: block;
+}
+
+.proj-next-ol {
+    font-family: $main-f-display;
+    margin-bottom: 1rem;
+}
+
+// .p-img-lead {
+//     display: block;
+// }
+
 .proj-desc {
-    grid-column: 2 / -2;
-    margin: 30% 0;
+    // grid-column: 2 / -2;
+    grid-column: 1 / -1;
+    margin-bottom: $pd-t-b;
 }
 
 

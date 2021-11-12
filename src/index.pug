@@ -6,13 +6,6 @@ layout: 'base.pug'
 
 section.slide.hero
     h1 A Designer who's here to help create & deliver change.
-//- section.slide.intro
-//-     each introimg in collections.introimgs
-//-         img.introimg(src=`${introimg.data.introimg1}`, alt="", srcset="")
-//-         img.introimg(src=`${introimg.data.introimg2}`, alt="", srcset="")
-//-         img.introimg(src=`${introimg.data.introimg3}`, alt="", srcset="")
-//-     else
-//-         .emptydiv oops! someone needs to let sami know it messed up.
 include partials/_about.pug
 section.slide.projs
     .projs-slide-gall(id="projects")

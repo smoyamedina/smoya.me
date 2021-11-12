@@ -7,11 +7,13 @@ section.slide.projhero
         span.overline.projs-dscplne #{projsDscplne}
         //- span.overline.projs-order #{(x + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
         h2.projs-name  #{projsName}
-        
     img.p-heroimg(src=`${projsFtImg}`)
 section.slide.proj-prompt 
     h4.proj-prompt-txt #{projPrompt}
 section.slide.proj-outcome
     img.p-img-lead(src=`${projsFtImg}`) 
-    .proj-desc #{projDesc}
-include _about.pug
+    p.proj-desc #{projDesc}
+section.slide.proj-next
+    .slide-text-all
+        span.proj-next-ol Next Project 
+        a.proj-next-link(href="#") Project Name Here
