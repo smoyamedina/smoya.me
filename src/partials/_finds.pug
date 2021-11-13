@@ -5,15 +5,15 @@ section.slide.finds
             p Sometimes I come across a resource or article that helps me improve as a designer or as a person. Maybe you'll find them interesting, too. 
             p I'll be updating this casually as I come across them.
     .finds-card-contain 
-        .finds-card 
+        a.finds-card(href=`${myFinds.myFinds[0].myFindLink}`)
             .overline 
                 span.finds-pub #{myFinds.myFinds[0].myFindPublisher}
                 span.finds-auth #{myFinds.myFinds[0].myFindAuthor}
-            a(href=`${myFinds.myFinds[0].myFindLink}`)  
+            .finds-title  
                 h4.finds-title #{myFinds.myFinds[0].myFindTitle}
-        .finds-card 
+        a.finds-card(href=`${myFinds.myFinds[1].myFindLink}`) 
             .overline 
                 span.finds-pub #{myFinds.myFinds[1].myFindPublisher}
                 span.finds-auth #{myFinds.myFinds[1].myFindAuthor}
-            a.finds-title(href=`${myFinds.myFinds[1].myFindLink}`) 
+            .finds-title
                 h4.finds-title #{myFinds.myFinds[1].myFindTitle}

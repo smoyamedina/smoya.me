@@ -1,3 +1,12 @@
+// JS confirmed classes
+const insertClass = (base, addon) => { 
+    document.querySelector(`${base}`).classList.add(`${addon}`)
+}
+
+insertClass('.p-heroimg','opac-init')
+insertClass('.proj-pg-desc', 'text-gradient-init')
+
+
 gsap.registerPlugin(CSSRulePlugin);
 
 //smooth scroll

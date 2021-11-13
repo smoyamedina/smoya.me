@@ -7,7 +7,8 @@ section.slide.projhero
         span.overline.projs-dscplne #{projsDscplne}
         //- span.overline.projs-order #{(x + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
         h2.projs-name  #{projsName}
-    img.p-heroimg(src=`${projsFtImg}`)
+    .p-heroimg
+        img(src=`${projsFtImg}`)
 section.slide.proj-prompt 
     h4.proj-prompt-txt #{projPrompt}
 section.slide.proj-outcome

@@ -156,6 +156,11 @@ html.has-scroll-dragging {
 */
 // end locomotive scroll styles
 
+// ----- Javascript Confirmed Class inserts + overrides
+
+
+
+
 // ----- Base Styles
 
 // header
@@ -247,8 +252,10 @@ html.has-scroll-dragging {
     padding: 0 1rem;
 }
 
-img {
+.projs-img,
+.p-heroimg {
     border-radius: .5rem;
+    overflow: hidden;
 }
 
 // headers and hierarchy in general
@@ -282,7 +289,7 @@ h1,
 
 h2 {
     font-size: clamp(2rem, 7.145vw, 7.155vw);
-    line-height: 78%;
+    line-height: 90%;
     letter-spacing: -.025em;
 }
 
@@ -319,7 +326,7 @@ p {
 
 img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 
 }
@@ -359,6 +366,7 @@ img {
 img {
     grid-column: 1 / -1;
     max-height: 70vh;
+    border-radius: .5em;
 }
 
 .slide-text-all,
@@ -395,7 +403,7 @@ img {
 }
 
 .projs-card:not(.projs-card:last-of-type) {
-    margin-bottom: 10%;
+    margin-bottom: 30%;
 }
 
 .projs-card {
@@ -424,14 +432,38 @@ img {
 .projs-dscplne {
     // order: 1;
     display: inline-block;
-    margin-bottom: .75rem;
+    margin-bottom: .35rem;
 }
 
-.projs-name {
+.projs-card .projs-text .projs-name {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: .25rem 0;
+    // this is the set-up for gradient animation
+    background: linear-gradient(115deg, rgba(224, 224, 224, 1) 33%, rgba(84, 72, 200, 1) 40%, rgba(239, 71, 111, 1) 43%, rgba(253, 235, 155, 1) 51%, rgba(118, 224, 175, 1) 57%, rgba(224, 224, 224, 1) 61%);
+    background-size: 400%;
+    background-position: right;
+    transition: color .125s ease-in-out;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.projs-card:hover .projs-text .projs-name {
+    color: transparent;
+    animation: projnameanim .75s cubic-bezier(1, .125, 1, 1) infinite;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+}
+
+@keyframes projnameanim {
+    0% {
+        background-position: right;
+    }
+
+    100% {
+        background-position: left;
+    }
 }
 
 .projs-img {
@@ -439,41 +471,6 @@ img {
     margin-bottom: 1rem;
     grid-column: 1 / -1;
 }
-
-// misc projs section
-
-
-// __ about
-
-// .about {
-//     padding-top: 3rem;
-//     padding-bottom: 3rem;
-//     border-top: 1px solid $main-dark;
-//     justify-items: center;
-// }
-
-// .about-intro,
-// .about-links {
-//     grid-column: 2 / -2;
-// }
-
-// .about-header>span {
-//     font-size: inherit;
-// }
-
-// .about-links>p {
-//     font-size: 1.5rem;
-//     line-height: 1.7rem;
-//     font-weight: $headerC-wt;
-//     letter-spacing: -.015em;
-
-//     a {
-//         font-size: inherit;
-//         text-decoration: underline;
-//     }
-// }
-
-
 
 // __ Finds
 
@@ -614,9 +611,38 @@ img {
 // indiv project pages
 
 .projhero {
-    overflow-x: hidden;
+    // overflow: hidden;
     grid-template-columns: 1 / -1;
-    padding-top: 3.75rem;
+    padding-top: 4.75rem;
+}
+
+// .p-heroimg img {
+//     display: block;
+//     transform: scale(150%) translateY(15%);
+// }
+$upFrom: 3rem;
+$delay: .25;
+
+@keyframes proj-hero-img-load {
+    0% {
+        transform: scale(150%) translateY($upFrom);
+    }
+
+    100% {
+        transform: scale(100%) translateY(0%);
+    }
+}
+
+@keyframes proj-hero-imgwrap-load {
+    0% {
+        transform: translateY($upFrom);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
 
 .proj-pg-desc,
@@ -626,12 +652,23 @@ img {
 }
 
 .proj-pg-desc {
-    grid-row-start: 2;
+    // grid-row-start: 1;
     padding-top: 1.5rem;
+    animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, .75, 1) 1, projnameanim 2s cubic-bezier(0, 1, .75, 1) 1;
+    animation-fill-mode: forwards;
+
 }
 
 .p-heroimg {
-    min-height: 55vh;
+    min-height: 65vh;
+    animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, .75, 1) 1;
+    animation-delay: .25s;
+    animation-fill-mode: forwards;
+
+    img {
+        animation: proj-hero-img-load 2s cubic-bezier(0, 1, .75, 1) 1;
+        animation-delay: inherit;
+    }
 }
 
 .proj-pg-desc .projs-name::after {
@@ -677,7 +714,18 @@ img {
     margin-bottom: $pd-t-b;
 }
 
+// INITS
+.opac-init {
+    opacity: 0;
+}
 
+.text-gradient-init {
+    background: linear-gradient(115deg, rgba(224, 224, 224, 1) 33%, rgba(84, 72, 200, 1) 40%, rgba(239, 71, 111, 1) 43%, rgba(253, 235, 155, 1) 51%, rgba(118, 224, 175, 1) 57%, rgba(224, 224, 224, 1) 61%);
+    color: transparent;
+    background-position: right;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
 
 @media (min-width: 1200px) {
     $dsk-padding: 2rem;
