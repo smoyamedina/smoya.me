@@ -68,7 +68,7 @@ collections:
         allow_add: true
         label_singular: "Project Image"
         fields:
-          - {name: "image", label: "Image for project details.", widget: "image", media_folder: "/assets/p/{{projsName}}"}
+          - {name: "image", label: "Image for project details.", widget: "image", media_folder: "/src/assets/p/{{projsName}}", public_folder: "/public/assets/p/{{projsName}}"}
           - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "introimgs"
