@@ -16,7 +16,7 @@ collections:
         fields:
           - {label: "Your current name", name: "myName", widget: "string"}
           - {label: "Your current About Me description.", name: "myDesc", widget: "markdown"}
-          - label: "Your links to your online presence on other sites, if relevant."
+          - label: "links to your online presence on other sites, if relevant."
             name: "myLinks"
             widget: "list"
             summary: '{{fields.myPlatform}}'
@@ -31,14 +31,14 @@ collections:
             widget: "list"
             allow_add: true
             add_to_top: true
-            label_singular: "certification"
+            label_singular: "Certification"
             fields: 
               - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
       - name: "finds"
         label: "Interesting finds you want to share."
         file: "src/copy/myFinds.json"
         fields:
-          - label: "Your links to interesting finds around the web"
+          - label: "finds"
             name: "myFinds"
             widget: "list"
             summary: '{{fields.myFindTitle}}, {{fields.myFindAuthor}}'
