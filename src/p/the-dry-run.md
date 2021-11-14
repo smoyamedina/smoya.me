@@ -17,5 +17,8 @@ projImgs:
   - image: /assets/tdr-w_b.png
     imageAlt: Three copies of the newspaper are laid out to feature the front page
       content. They are all overlapping one another.
+  - image: /assets/p/the-dry-run/tdr-w_d.png
+    imageAlt: The lower half of the opening page is featured in overlapping,
+      folded-in-half editions of the newspaper.
 projTag: publication
 ---
