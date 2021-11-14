@@ -39,7 +39,7 @@ projImgs:
     imageAlt: A call to action that encourages people to review common
       misconceptions of people who live with Down Syndrome. There is a link to
       an external video.
-  - image: ../assets/p/the-valivaryus-project/tdr-w_c.png
-    imageAlt: TEST 5
+  - imageAlt: TEST 6
+    image: ../assets/p/the-valivaryus-project/amass-w_d.png
 projTag: ongoing
 ---
