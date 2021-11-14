@@ -1,8 +1,8 @@
 ---
 projsName: The Valivaryus Project
 projsDscplne: On-Going
-projsFtImg: ../../assets/p/valivaryus-w_e.png
-projsHeroImg: ../../assets/p/valivaryus-w_e.png
+projsFtImg: ../assets/p/valivaryus-w_e.png
+projsHeroImg: ../assets/p/valivaryus-w_e.png
 projPrompt: How might we address the stigma against people who live with
   intellectual and developmental disabilities?
 projDesc: "It's a big ask.\ 
@@ -28,14 +28,14 @@ projDesc: "It's a big ask.\
 
   \r\n"
 projImgs:
-  - image: ../../assets/p/valivaryus-w_a.png
+  - image: ../assets/p/valivaryus-w_a.png
     imageAlt: "The opening of a website. The headline reads: Just as capable, Just
       built different. and the subheadline reads: Down Syndrome is a genetic
       condition that causes differences in one's appearance and development."
-  - image: ../../assets/p/valivaryus-w_b.png
+  - image: ../assets/p/valivaryus-w_b.png
     imageAlt: A wall of text highlights the different skills and occupations held by
       people with Down Syndrome.
-  - image: ../../assets/p/valivaryus-w_c.png
+  - image: ../assets/p/valivaryus-w_c.png
     imageAlt: A call to action that encourages people to review common
       misconceptions of people who live with Down Syndrome. There is a link to
       an external video.
