@@ -39,7 +39,5 @@ projImgs:
     imageAlt: A call to action that encourages people to review common
       misconceptions of people who live with Down Syndrome. There is a link to
       an external video.
-  - image: ../assets/p/the-valivaryus-project/blast-of-red.png
-    imageAlt: PLEASE BE THE LAST TEST
 projTag: ongoing
 ---
