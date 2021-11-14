@@ -53,15 +53,15 @@ collections:
   - name: "project"
     label: "Projects"
     folder: "src/p"
-    media_folder: "../"
-    public_folder: "../"
+    media_folder: "../assets/p"
+    public_folder: "../assets/p"
     create: true
     slug: "{{projsName}}"
     fields:
       - {label: "Project Name", name: "projsName", widget: "string"}
       - {label: "Medium, Discipline, or Type", name: "projsDscplne", widget: "string"}
-      - {label: "Feature Image", name: "projsFtImg", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
-      - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
+      - {label: "Feature Image", name: "projsFtImg", widget: "image", media_folder: "{{projsName}}", public_folder: "{{projsName}}"}
+      - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image", media_folder: "{{projsName}}", public_folder: "{{projsName}}"}
       - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
       - {label: "Leading summary", name: "projDesc", widget: "markdown"}
       - label: "Project Images"
@@ -71,7 +71,7 @@ collections:
         allow_add: true
         label_singular: "Project Image"
         fields:
-          - {name: "image", label: "Image for project details.", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
+          - {name: "image", label: "Image for project details.", widget: "image", media_folder: "{{projsName}}", public_folder: "{{projsName}}"}
           - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "introimgs"
