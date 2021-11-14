@@ -41,5 +41,7 @@ projImgs:
       an external video.
   - image: /assets/p/the-valivaryus-project/valivaryus-w_g.png
     imageAlt: A mobile view of the splash screen.
+  - image: p/the-valivaryus-project/tdr-w_a.png
+    imageAlt: TESTING FOR DETECTION OF LOCATION.
 projTag: ongoing
 ---
