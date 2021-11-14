@@ -74,13 +74,6 @@ collections:
           - {name: "image", label: "Image for project details.", widget: "image", media_folder: "{{projsName}}", public_folder: "{{projsName}}"}
           - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
       - {label: "Tag", name: "projTag", widget: "string"}
-  - name: "introimgs"
-    label: "Intro Images"
-    folder: "src/assets/introimgs"
-    fields: 
-      - {label: "Image 1 ", name: "introimg1", widget: "image"}
-      - {label: "Image 2 ", name: "introimg2", widget: "image"}
-      - {label: "Image 3 ", name: "introimg3", widget: "image"}
   - name: "extraimgs"
     label: "Extra Projects or Experiments"
     folder: "src/assets/extra"
