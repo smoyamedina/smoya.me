@@ -53,6 +53,7 @@ collections:
   - name: "project"
     label: "Projects"
     folder: "src/p"
+    media_folder: "../assets/p"
     create: true
     slug: "{{projsName}}"
     fields:
