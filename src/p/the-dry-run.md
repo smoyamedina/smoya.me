@@ -1,8 +1,8 @@
 ---
 projsName: The Dry Run
 projsDscplne: Publication
-projsFtImg: ../assets/p/thedryrun1.png
-projsHeroImg: ../assets/p/thedryrun1.png
+projsFtImg: ../assets/p/the-dry-run/thedryrun1.png
+projsHeroImg: ../assets/p/the-dry-run/thedryrun1.png
 projPrompt: I was challenged to conceptualize a broadsheet publication based on
   the content of a literary work.
 projDesc: I was challenged to create a newspaper based on the content of a story
@@ -10,11 +10,11 @@ projDesc: I was challenged to create a newspaper based on the content of a story
   is inspired by Daniel Keyes' Flowers for Algernon. This 3-page dry run
   explores Charlie's experiences in the form of complex typographical hierarchy.
 projImgs:
-  - image: ../assets/p/tdr-w_c.png
+  - image: ../assets/p/the-dry-run/tdr-w_c.png
     imageAlt: A black and white newspaper spread is laid out on a flat surface. The
       upper right corner is lightly folded over the show the contents of the
       cover.
-  - image: ../assets/p/tdr-w_b.png
+  - image: ../assets/p/the-dry-run/tdr-w_b.png
     imageAlt: Three copies of the newspaper are laid out to feature the front page
       content. They are all overlapping one another.
   - image: ../assets/p/the-dry-run/tdr-w_d.png
