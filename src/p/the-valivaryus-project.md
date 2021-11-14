@@ -39,7 +39,7 @@ projImgs:
     imageAlt: A call to action that encourages people to review common
       misconceptions of people who live with Down Syndrome. There is a link to
       an external video.
-  - image: the-valivaryus-project/amass-w_c.png
-    imageAlt: TESTING NEW INPUT WITH DOUBLE DOTS
+  - image: the-valivaryus-project/amass-w_g.png
+    imageAlt: TESTING 7
 projTag: ongoing
 ---
