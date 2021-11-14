@@ -35,7 +35,7 @@ collections:
             fields: 
               - {name: "myCertItem", label: "What'd you earn?", widget: "string"}
       - name: "finds"
-        label: "Finds"
+        label: "Interesting finds you want to share."
         file: "src/copy/myFinds.json"
         fields:
           - label: "Your links to interesting finds around the web"
