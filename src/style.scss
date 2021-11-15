@@ -1,7 +1,7 @@
 //layout vars
 $mb-grid-col-tmplt: repeat(4, minmax(0, 1fr));
 $dsk-grid-col-num: repeat(8, minmax(0, 1fr));
-$mb-grid-row-tmplt: minmax(10vw, auto);
+$mb-grid-row-tmplt: minmax(5vw, auto);
 $dsk-gap: 1.667rem;
 $mb-gap: 1rem;
 $pd-t-b: 6rem;
@@ -43,13 +43,13 @@ $headerC-wt: 400;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 22px;
     font-size: $mb-fontsize;
     font-size: clamp(22px, calc(14px + 1.1vw), 26px);
     color: $main-bright;
     text-decoration: none;
     font-family: $main-f-reg;
-    // transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 100ms linear;
 }
 
 body {
@@ -171,7 +171,7 @@ html.has-scroll-dragging {
     display: grid;
     // display: flex;
     width: 100%;
-    grid-template-columns: $mb-grid-col-tmplt;
+    grid-template-columns: $dsk-grid-col-num;
     gap: $mb-gap;
     // justify-content: space-between;
     // align-items: stretch;
@@ -226,8 +226,19 @@ html.has-scroll-dragging {
 
 .nav-item a,
 .nav-item {
-    display: block;
+    // display: inline-block;
     text-align: right;
+}
+
+.nav-item a {
+    padding-bottom: .25rem;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    color: $light-cool;
+    border-color: $light-cool;
 }
 
 .nav-item {
@@ -295,7 +306,7 @@ h2 {
 
 h3 {
     font-weight: $headerB-wt;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 3.9vw, 2.4rem);
     line-height: 100%;
     margin-bottom: 1.5rem;
 }
@@ -318,7 +329,7 @@ h4,
 
 p {
     margin-bottom: .5rem;
-    line-height: 130%;
+    line-height: 140%;
     letter-spacing: .001rem;
 }
 
@@ -339,15 +350,6 @@ img {
     gap: $mb-gap;
     grid-template-columns: $mb-grid-col-tmplt;
     grid-auto-rows: $mb-grid-row-tmplt;
-}
-
-.intro-text .slide-text-all {
-    // min-height: 60vh;
-    //just to center vertically
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
 }
 
 // ------ layout
@@ -393,7 +395,29 @@ img {
     padding-bottom: $pd-t-b;
 }
 
+.about .slide-text-all {
+    // min-height: 60vh;
+    //just to center vertically
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $mb-gap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 35ch;
+}
 
+// give both flex-basis of 0% so they both have the same grow shrink priority and end up doing both at the same rate!
+.about .slide-text-all h3 {
+    min-width: 13.5rem;
+    display: inline-block;
+    flex: 1 1 0%;
+}
+
+.about .slide-text-all .slide-text-pwrap {
+    min-width: 13.5rem;
+    flex: 1 1 0%;
+}
 
 // __ proj cards
 
@@ -478,6 +502,7 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: flex-start; // use this to prevent flex items from stretching to fill entire height
     gap: $mb-gap;
     border-width: 2px 0;
@@ -490,13 +515,14 @@ img {
 
 .finds-intro {
     display: inline-block;
-
     margin-bottom: 2rem;
     flex: 1 1 29ch;
+    // flex: 0 0 25%;
 }
 
 .finds-card-contain {
     flex: 1 1 29ch;
+    // flex: 0 0 50%;
 }
 
 .finds-card {
@@ -505,6 +531,12 @@ img {
     border: 2px solid $main-bright;
     border-radius: .5rem;
     padding: 2.5rem 1rem 2rem 1rem;
+}
+
+.finds-card:hover,
+.finds-card:focus {
+    background: $dark-cool;
+    border-color: $dark-cool;
 }
 
 .finds-card:not(:last-of-type) {
@@ -549,6 +581,9 @@ img {
     padding: 0 $mb-gap;
     padding-top: $pd-t-b;
     padding-bottom: $pd-t-b;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $mb-gap;
 }
 
 .flinks-overline,
@@ -561,7 +596,12 @@ img {
 }
 
 .fi-links {
+    flex: 1 1 0%;
     margin-bottom: 2rem;
+}
+
+.fi-cta {
+    flex: 3 3 0%;
 }
 
 .fi-link a {
@@ -578,6 +618,8 @@ img {
     font-weight: $headerA-wt;
     white-space: normal;
 }
+
+
 
 @keyframes marquee {
     0% {
@@ -727,6 +769,13 @@ $delay: .25;
     -webkit-background-clip: text;
 }
 
+
+@media (max-width: 50rem) {
+    .fi-links {
+        min-width: 100%;
+    }
+}
+
 @media (min-width: 1200px) {
     $dsk-padding: 2rem;
 
@@ -740,61 +789,6 @@ $delay: .25;
         top: 1.75rem;
     }
 
-    .logo-type {
-        grid-column: 1 / 2;
-        // flex: 6 6 auto;
-    }
-
-    .logo-mk {
-        grid-column: -1 / -2;
-        // flex: 2 2 auto;
-    }
-
-    .nav-items {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .nav-item {
-        // justify-content: flex-start;
-        grid-column: span 1;
-    }
-
-    .nav-item:first-of-type {
-        flex: 1 1 auto;
-    }
-
-    .nav-item:last-of-type {
-        flex: 1 1 auto;
-    }
-
-    .nav-item a {
-        text-align: left;
-    }
-
-    h1,
-    h2,
-    h3 {
-        font-family: $main-f-display;
-    }
-
-    h1,
-    h2 {
-        font-family: $main-f-display;
-        font-weight: $headerA-wt;
-        text-transform: uppercase;
-    }
-
-    h3 {
-        font-weight: $headerB-wt;
-        margin-bottom: 1.5rem;
-    }
-
-    h4 {
-        font-weight: $headerC-wt;
-        letter-spacing: -.015em;
-        // margin-bottom: 2rem;
-    }
-
     .header,
     .footer,
     .slide {
@@ -802,29 +796,10 @@ $delay: .25;
         padding-right: $dsk-padding;
     }
 
-    .header,
-    .nav-list,
-    .slide {
-        gap: $dsk-gap;
-    }
-
-    // __ intro, imgs
-
-    .introimg:nth-child(1) {
-        grid-column: 1 / 6;
-    }
-
-    .introimg:nth-child(2) {
-        grid-column: -1 / -4;
-    }
-
-    .introimg:nth-child(3) {
-        grid-column-start: -3;
-    }
-
-    // __ intro text
-    .slide-text-all {
-        grid-column: 4 / -4;
+    // __ about / intro
+    .about .slide-text-all {
+        margin: 0 auto;
+        max-width: 49.5%;
     }
 
     // __ project gallery
@@ -851,39 +826,28 @@ $delay: .25;
         left: $dsk-padding;
     }
 
-    .projs-name {
-        margin-bottom: 1rem;
-    }
-
     .projs-img {
         align-self: center;
     }
 
-    // __ about me
-
-    .about-intro {
-        grid-column: 1 / 6;
-    }
-
-    .about-desc {
-        columns: 2 auto;
-    }
-
-    .about-links {
-        grid-column: -1 / -4;
-    }
 
     // __ finds
+    .finds-intro {
+        flex: 0 0 25%;
+        margin-bottom: 0;
+    }
 
-    // .finds-intro {
-    //     grid-column: 1 / 3;
-    // }
+    .finds-card-contain {
+        flex: 0 0 50%;
+    }
 
-    // .finds-card {
-    //     width: 50%;
-    //     flex: 1 1 auto;
-    //     // justify-content: center;
-    // }
+    // __ footer
+    .footer-info {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-
+    .fi-links {
+        margin-bottom: 0;
+    }
 }
