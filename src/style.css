@@ -10,8 +10,6 @@
   color: #e0e0e0;
   text-decoration: none;
   font-family: roc-grotesk, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  -webkit-transition: 100ms linear;
-  transition: 100ms linear;
 }
 
 body {
@@ -111,6 +109,10 @@ html.has-scroll-dragging {
     bottom: 0;
 }
 */
+.container {
+  overflow-x: hidden;
+}
+
 .header {
   position: fixed;
   top: 1rem;
@@ -275,11 +277,41 @@ p {
   letter-spacing: .001rem;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: .25rem;
+  height: .25rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #EF476F;
+}
+
 img {
+  display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  grid-column: 1 / -1;
+}
+
+.projs-img,
+.p-img-lead {
+  border-radius: .5rem;
+  overflow: hidden;
+  grid-column: 1 / -1;
 }
 
 .slide {
@@ -304,12 +336,6 @@ img {
 
 .slide h1 {
   grid-column: 1 / -1;
-}
-
-img {
-  grid-column: 1 / -1;
-  max-height: 70vh;
-  border-radius: .5em;
 }
 
 .slide-text-all,
@@ -372,13 +398,8 @@ img {
   margin-bottom: 6rem;
 }
 
-.projs-card:not(.projs-card:last-of-type) {
-  margin-bottom: 30%;
-}
-
 .projs-card {
-  position: relative;
-  display: block;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,6 +407,12 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.projs-card-init {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .projs-slide-gall {
@@ -413,6 +440,7 @@ img {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+  margin-top: .75rem;
 }
 
 .projs-dscplne {
@@ -468,9 +496,32 @@ img {
 }
 
 .projs-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}
+
+.projs-img-wrap {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: 20vh;
+  width: 100%;
+}
+
+.projs-img-wrap::before {
   display: block;
-  margin-bottom: 1rem;
-  grid-column: 1 / -1;
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  position: absolute;
+  border-radius: .5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .finds {
@@ -722,7 +773,7 @@ img {
 }
 
 .p-heroimg {
-  min-height: 65vh;
+  height: 65vh;
   -webkit-animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, 0.75, 1) 1;
           animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, 0.75, 1) 1;
   -webkit-animation-delay: .25s;
@@ -790,6 +841,36 @@ img {
   -webkit-background-clip: text;
 }
 
+.projs-init {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.projs-slide-gall-init {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  width: calc(100% * 2);
+  overflow: hidden;
+}
+
+.projs-card-init {
+  width: calc(100% / 2);
+  padding: 1rem;
+}
+
+.projs-text-init {
+  position: absolute;
+  z-index: 100;
+  top: 60%;
+}
+
 @media (max-width: 50rem) {
   .fi-links {
     min-width: 100%;
@@ -816,27 +897,16 @@ img {
     margin: 0 auto;
     max-width: 49.5%;
   }
-  .projs {
-    height: 100vh;
-    padding: 0;
-    margin: 0;
+  .projs-slide-gall-init {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .projs-slide-gall {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+  .projs-init {
+    padding-left: 0;
+    padding-right: 0;
   }
-  .projs-card {
-    height: 100%;
-    width: 100vw;
-    margin: 0;
-    padding: 0 2rem;
-  }
-  .projs-text {
+  .slide.projs-init .projs-text {
     left: 2rem;
   }
   .projs-img {
@@ -861,6 +931,12 @@ img {
   }
   .fi-links {
     margin-bottom: 0;
+  }
+  .projs-card-init {
+    margin-top: 0;
+  }
+  .projs-text-init {
+    display: block;
   }
 }
 /*# sourceMappingURL=style.css.map */
