@@ -462,11 +462,6 @@ img {
     flex-direction: column;
 }
 
-.projs-card-init {
-    justify-content: center;
-}
-
-
 .projs-slide-gall {
     grid-column: 1 / -1;
     display: flex;
@@ -521,15 +516,15 @@ img {
 
 .projs-img {
     object-fit: cover;
-    position: relative;
+    // position: relative;
 }
 
 .projs-img-wrap {
     display: inline-block;
     position: relative;
     height: 100%;
-    height: min-content;
-    margin-bottom: 20vh;
+    height: 60vh;
+    // margin-bottom: 20vh;
     width: 100%;
 }
 
@@ -831,16 +826,17 @@ $num-of-projs: 2;
 }
 
 .projs-card-init {
-    // height: 100%;
     width: calc(100% / #{$num-of-projs});
-    // margin-top: 15vh;
     padding: $mb-gap;
+    //target card placement in flexbox
+    justify-content: baseline;
+    padding-top: 3rem;
 }
 
 .projs-text-init {
-    position: absolute;
+    // position: absolute;
     z-index: 100;
-    top: 60%;
+    // top: 65%;
 }
 
 @media (max-width: 50rem) {

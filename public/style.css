@@ -409,12 +409,6 @@ img {
           flex-direction: column;
 }
 
-.projs-card-init {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .projs-slide-gall {
   grid-column: 1 / -1;
   display: -webkit-box;
@@ -498,17 +492,13 @@ img {
 .projs-img {
   -o-object-fit: cover;
      object-fit: cover;
-  position: relative;
 }
 
 .projs-img-wrap {
   display: inline-block;
   position: relative;
   height: 100%;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  margin-bottom: 20vh;
+  height: 60vh;
   width: 100%;
 }
 
@@ -863,12 +853,14 @@ img {
 .projs-card-init {
   width: calc(100% / 2);
   padding: 1rem;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  padding-top: 3rem;
 }
 
 .projs-text-init {
-  position: absolute;
   z-index: 100;
-  top: 60%;
 }
 
 @media (max-width: 50rem) {
