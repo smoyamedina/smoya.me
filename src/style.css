@@ -846,12 +846,12 @@ img {
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 0;
-  width: calc(100% * 2);
+  width: calc(100% * 5);
   overflow: hidden;
 }
 
 .projs-card-init {
-  width: calc(100% / 2);
+  width: calc(100% / 5);
   padding: 1rem;
   -webkit-box-pack: baseline;
       -ms-flex-pack: baseline;

@@ -815,7 +815,7 @@ $delay: .25;
     height: 100vh;
 }
 
-$num-of-projs: 2;
+$num-of-projs: 5;
 
 .projs-slide-gall-init {
     display: flex;
@@ -834,7 +834,7 @@ $num-of-projs: 2;
 }
 
 .projs-text-init {
-    // position: absolute;
+    // position: absolute; //
     z-index: 100;
     // top: 65%;
 }
