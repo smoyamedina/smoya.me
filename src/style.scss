@@ -66,10 +66,10 @@ body {
 
 
 // /*! locomotive-scroll v4.1.2 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
-// html.has-scroll-smooth {
-//     overflow: hidden;
-// }
-/*
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
 html.has-scroll-dragging {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -153,7 +153,7 @@ html.has-scroll-dragging {
     right: auto;
     bottom: 0;
 }
-*/
+
 // end locomotive scroll styles
 
 
@@ -457,9 +457,10 @@ img {
 // }
 
 .projs-card {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .projs-slide-gall {
@@ -469,12 +470,14 @@ img {
 }
 
 .projs-text {
+    display: block;
     height: min-content;
     display: flex;
     flex-direction: column;
     order: 3;
     margin-top: .75rem;
-
+    // transition: all 1s linear;
+    clip-path: polygon(0 0, 100% 0, 100% 105%, 0% 105%);
 }
 
 .projs-dscplne {
@@ -516,7 +519,6 @@ img {
 
 .projs-img {
     object-fit: cover;
-    // position: relative;
 }
 
 .projs-img-wrap {
@@ -524,7 +526,6 @@ img {
     position: relative;
     height: 100%;
     height: 60vh;
-    // margin-bottom: 20vh;
     width: 100%;
 }
 
@@ -552,6 +553,7 @@ img {
     border-width: 2px 0;
     border-style: solid;
     border-color: $main-bright;
+    margin-top: 25%;
     padding-top: $pd-t-b;
     padding-bottom: $pd-t-b;
     position: relative;
@@ -678,8 +680,6 @@ img {
 .marquee {
     display: inline-block;
     animation: marquee 20s linear infinite;
-    // width: max-content;
-    // position: relative;
 }
 
 
@@ -690,22 +690,16 @@ img {
 .marquee-txt::after {
     content: "✦";
     display: inline-block;
-    // margin-left: 2rem;
     padding: 1rem 2rem;
 }
 
 // indiv project pages
 
 .projhero {
-    // overflow: hidden;
     grid-template-columns: 1 / -1;
     padding-top: 4.75rem;
 }
 
-// .p-heroimg img {
-//     display: block;
-//     transform: scale(150%) translateY(15%);
-// }
 $upFrom: 3rem;
 $delay: .25;
 
@@ -812,31 +806,31 @@ $delay: .25;
 .projs-init {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    // height: 100vh;
+    // position: relative;
 }
 
 $num-of-projs: 5;
 
 .projs-slide-gall-init {
-    display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     margin: 0;
-    width: calc(100% * #{$num-of-projs});
-    overflow: hidden;
+    // width: calc(100% * #{$num-of-projs});
+    // overflow: hidden;
 }
 
 .projs-card-init {
-    width: calc(100% / #{$num-of-projs});
+    // width: calc(100% / #{$num-of-projs});
     padding: $mb-gap;
     //target card placement in flexbox
-    justify-content: baseline;
-    padding-top: 3rem;
+    // justify-content: baseline;
 }
 
 .projs-text-init {
-    // position: absolute; //
+    position: fixed;
     z-index: 100;
-    // top: 65%;
+    //for now this allows for three lines on mobile. flagged
+    top: 80.75%;
 }
 
 @media (max-width: 50rem) {
@@ -913,14 +907,21 @@ $num-of-projs: 5;
     }
 
     // inits
+    // .projs-init {
+    //     position: relative;
+    // }
+
     .projs-card-init {
-        // position: relative;
-        // center vertically desktop
+        // center vertically turned off on desktop
         margin-top: 0;
+        padding: 0 $dsk-gap;
     }
 
     .projs-text-init {
         display: block;
+        position: fixed;
+        bottom: $dsk-gap;
+        left: $dsk-gap;
     }
 
 }

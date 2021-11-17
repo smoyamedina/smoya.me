@@ -12,7 +12,7 @@ section.slide.projs
         each project, projNum in collections.project
             .projs-card
                 //- .projs-overline-all
-                a.projs-text(href=`${project.url}`)
+                a.projs-text(href=`${project.url}` data-scroll-sticky)
                     //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
                     span.overline.projs-dscplne #{project.data.projsDscplne}
                     h2.projs-name #{project.data.projsName} 
