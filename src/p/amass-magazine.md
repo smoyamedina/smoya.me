@@ -13,14 +13,18 @@ projImgs:
     imageAlt: 'A magazine spread features the overline and headline of "Featured
       Discontent: Here are the largest public companies taking payroll loans
       meant for small businesses."'
+    position: left
   - image: ../assets/p/amass-magazine/amass-w_c.png
     imageAlt: A magazine spread features a headline of "Wisconsinites given the cold
       shoulder when asking for easier access to their rights."
+    position: right
   - image: ../assets/p/amass-magazine/amass-w_d.png
     imageAlt: A magazine spread features a headline of "They voted from home so you
       would have to risk your health when voting in-person."
+    position: center
   - image: ../assets/p/amass-magazine/amass-w_e.png
     imageAlt: A magazine spread features a headline of "Plainsboro company offering
       90-day insulin at no cost to patients."
+    position: full
 projTag: Publication
 ---
