@@ -72,10 +72,7 @@ collections:
         fields:
           - {name: "image", label: "Image for project progress.", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
           - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
-          - label: "Align Content"
-            name: "align"
-            widget: "select"
-            options: ["left", "center", "right"]
+          - {name: "image2", label: "Image for project 222 progress.", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "extraimgs"
     label: "Extra Projects or Experiments"
