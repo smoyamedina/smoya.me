@@ -72,7 +72,7 @@ collections:
         fields:
           - {name: "image", label: "Image for project progress.", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
           - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
-          - label: "Page position on desktop."
+          - label: "Page position on desktop"
             name: "position"
             widget: "select"
             options: ["full", "left", "center", "right"]
