@@ -70,9 +70,13 @@ collections:
         allow_add: true
         label_singular: "Project Image"
         fields:
-          - {name: "image", label: "Image for project progress.", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
-          - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
-          - {name: "imageAl333t", label: "3333Image description for alt text.", widget: "string"}
+          - {name: "image", label: "Image for project progress", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
+          - {name: "imageAlt", label: "Image description for alt text", widget: "string"}
+          - name: "position"
+            label: "Position of outcome image on desktop"
+            widget: "select"
+            options: ["full","left","center","right"]
+            default: ["full"]
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "extraimgs"
     label: "Extra Projects or Experiments"

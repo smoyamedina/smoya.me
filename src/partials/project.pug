@@ -16,7 +16,7 @@ section.slide.proj-outcome
         img(src=`../${projsFtImg}`) 
     p.proj-desc #{projDesc}
     each outcomeImg in projImgs
-        .p-outcome-img
+        .p-outcome-img(class=`${outcomeImg.position}`)
             img(src=`../${outcomeImg.image}` alt=`${outcomeImg.imageAlt}`)
 section.slide.proj-next
     .slide-text-all
