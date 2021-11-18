@@ -758,12 +758,9 @@ $delay: .25;
     content: none;
 }
 
-
-
-
 .proj-prompt {
-    padding-top: $pd-t-b;
-    padding-bottom: $pd-t-b;
+    padding-top: $mb-gap;
+    margin-bottom: 12rem;
 }
 
 .proj-prompt-txt {
@@ -777,11 +774,18 @@ $delay: .25;
     margin-bottom: 6rem;
 }
 
-.proj-next .slide-text-all {
-    padding-top: $pd-t-b;
-    padding-bottom: $pd-t-b;
+.proj-next {
+    margin: 0 $mb-gap;
+    padding: 0;
     border-top: 2px solid $main-bright;
     border-bottom: 2px solid $main-bright;
+}
+
+.proj-next .slide-text-all {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0 auto;
+    max-width: 22rem;
 }
 
 .proj-next-ol,
@@ -917,6 +921,22 @@ $num-of-projs: 5;
     }
 
     // __ dedicated project pages
+
+    .proj-prompt-txt {
+        grid-column: 3 / -1;
+    }
+
+    // project next
+    .proj-next {
+        margin: 0 $dsk-gap;
+    }
+
+    .proj-next .slide-text-all {
+        max-width: 100%;
+        grid-column: 3 / -3;
+    }
+
+
     // utility clases for outcome positioning
     .left {
         grid-column: 1 / span 4;
