@@ -15,7 +15,11 @@ section.slide.proj-outcome
     .p-img-lead
         img(src=`../${projsFtImg}`) 
     p.proj-desc #{projDesc}
+    each outcomeImg in projImgs
+        .p-outcome-img
+            img(src=`../${outcomeImg.image}` alt=`${outcomeImg.imageAlt}`)
 section.slide.proj-next
     .slide-text-all
         span.proj-next-ol Next Project 
         a.proj-next-link(href="#") Project Name Here
+           

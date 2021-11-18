@@ -219,7 +219,8 @@ html.has-scroll-dragging {
 }
 
 .projs-img,
-.p-heroimg {
+.p-heroimg,
+.p-outcome-img {
   border-radius: .5rem;
   overflow: hidden;
 }
@@ -304,7 +305,8 @@ p {
   background: #EF476F;
 }
 
-img {
+img,
+.p-outcome-img {
   display: block;
   width: 100%;
   height: 100%;
@@ -506,7 +508,8 @@ img {
      object-fit: cover;
 }
 
-.projs-img-wrap {
+.projs-img-wrap,
+.p-outcome-img-wrap {
   display: inline-block;
   position: relative;
   height: 100%;
@@ -810,6 +813,10 @@ img {
       align-self: center;
 }
 
+.proj-outcome {
+  margin-bottom: 6rem;
+}
+
 .proj-next .slide-text-all {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -923,6 +930,22 @@ img {
   }
   .fi-links {
     margin-bottom: 0;
+  }
+  .left {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / span 4;
+  }
+  .center {
+    grid-column: 3 / span -3;
+  }
+  .right {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4;
+    grid-column: 5 / span 4;
+  }
+  .full {
+    grid-column: 1 / -1;
   }
   .projs-card-init {
     margin-top: 0;

@@ -66,12 +66,17 @@ collections:
       - label: "Project Images"
         name: "projImgs"
         widget: "list"
-        summary: '{{fileName}} // {{fields.imageAlt}}'
+        summary: '{{dirName}} // {{fields.imageAlt}}'
         allow_add: true
         label_singular: "Project Image"
         fields:
           - {name: "image", label: "Image for project progress.", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
           - {name: "imageAlt", label: "Image description for alt text.", widget: "string"}
+          - label: "Page position on desktop."
+            name: "position"
+            widget: "select"
+            options: ["full", "left", "center", "right"]
+            default: ["full"]
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "extraimgs"
     label: "Extra Projects or Experiments"
