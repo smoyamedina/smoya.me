@@ -15,10 +15,10 @@ section.slide.proj-outcome
     .p-img-lead.left
         img(src=`../${projsFtImg}`) 
     p.proj-desc #{projDesc}
-section.slide.p-outcome-img-wrap
-        each outcomeImg in projImgs
-            .p-outcome-img(class=`${outcomeImg.position}`)
-                img(src=`../${outcomeImg.image}` alt=`${outcomeImg.imageAlt}`)
+section.slide.p-outcome-img-list
+    each outcomeImg in projImgs
+        .p-outcome-img(class=`${outcomeImg.position}`)
+            img(src=`../${outcomeImg.image}` alt=`${outcomeImg.imageAlt}`)
 section.slide.proj-next
     .slide-text-all
         span.proj-next-ol Next Project 

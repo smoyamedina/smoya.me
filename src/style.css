@@ -822,6 +822,10 @@ img,
   grid-column: 1 / -1;
 }
 
+.p-outcome-img-list {
+  margin-bottom: 6rem;
+}
+
 .proj-next {
   margin: 0 1rem;
   padding: 0;
