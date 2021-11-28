@@ -216,7 +216,8 @@ html.has-scroll-dragging {
 
 .header,
 .footer,
-.slide {
+.slide,
+.p-outcome-img-wrap {
   padding: 0 1rem;
 }
 
@@ -510,8 +511,7 @@ img,
      object-fit: cover;
 }
 
-.projs-img-wrap,
-.p-outcome-img-wrap {
+.projs-img-wrap {
   display: inline-block;
   position: relative;
   height: 100%;
@@ -815,8 +815,11 @@ img,
 }
 
 .proj-outcome {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin: 6rem auto;
+}
+
+.p-outcome-img {
+  grid-column: 1 / -1;
 }
 
 .proj-next {

@@ -257,7 +257,8 @@ html.has-scroll-dragging {
 
 .header,
 .footer,
-.slide {
+.slide,
+.p-outcome-img-wrap {
     padding: 0 1rem;
 }
 
@@ -523,8 +524,7 @@ img,
     object-fit: cover;
 }
 
-.projs-img-wrap,
-.p-outcome-img-wrap {
+.projs-img-wrap {
     display: inline-block;
     position: relative;
     height: 100%;
@@ -770,9 +770,23 @@ $delay: .25;
 }
 
 .proj-outcome {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin: 6rem auto;
 }
+
+
+// .p-outcome-img-wrap {
+//     margin-bottom: 6rem;
+//     grid-column: 1 / -1;
+//     height: max-content;
+//     display: grid;
+//     grid-template-columns: $dsk-grid-col-num;
+//     gap: $mb-gap;
+// }
+
+.p-outcome-img {
+    grid-column: 1 / -1;
+}
+
 
 .proj-next {
     margin: 0 $mb-gap;
@@ -932,11 +946,6 @@ $num-of-projs: 5;
     .proj-desc {
         grid-column: -3 / -1;
     }
-
-    // div.p-outcome-img:nth-of-type(1) {
-    //     padding-top: 6rem;
-
-    // }
 
     // project next
     .proj-next {
