@@ -18,6 +18,7 @@ const addInitClass = (base, addon) => {
 
 initPairs.forEach((currentPair) => { addInitClass(currentPair[0], currentPair[1]) });
 
+
 // ▶ locomotive smooth scroll ◀
 
 // const scrollContainer = '[data-scroll-container]'
@@ -55,12 +56,41 @@ const projCardCount = document.getElementsByClassName('projs-card').length
 let textRevealEndStd = "center 10%"
 let textRevealEndLast = "center 30%"
 
+
+gsap.to('.hero-txt', {
+    ease: 'none',
+    y: '-130vh',
+    opacity: 0,
+    scrollTrigger: {
+        trigger: '.about',
+        scrub: true,
+        // markers: true,
+        start: 'top bottom',
+        end: 'top top',
+        toggleActions: 'play reverse play reverse',
+    }
+})
+
+gsap.to('.proj-leadin', {
+    ease: 'none',
+    y: '50vh',
+    opacity: 0,
+    scrollTrigger: {
+        trigger: '.projs',
+        scrub: true,
+        // markers: true,
+        start: 'top bottom',
+        end: 'top 30%',
+        toggleActions: 'play reverse play reverse',
+    }
+})
+
 let textReveal = (projNum, endVals) => {
     const tl = gsap.timeline({
-      defaults: {duration: 1},
+      
       scrollTrigger: {
         trigger: `.projs-card:nth-child(${projNum})`,
-        scrub: 1.5,
+        scrub: 1,
         // scroller: scrollContainer,
         // markers: true,
         start: "center 90%",
@@ -71,7 +101,7 @@ let textReveal = (projNum, endVals) => {
     tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: .1})
     tl.from(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'20', opacity: 0, duration: 0.2}, 0)
     tl.to(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-20', opacity: 0, duration: 0.2}, 0.85)
-    tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .1})
+    tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .2}, '>-0.15')
 }
   
 for (i=1; i <= projCardCount ; i++) {
@@ -85,6 +115,8 @@ for (i=1; i <= projCardCount ; i++) {
         }
     }
 } 
+
+
 
 //test transition
 // let projReveal = (projNum) => {
