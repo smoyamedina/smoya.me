@@ -1,7 +1,6 @@
 // ▶ JS confirmed - adding init classes ◀
 // mostly doing this to force myself to learn what I can do with CSS alone
 const initPairs = [
-    ['p-heroimg','opac-init'],
     ['proj-pg-desc', 'text-gradient-init'],
     ['projs', 'projs-init'],
     ['projs-card', 'projs-card-init'],
@@ -19,25 +18,17 @@ const addInitClass = (base, addon) => {
 initPairs.forEach((currentPair) => { addInitClass(currentPair[0], currentPair[1]) });
 
 
-// ▶ locomotive smooth scroll ◀
-
-// const scrollContainer = '[data-scroll-container]'
+// ▶ smooth scroll ◀
 
 // const locoScroll = new LocomotiveScroll({
-//     el: document.querySelector(scrollContainer),
+//     el: document.querySelector(".container"),
 //     smooth: true
-// });
-
-// document.onreadystatechange = function () {
-//     // because loco inits before all heights are rendered completely. need to refresh it.
-//     if (document.readyState === 'complete') {
-//         locoScroll.update();
-//     }
-// }
-// locoScroll.on("scroll", ScrollTrigger.update);
-
-// // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-// ScrollTrigger.scrollerProxy(scrollContainer, {
+//   });
+//   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+//   locoScroll.on("scroll", ScrollTrigger.update);
+  
+//   // tell ScrollTrigger to use these proxy methods for the ".container" element since Locomotive Scroll is hijacking things
+//   ScrollTrigger.scrollerProxy(".container", {
 //     scrollTop(value) {
 //       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
 //     }, // we don't have to define a scrollLeft because we're only scrolling vertically.
@@ -45,7 +36,7 @@ initPairs.forEach((currentPair) => { addInitClass(currentPair[0], currentPair[1]
 //       return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
 //     },
 //     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-//     pinType: document.querySelector(scrollContainer).style.transform ? "transform" : "fixed"
+//     pinType: document.querySelector(".container").style.transform ? "transform" : "fixed"
 //   });
 
 // ▶ gsap ◀
@@ -53,8 +44,8 @@ gsap.registerPlugin(CSSRulePlugin);
 
 const projCardCount = document.getElementsByClassName('projs-card').length
 
-let textRevealEndStd = "center 10%"
-let textRevealEndLast = "center 30%"
+let homeProjTxtRevealEndStd = "center 10%"
+let homeProjTxtRevealEndLast = "center 30%"
 
 
 gsap.to('.hero-txt', {
@@ -64,6 +55,7 @@ gsap.to('.hero-txt', {
     scrollTrigger: {
         trigger: '.about',
         scrub: true,
+        // scroller: ".container",
         // markers: true,
         start: 'top bottom',
         end: 'top top',
@@ -71,27 +63,29 @@ gsap.to('.hero-txt', {
     }
 })
 
-gsap.to('.proj-leadin', {
-    ease: 'none',
-    y: '50vh',
-    opacity: 0,
-    scrollTrigger: {
-        trigger: '.projs',
-        scrub: true,
-        // markers: true,
-        start: 'top bottom',
-        end: 'top 30%',
-        toggleActions: 'play reverse play reverse',
-    }
-})
 
-let textReveal = (projNum, endVals) => {
+
+// gsap.to('.proj-leadin', {
+//     ease: 'none',
+//     y: '50vh',
+//     opacity: 0,
+//     scrollTrigger: {
+//         trigger: '.projs',
+//         scrub: true,
+//         // markers: true,
+//         start: 'top bottom',
+//         end: 'top 30%',
+//         toggleActions: 'play reverse play reverse',
+//     }
+// })
+
+let homeProjTxtReveal = (projNum, endVals) => {
     const tl = gsap.timeline({
       
       scrollTrigger: {
         trigger: `.projs-card:nth-child(${projNum})`,
         scrub: 1,
-        // scroller: scrollContainer,
+        // scroller: ".container",
         // markers: true,
         start: "center 90%",
         end: endVals,
@@ -109,46 +103,60 @@ for (i=1; i <= projCardCount ; i++) {
     //check if div exists to avoid warnings in console
     if (projNameContain !== null) {
         if (i < projCardCount === true) {
-            textReveal(i, textRevealEndStd)
+            homeProjTxtReveal(i, homeProjTxtRevealEndStd)
         } else {
-            textReveal(i, textRevealEndLast)
+            homeProjTxtReveal(i, homeProjTxtRevealEndLast)
         }
     }
 } 
 
 
+// Indiv Proj page
 
-//test transition
-// let projReveal = (projNum) => {
-// gsap.from(`.projs-card:nth-child(${projNum}) .projs-img`, {
-//     duration: .5,
-//     opacity: 0.4,
-//     ease: "expo.inOut",
+// gsap.to('.proj-pg-desc', {
+//     ease: 'none',
+//     bottom: '10rem',
 //     scrollTrigger: {
-//         trigger:`.projs-card:nth-child(${projNum})`,
-//         markers: true,
-//         start: "top 50%",
-//         end: "bottom 60%",
-//         // scroller: ".smooth-scroll",
-//         toggleActions: "play reverse play reverse",
-//         // scrub: true
-//         },
-
+//         trigger: '.proj-prompt',
+//         scrub: 2,
+//         // markers: true,
+//         start: 'top 100%',
+//         end: 'top 25%',
+//         toggleActions: 'play reverse play reverse',
 //     }
-// )
-// }
+// })
 
+let txtReveals = (txtClass, txtTrigger) => {
+    gsap.from(`.${txtClass}`, {
+        ease: 'power4.out',
+        y: '75%',
+        opacity: 0,
+        duration: 2,
+        scrollTrigger: {
+            // scroller: ".container",
+            trigger: `.${txtTrigger}`,
+            start: 'top 85%',
+            end: 'top 50%'
+        }
+    })
 
+}
 
-  //for reference after .hero animates
-//   for (i=1; i < 9; i++) {
-//     const homeProjContain = document.querySelector(`.project${i}`)
-//     //check if div exists to avoid warnings in console
-//     if (homeProjContain !== null) {
-//       projReveal(i)
-//     }
-//   }
-  
+let imgReveals = (imgClass, imgWrapClass, imgTrigger) => {
+    let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 2.5}, {scale: 1, duration: 2.5, ease: "power4.out"})}
+    gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
+        trigger: `.${imgTrigger}`,
+        // scroller: ".container",
+        start: "top 85%"
+    }})
+}
+
+txtReveals('proj-pg-desc', 'projhero');
+txtReveals('proj-prompt-txt', 'proj-prompt');
+txtReveals('proj-desc', 'proj-outcome');
+imgReveals('p-heroimg img', 'p-heroimg', 'projhero');
+imgReveals('p-img-lead img', 'p-img-lead', 'proj-outcome');
+
 
 
 
