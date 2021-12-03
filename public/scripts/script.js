@@ -54,7 +54,7 @@ gsap.to('.hero-txt', {
     opacity: 0,
     scrollTrigger: {
         trigger: '.about',
-        scrub: true,
+        scrub: .75,
         // scroller: ".container",
         // markers: true,
         start: 'top bottom',
@@ -63,39 +63,21 @@ gsap.to('.hero-txt', {
     }
 })
 
-
-
-// gsap.to('.proj-leadin', {
-//     ease: 'none',
-//     y: '50vh',
-//     opacity: 0,
-//     scrollTrigger: {
-//         trigger: '.projs',
-//         scrub: true,
-//         // markers: true,
-//         start: 'top bottom',
-//         end: 'top 30%',
-//         toggleActions: 'play reverse play reverse',
-//     }
-// })
-
 let homeProjTxtReveal = (projNum, endVals) => {
     const tl = gsap.timeline({
-      
       scrollTrigger: {
         trigger: `.projs-card:nth-child(${projNum})`,
-        scrub: 1,
+        scrub: .75,
         // scroller: ".container",
         // markers: true,
-        start: "center 90%",
+        start: "top bottom",
         end: endVals,
         toggleActions: 'play reverse play reverse',
       }
     })
-    tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: .1})
-    tl.from(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'20', opacity: 0, duration: 0.2}, 0)
-    tl.to(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-20', opacity: 0, duration: 0.2}, 0.85)
-    tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .2}, '>-0.15')
+    tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, "clipPath": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: .2})
+    tl.fromTo(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-70vh'}, {y:'-10vh', duration: 4, ease: 'power3.inOut'}, '<-.75')
+    tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .2}, '>-.75')
 }
   
 for (i=1; i <= projCardCount ; i++) {
@@ -112,19 +94,6 @@ for (i=1; i <= projCardCount ; i++) {
 
 
 // Indiv Proj page
-
-// gsap.to('.proj-pg-desc', {
-//     ease: 'none',
-//     bottom: '10rem',
-//     scrollTrigger: {
-//         trigger: '.proj-prompt',
-//         scrub: 2,
-//         // markers: true,
-//         start: 'top 100%',
-//         end: 'top 25%',
-//         toggleActions: 'play reverse play reverse',
-//     }
-// })
 
 let txtReveals = (txtClass, txtTrigger) => {
     gsap.from(`.${txtClass}`, {
@@ -143,7 +112,7 @@ let txtReveals = (txtClass, txtTrigger) => {
 }
 
 let imgReveals = (imgClass, imgWrapClass, imgTrigger) => {
-    let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 2.5}, {scale: 1, duration: 2.5, ease: "power4.out"})}
+    let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 2}, {scale: 1, duration: 2.5, ease: "power4.out"})}
     gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
         trigger: `.${imgTrigger}`,
         // scroller: ".container",
@@ -157,7 +126,35 @@ txtReveals('proj-desc', 'proj-outcome');
 imgReveals('p-heroimg img', 'p-heroimg', 'projhero');
 imgReveals('p-img-lead img', 'p-img-lead', 'proj-outcome');
 
+// ---------- Project Outcome Images within the -list wrapper
+const pOutcomeImgFirst = 'top 75%'
+const pOutcomeImgStd = 'bottom 75%'
 
 
+let projOutcomeImgReveals = (pOutcomeImgClass, pOutcomeImgWrapClass, pOutcomeImgTrigger, pOutcomeImgStart) => {
+    let imgScaleDown = () => {
+        gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 2}, {scale: 1, duration: 2.5, ease: "power4.out"})}
+        gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
+        trigger: `.${pOutcomeImgTrigger}`,
+        // scroller: ".container",
+        start: `${pOutcomeImgStart}`,
+        invalidateOnRefresh: true 
+        // iOR to refresh preceeding div's position + therefore scrollTrigger location!!
+    }})
+}
 
+const projOutcomeImgCount = document.querySelectorAll('.p-outcome-img img').length;
+//1 bc of nth-child's starting interger 
+for (i=1; i <= projOutcomeImgCount ; i++) {
+    const projOutcomeImgContain = document.querySelector(`.p-outcome-img:nth-child(${i}) img`)
+    //check if div exists to avoid warnings in console
+    if (projOutcomeImgContain !== null) {
+        // (pOutcomeImgClass, pOutcomeImgWrapClass, pOutcomeImgTrigger, pOutcomeImgStart)
+        if (i == 1) {
+            projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) img`, `p-outcome-img:nth-child(${i})`, `p-outcome-img-list`, pOutcomeImgFirst)
+        } else {
+            projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) img`, `p-outcome-img:nth-child(${i})`, `p-outcome-img:nth-child(${i - 1})`, pOutcomeImgStd)
+        }
+    }
+};
 

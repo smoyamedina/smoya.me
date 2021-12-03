@@ -430,8 +430,8 @@ img,
 }
 
 .hero h1 {
-    position: fixed;
-    bottom: 2rem;
+    // position: fixed;
+    // bottom: 2rem;
     margin-bottom: 0;
 }
 
@@ -498,6 +498,7 @@ img,
     display: flex;
     flex-direction: column;
     order: 3;
+    z-index: 90;
     margin-top: .75rem;
     // transition: all 1s linear;
     clip-path: polygon(0 0, 100% 0, 100% 105%, 0% 105%);
@@ -575,7 +576,6 @@ img,
     border-width: 2px 0;
     border-style: solid;
     border-color: $main-bright;
-    margin-top: 25%;
     padding-top: $pd-t-b;
     padding-bottom: $pd-t-b;
     position: relative;
@@ -847,12 +847,12 @@ $num-of-projs: 5;
     // justify-content: baseline;
 }
 
-.projs-text-init {
-    position: fixed;
-    z-index: 100;
-    //for now this allows for three lines on mobile. flagged
-    bottom: .5rem;
-}
+// .projs-text-init {
+//     position: fixed;
+//     z-index: 100;
+//     //for now this allows for three lines on mobile. flagged
+//     bottom: .5rem;
+// }
 
 @media (max-width: 50rem) {
     .fi-links {
@@ -912,10 +912,6 @@ $num-of-projs: 5;
     //     align-items: center;
     // }
 
-    .slide.projs-init .projs-text {
-        left: $dsk-padding;
-    }
-
     .projs-img-wrap {
         width: 74.52%;
         margin-left: auto;
@@ -973,6 +969,10 @@ $num-of-projs: 5;
         height: 100%;
     }
 
+    .p-heroimg-init {
+        transform: translateY(100%) scale(2.5);
+        opacity: 0;
+    }
 
     .proj-pg-desc {
         grid-row-start: 1;
@@ -1032,13 +1032,14 @@ $num-of-projs: 5;
         // center vertically turned off on desktop
         margin-top: 0;
         padding: 0;
+        position: relative;
     }
 
     .projs-text-init {
         display: block;
-        position: fixed;
+        position: absolute;
+        z-index: 90;
         bottom: 1.125rem;
-        left: $dsk-gap;
     }
 
 }
