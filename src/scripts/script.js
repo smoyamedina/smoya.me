@@ -95,6 +95,9 @@ for (i=1; i <= projCardCount ; i++) {
 
 // Indiv Proj page
 
+// ---------- 
+
+
 let txtReveals = (txtClass, txtTrigger) => {
     gsap.from(`.${txtClass}`, {
         ease: 'power4.out',
