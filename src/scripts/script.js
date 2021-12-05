@@ -1,4 +1,5 @@
 // ▶ JS confirmed - adding init classes ◀
+function initMain(){
 // mostly doing this to force myself to learn what I can do with CSS alone
 const initPairs = [
     ['proj-pg-desc', 'text-gradient-init'],
@@ -160,4 +161,13 @@ for (i=1; i <= projOutcomeImgCount ; i++) {
         }
     }
 };
+}
 
+initMain();
+//SWUP pg transitions test
+// const swup = new Swup();
+// swup.on('contentReplaced', initMain);
+// swup.on('contentReplaced', function () {
+//     window.scrollTo(0, 0);
+//     initMain();
+// });

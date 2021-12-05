@@ -11,7 +11,7 @@ html(lang="en")
     body
         .container(data-scroll-container)
             include _headerwithnav.pug
-            main.main(data-scroll-section)
+            main.main#swup.transition-fade(data-scroll-section)
                 !=content
             include _footer.pug
         script. 

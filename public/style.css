@@ -26,6 +26,16 @@ body {
   display: inline-block;
 }
 
+.transition-fade {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }
@@ -118,7 +128,7 @@ html.has-scroll-dragging {
 }
 
 .container {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .header {
@@ -374,7 +384,7 @@ img,
 }
 
 .hero h1 {
-  margin-bottom: 0;
+  margin-bottom: 2.5rem;
 }
 
 .hero-txt {
@@ -878,7 +888,7 @@ img,
     padding: 2rem;
   }
   .hero h1 {
-    bottom: 1.5rem;
+    margin-bottom: -.5rem;
   }
   .about .slide-text-all {
     margin: 0 auto;
