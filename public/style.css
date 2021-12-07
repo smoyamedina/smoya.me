@@ -226,8 +226,7 @@ html.has-scroll-dragging {
 
 .header,
 .footer,
-.slide,
-.p-outcome-img-wrap {
+.slide {
   padding: 0 1rem;
 }
 
@@ -330,7 +329,7 @@ p {
 }
 
 img,
-.p-outcome-img img {
+.p-outcome-img .p-outcome-img-wrapper img {
   display: block;
   width: 100%;
   height: 100%;
@@ -744,6 +743,8 @@ img,
 }
 
 .proj-pg-desc {
+  -webkit-transition: 0s;
+  transition: 0s;
   padding-top: 1.5rem;
   -webkit-animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, 0.75, 1) 1, projnameanim 2s cubic-bezier(0, 1, 0.75, 1) 1;
           animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, 0.75, 1) 1, projnameanim 2s cubic-bezier(0, 1, 0.75, 1) 1;
@@ -752,6 +753,8 @@ img,
 }
 
 .p-heroimg {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   height: 65vh;
   -webkit-animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, 0.75, 1) 1;
           animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, 0.75, 1) 1;
@@ -799,6 +802,18 @@ img,
 
 .p-outcome-img {
   grid-column: 1 / -1;
+}
+
+.p-outcome-img-wrapper {
+  border-radius: .5rem;
+  overflow: hidden;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.p-outcome-img-wrapper img {
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 
 .proj-next {
@@ -944,8 +959,6 @@ img,
     height: 100%;
   }
   .p-heroimg-init {
-    -webkit-transform: translateY(100%) scale(2.5);
-            transform: translateY(100%) scale(2.5);
     opacity: 0;
   }
   .proj-pg-desc {

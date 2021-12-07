@@ -18,7 +18,8 @@ section.slide.proj-outcome
 section.slide.p-outcome-img-list
     each outcomeImg in projImgs
         .p-outcome-img(class=`${outcomeImg.position}`)
-            img(src=`../${outcomeImg.image}` alt=`${outcomeImg.imageAlt}`)
+            .p-outcome-img-wrapper
+                img(src=`../${outcomeImg.image}` alt=`${outcomeImg.imageAlt}`)
 //- section.slide.proj-next
 //-     .slide-text-all
 //-         span.proj-next-ol Next Project

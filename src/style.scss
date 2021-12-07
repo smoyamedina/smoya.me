@@ -270,8 +270,7 @@ html.has-scroll-dragging {
 
 .header,
 .footer,
-.slide,
-.p-outcome-img-wrap {
+.slide {
     padding: 0 1rem;
 }
 
@@ -384,7 +383,7 @@ p {
 // images
 
 img,
-.p-outcome-img img {
+.p-outcome-img .p-outcome-img-wrapper img {
     display: block;
     width: 100%;
     height: 100%;
@@ -741,6 +740,7 @@ $delay: .25;
 
 .proj-pg-desc {
     // grid-row-start: 1;
+    transition: 0s;
     padding-top: 1.5rem;
     animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, .75, 1) 1, projnameanim 2s cubic-bezier(0, 1, .75, 1) 1;
     animation-fill-mode: forwards;
@@ -748,6 +748,7 @@ $delay: .25;
 }
 
 .p-heroimg {
+    transform: translateY(100%);
     height: 65vh;
     animation: proj-hero-imgwrap-load 2s cubic-bezier(0, 1, .75, 1) 1;
     animation-delay: .25s;
@@ -790,6 +791,16 @@ $delay: .25;
     grid-column: 1 / -1;
 }
 
+.p-outcome-img-wrapper {
+    border-radius: .5rem;
+    overflow: hidden;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.p-outcome-img-wrapper img {
+    transform: scale(2);
+}
 
 .proj-next {
     margin: 0 $mb-gap;
@@ -964,6 +975,7 @@ $num-of-projs: 5;
         height: 92vh;
         z-index: 50;
         position: relative;
+
     }
 
     .p-heroimg::before {
@@ -977,10 +989,10 @@ $num-of-projs: 5;
         left: 0;
         width: 100%;
         height: 100%;
+
     }
 
     .p-heroimg-init {
-        transform: translateY(100%) scale(2.5);
         opacity: 0;
     }
 
