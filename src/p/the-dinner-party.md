@@ -15,9 +15,12 @@ projDesc: As a result of increased physical distancing during the pandemic,
 projImgs:
   - image: ../assets/p/the-dinner-party/din-w_g.png
     imageAlt: An envelope with funky designs is laid out on a yellow background.
+    position: left
   - image: ../assets/p/the-dinner-party/din-w_e.png
     imageAlt: A series of stickers with sayings are spread across the board.
+    position: right
   - image: ../assets/p/the-dinner-party/din-w_f.png
     imageAlt: A green sweater features a hand-stitched mantra that's sewed in backwards.
+    position: full
 projTag: Interactive
 ---
