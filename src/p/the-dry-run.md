@@ -14,11 +14,14 @@ projImgs:
     imageAlt: A black and white newspaper spread is laid out on a flat surface. The
       upper right corner is lightly folded over the show the contents of the
       cover.
+    position: full
   - image: ../assets/p/the-dry-run/tdr-w_b.png
     imageAlt: Three copies of the newspaper are laid out to feature the front page
       content. They are all overlapping one another.
+    position: full
   - image: ../assets/p/the-dry-run/tdr-w_d.png
     imageAlt: The lower half of the opening page is featured in overlapping,
       folded-in-half editions of the newspaper.
+    position: full
 projTag: publication
 ---
