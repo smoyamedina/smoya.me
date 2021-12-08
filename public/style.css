@@ -482,7 +482,7 @@ img,
 
 .projs-dscplne {
   display: inline-block;
-  margin-bottom: .35rem;
+  margin-bottom: 1.5rem;
 }
 
 .projs-card .projs-text .projs-name {
@@ -807,8 +807,11 @@ img,
 .p-outcome-img-wrapper {
   border-radius: .5rem;
   overflow: hidden;
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .p-outcome-img-wrapper img {

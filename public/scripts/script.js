@@ -58,7 +58,7 @@ function initMain(){
         }
         })
         tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, "clipPath": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: .2})
-        tl.fromTo(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-70vh'}, {y:'-10vh', duration: 4, ease: 'linear'}, '<-.75')
+        tl.fromTo(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-70vh'}, {y:'-0vh', duration: 4, ease: 'linear'}, '<-.75')
         tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .2}, '>-.75')
     }
     
@@ -109,18 +109,18 @@ function initMain(){
                 }
             }
         )
-        gsap.fromTo(`.${imgClass}`, {
-            'transform-origin':'50% 0%'}, {
-            'transform-origin':'50% 100%',
-            scrollTrigger: {
-                    trigger: `.${imgTrigger}`,
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: 1,
-                    markers: true
-                }
-            }
-        )
+        // gsap.fromTo(`.${imgClass}`, {
+        //     'transform-origin':'50% 0%'}, {
+        //     'transform-origin':'50% 100%',
+        //     scrollTrigger: {
+        //             trigger: `.${imgTrigger}`,
+        //             start: 'top top',
+        //             end: 'bottom top',
+        //             scrub: 1,
+        //             // markers: true
+        //         }
+        //     }
+        // )
 
         ScrollTrigger.refresh()
     }
@@ -137,7 +137,7 @@ function initMain(){
 
     let txtReveals = (txtClass, txtTrigger) => {
         gsap.from(`.${txtClass}`, {
-            ease: 'power4.out',
+            ease: 'expo.out',
             y: '100%',
             opacity: 0,
             duration: 2,
@@ -150,34 +150,37 @@ function initMain(){
     }
 
     let imgReveals = (imgClass, imgWrapClass, imgTrigger) => {
-        let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 2}, {scale: 1.125, duration: 2.5, ease: "power4.out"})}
-        gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
+        let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.5}, {scale: 1, duration: 2.5, ease: "expo.out"})}
+        gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "expo.out", y: 0, scrollTrigger: {
             trigger: `.${imgTrigger}`,
             // scroller: ".container",
             start: "top 85%"
         }})
-        gsap.fromTo(`.${imgClass}`, {
-            'transform-origin':'50% 0%'}, {
-            'transform-origin':'50% 100%',
-            scrollTrigger: {
-                    trigger: `.${imgTrigger}`,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1,
-                    markers: true
-                }
-            }
-        )
+        // gsap.fromTo(`.${imgClass}`, {
+        //     'transform-origin':'50% 0%'}, {
+        //     'transform-origin':'50% 100%',
+        //     scrollTrigger: {
+        //             trigger: `.${imgTrigger}`,
+        //             start: 'top bottom',
+        //             end: 'bottom top',
+        //             scrub: 1,
+        //             markers: true
+        //         }
+        //     }
+        // )
         ScrollTrigger.refresh()
     }
 
     heroImgReveal('p-heroimg img', 'p-heroimg', 'projhero');
     heroTxtReveal('proj-pg-desc', 'projhero');
 
+
+    txtReveals('hero-txt', 'hero');
     txtReveals('slide-text-all h3', 'about .slide-text-all');
     txtReveals('slide-text-pwrap', 'about .slide-text-all');
     txtReveals('proj-prompt-txt', 'proj-prompt');
     txtReveals('proj-desc', 'proj-outcome');
+    
     
     imgReveals('p-img-lead img', 'p-img-lead', 'proj-outcome');
 
@@ -189,7 +192,7 @@ function initMain(){
 
     let projOutcomeImgReveals = (pOutcomeImgClass, pOutcomeImgWrapClass, pOutcomeImgTrigger, pOutcomeImgStart) => {
         let imgScaleDown = () => {    
-            gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 2}, {scale: 1.15, duration: 2, ease: "power4.out"})
+            gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 1.5}, {scale: 1, duration: 2, ease: "power4.out"})
         }
 
         gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
@@ -203,18 +206,18 @@ function initMain(){
                 }
             }
         )
-        gsap.fromTo(`.${pOutcomeImgClass}`, {
-            'transform-origin':'50% 0%'}, {
-            'transform-origin':'50% 100%',
-            scrollTrigger: {
-                    trigger: `.p-outcome-img-list`,
-                    start: 'top 90%',
-                    end: 'bottom 10%',
-                    scrub: 1,
-                    markers: true
-                }
-            }
-        )
+        // gsap.fromTo(`.${pOutcomeImgClass}`, {
+        //     'transform-origin':'50% 0%'}, {
+        //     'transform-origin':'50% 100%',
+        //     scrollTrigger: {
+        //             trigger: `.p-outcome-img-list`,
+        //             start: 'top bottom',
+        //             end: 'bottom top',
+        //             scrub: .75,
+        //             markers: true
+        //         }
+        //     }
+        // )
     }
         
     
@@ -247,6 +250,26 @@ function initMain(){
             }
         }
     }
+
+    // ---------- Footer
+
+    // // const getFooterItem = () => { return document.querySelector('.fi-links').children['${arrayNum}'].className }
+    // // let numOfFooterItems = getFooterItems.length;
+    // const animateItem = (item) => {
+    //     return footerTL.from(`${item}`, {opacity: 0, y: '20vh', duration: .15})
+    // }
+    let footerTL = gsap.timeline({ease: "power4.out",
+            scrollTrigger: {
+                trigger: 'footer',
+                start: 'top 65%',
+                end: 'bottom bottom'
+            }   
+        }
+    )
+    footerTL.from('.flinks-overline', {opacity: 0, y: '20vh'}, "<+=.1")
+    footerTL.from('.fi-link:nth-of-type(2)', {opacity: 0, y: '20vh'}, "<+=.1")
+    footerTL.from('.fi-link:nth-of-type(3)', {opacity: 0, y: '20vh'}, "<+=.1")
+    footerTL.from('.fi-link:nth-of-type(4)', {opacity: 0, y: '20vh'}, "<+=.1")
 };
 
 initMain();

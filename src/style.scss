@@ -390,7 +390,6 @@ img,
     object-fit: cover;
     // for grid children imgs
     grid-column: 1 / -1;
-
 }
 
 .projs-img,
@@ -515,7 +514,7 @@ img,
 
 .projs-dscplne {
     display: inline-block;
-    margin-bottom: .35rem;
+    margin-bottom: 1.5rem;
 }
 
 .projs-card .projs-text .projs-name {
@@ -794,12 +793,14 @@ $delay: .25;
 .p-outcome-img-wrapper {
     border-radius: .5rem;
     overflow: hidden;
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    align-items: stretch;
 }
 
 .p-outcome-img-wrapper img {
     transform: scale(2);
+    // height: auto;
 }
 
 .proj-next {
