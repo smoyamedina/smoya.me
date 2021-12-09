@@ -601,7 +601,7 @@ img,
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 1rem;
-  border-width: 2px 0;
+  border-width: 2px 0 0 0;
   border-style: solid;
   border-color: #e0e0e0;
   padding-top: 6rem;
@@ -669,6 +669,9 @@ img,
   padding: 0;
   overflow: hidden;
   white-space: nowrap;
+  border-width: 2px 0 0 0;
+  border-style: solid;
+  border-color: #e0e0e0;
 }
 
 .footer * {

@@ -620,7 +620,7 @@ img,
     justify-content: space-between;
     align-items: flex-start; // use this to prevent flex items from stretching to fill entire height
     gap: $mb-gap;
-    border-width: 2px 0;
+    border-width: 2px 0 0 0;
     border-style: solid;
     border-color: $main-bright;
     padding-top: $pd-t-b;
@@ -685,6 +685,9 @@ img,
     padding: 0;
     overflow: hidden;
     white-space: nowrap;
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-color: $main-bright;
 }
 
 .footer * {
