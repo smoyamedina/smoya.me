@@ -28,6 +28,20 @@ function initMain(){
     let homeProjTxtRevealEndStd = "center 10%"
     let homeProjTxtRevealEndLast = "center 10%"
 
+
+    // ---------- bg blobbies
+    gsap.to('canvas', {
+        y: '-50%',
+        ease: 'power4.out',
+        opacity: .5,
+        scrollTrigger: {
+            trigger: '.about',
+            start: 'top 60%',
+            toggleActions: 'play pause pause reverse',
+            scrub: .75
+        }
+    })
+
     // ---------- hero text
     gsap.to('.hero-txt', {
         ease: 'none',

@@ -13,6 +13,12 @@ $light-warm: #FDEB9B;
 $dark-cool: #5448C8;
 $light-cool: #76E0AF;
 $main-bright: #e0e0e0;
+//lighter
+$dark-warm-half: #FFC3D1;
+$light-warm-half: #FEF6D0;
+$dark-cool-half: #AEA8E5;
+$light-cool-half: #BFF0D9;
+
 
 //type style vars
 
@@ -37,7 +43,20 @@ $headerA-wt: 600;
 $headerB-wt: 600;
 $headerC-wt: 400;
 
+//CSS vars for bg
+
+
+
 // Resets and base
+
+:root {
+    --main-dark: #{$main-dark};
+    --dark-warm: #{$dark-warm};
+    --light-warm: #{$light-warm};
+    --dark-cool: #{$dark-cool};
+    --light-cool: #{$light-cool};
+    --main-bright: #{$main-bright};
+}
 
 * {
     padding: 0;
@@ -50,6 +69,16 @@ $headerC-wt: 400;
     text-decoration: none;
     font-family: $main-f-reg;
     transition: 100ms linear;
+}
+
+.orb-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // pointer-events: none;
+    z-index: -2;
 }
 
 body {
@@ -399,6 +428,13 @@ img,
     grid-column: 1 / -1;
 }
 
+.projs-img-wrap,
+.p-outcome-img-wrapper,
+.p-heroimg,
+.p-img-lead {
+    box-shadow: 0 0 2em 1em rgba($main-dark, .17);
+}
+
 // slide sizing
 
 .slide {
@@ -416,6 +452,7 @@ img,
     min-height: 100vh;
     padding: 1rem;
     align-items: end;
+    pointer-events: none;
 }
 
 .slide h1 {
@@ -523,7 +560,7 @@ img,
     justify-content: space-between;
     margin: .25rem 0;
     // this is the set-up for gradient animation
-    background: linear-gradient(115deg, rgba(224, 224, 224, 1) 33%, rgba(84, 72, 200, 1) 40%, rgba(239, 71, 111, 1) 43%, rgba(253, 235, 155, 1) 51%, rgba(118, 224, 175, 1) 57%, rgba(224, 224, 224, 1) 61%);
+    background: linear-gradient(115deg, #{$main-bright} 33%, #{$dark-cool-half} 40%, #{$dark-warm} 46%, #{$light-warm-half} 49%, #{$light-cool-half} 57%, #{$main-bright} 61%);
     background-size: 400%;
     background-position: right;
     transition: color .125s ease-in-out;
@@ -554,6 +591,7 @@ img,
 }
 
 .projs-img-wrap {
+    border-radius: .5em;
     display: inline-block;
     position: relative;
     height: 78vh;
@@ -565,6 +603,7 @@ img,
     //adding darker filter over pics
     content: "";
     background: rgba(0, 0, 0, 0.5);
+
     z-index: 50;
     position: absolute;
     border-radius: .5rem;
@@ -839,7 +878,7 @@ $delay: .25;
 }
 
 .text-gradient-init {
-    background: linear-gradient(115deg, rgba(224, 224, 224, 1) 33%, rgba(84, 72, 200, 1) 40%, rgba(239, 71, 111, 1) 43%, rgba(253, 235, 155, 1) 51%, rgba(118, 224, 175, 1) 57%, rgba(224, 224, 224, 1) 61%);
+    background: linear-gradient(115deg, #{$main-bright} 33%, #{$dark-cool-half} 40%, #{$dark-warm} 46%, #{$light-warm-half} 49%, #{$light-cool-half} 57%, #{$main-bright} 61%);
     color: transparent;
     background-position: right;
     background-clip: text;

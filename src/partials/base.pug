@@ -9,6 +9,7 @@ html(lang="en")
         title SMOYA.ME | #{title}
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js")
     body
+        canvas.orb-canvas
         .container(data-scroll-container)
             include _headerwithnav.pug
             main.main#swup.transition-fade(data-scroll-section)
