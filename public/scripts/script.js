@@ -1,4 +1,4 @@
-// ▶ JS confirmed - adding init classes ◀
+// ▶ JS confirmed - adding init classes here ◀ 
 
 function initMain(){
     // mostly doing this to force myself to learn what I can do with CSS alone
