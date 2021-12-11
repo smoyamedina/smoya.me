@@ -31,7 +31,7 @@ projDesc: "It's a big ask.\
   \r\n"
 media:
   use: true
-  file: ../assets/p/valivaryus.webm
+  file: ../assets/p/the-valivaryus-project/valivaryus.webm
 projImgs:
   - image: ../assets/p/the-valivaryus-project/valivaryus-w_a.png
     imageAlt: "The opening of a website. The headline reads: Just as capable, Just
