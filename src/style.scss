@@ -79,6 +79,18 @@ $headerC-wt: 400;
     height: 100%;
     // pointer-events: none;
     z-index: -2;
+    animation: fade-in 2s cubic-bezier(0, 1, .75, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
 
 body {
@@ -87,6 +99,8 @@ body {
 
 .header {
     z-index: 90;
+    animation: fade-in 2s cubic-bezier(0, 1, .75, 1);
+    animation-fill-mode: forwards;
 }
 
 .nobreak {
@@ -197,6 +211,8 @@ html.has-scroll-dragging {
 
 
 // ----- Base Styles
+
+
 
 //container
 .container {
@@ -551,7 +567,7 @@ img,
 
 .projs-dscplne {
     display: inline-block;
-    margin-bottom: 1.5rem;
+    margin-bottom: .25rem;
 }
 
 .projs-card .projs-text .projs-name {
@@ -706,12 +722,8 @@ img,
 }
 
 .flinks-overline {
-    margin-bottom: .75rem;
-}
-
-.flinks-overline {
     color: $dark-warm;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .fi-link {
@@ -986,6 +998,10 @@ $num-of-projs: 5;
         padding-top: .25rem;
     }
 
+    .projs-dscplne {
+        margin-bottom: 1.5rem;
+    }
+
     // __ finds
     .finds-intro {
         flex: 0 0 25%;
@@ -1074,6 +1090,10 @@ $num-of-projs: 5;
         grid-column: 3 / -3;
     }
 
+    // footer
+    .flinks-overline {
+        margin-bottom: 1rem;
+    }
 
     // utility clases for outcome positioning
     .left {

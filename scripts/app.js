@@ -162,7 +162,7 @@ const app = new PIXI.Application({
 // Create colour palette
 const colorPalette = new ColorPalette();
 
-app.stage.filters = [new KawaseBlurFilter(49, 10, true)];
+app.stage.filters = [new KawaseBlurFilter(48, 10, true)];
 
 // Create orbs
 const orbs = [];

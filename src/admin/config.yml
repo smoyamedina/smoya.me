@@ -63,6 +63,13 @@ collections:
       - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
       - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
       - {label: "Leading summary", name: "projDesc", widget: "markdown"}
+      - label: "Project Multimedia"
+        name: "media"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Use multimedia on page", name: "use", widget: "boolean"}
+          - {label: "Multimedia File", name: "file", widget: "file"}
       - label: "Project Images"
         name: "projImgs"
         widget: "list"
