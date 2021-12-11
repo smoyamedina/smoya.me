@@ -8,11 +8,13 @@ projPrompt: How might we address the stigma against people who live with
 projDesc: "It's a big ask.\ 
 
 
+
   The Valivaryus Project is an on-going project that I wish to use to tackle
   misunderstandings for various neurodivergencies. The initiative I created as a
   part of my degree project addresses Down Syndrome in particular due to my
   sister's personal experiences and my own observations over the course of our
   lives.
+
 
 
   \r
@@ -27,6 +29,9 @@ projDesc: "It's a big ask.\
   \r
 
   \r\n"
+media:
+  use: true
+  file: ../assets/p/valivaryus.webm
 projImgs:
   - image: ../assets/p/the-valivaryus-project/valivaryus-w_a.png
     imageAlt: "The opening of a website. The headline reads: Just as capable, Just
