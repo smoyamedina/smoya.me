@@ -67,10 +67,10 @@ collections:
         name: "media"
         widget: "object"
         collapsed: true
-        media_folder: "../assets/p"
+        media_folder: "../assets/p/"
         fields:
           - {label: "Use multimedia on page", name: "use", widget: "boolean"}
-          - {label: "Multimedia File", name: "file", widget: "file"}
+          - {label: "Multimedia File", name: "file", widget: "file", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
       - label: "Project Images"
         name: "projImgs"
         widget: "list"
