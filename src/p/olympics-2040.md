@@ -8,6 +8,9 @@ projDesc: This project brands the 2040 olympics set in Buenos Aires, Argentina.
   Visual callbacks to the Argentinian tradition of Fileteado Porteño and modular
   indigenous patterns place an emphasis on unity and peace that the Olympics
   tries to achieve through global sportsmanship.
+media:
+  use: false
+  file:
 projImgs:
   - image: ../assets/p/olympics-2040/olymp-w_h.png
     imageAlt: "A proposal book spread for a hypothetical Olympics in the future. A

@@ -9,6 +9,9 @@ projDesc: I was challenged to create a newspaper based on the content of a story
   I hold dear to me. The Dry Run is an experimental broadsheet publication that
   is inspired by Daniel Keyes' Flowers for Algernon. This 3-page dry run
   explores Charlie's experiences in the form of complex typographical hierarchy.
+media:
+  use: false
+  file: 
 projImgs:
   - image: ../assets/p/the-dry-run/tdr-w_c.png
     imageAlt: A black and white newspaper spread is laid out on a flat surface. The

@@ -10,6 +10,9 @@ projDesc: >-
 
 
   In order to bridge the gap that has been created between us and those we wish we could see in person, I conceptualized and designed different items for an imaginary party based off of information I gathered from interviewing someone representative of the typical person at one of my gatherings. This includes something to announce the gathering, something to utilize during the gathering, and something to take home afterward.
+media:
+  use: false
+  file: 
 projImgs:
   - image: ../assets/p/the-dinner-party/din-w_g.png
     imageAlt: An envelope with funky designs is laid out on a yellow background.

@@ -836,6 +836,13 @@ $delay: .25;
     border-radius: .5rem;
 }
 
+.video {
+    max-height: 90vh;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
 .p-outcome-img-list {
     margin-bottom: 6rem;
 }

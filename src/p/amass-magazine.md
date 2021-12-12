@@ -8,6 +8,9 @@ projDesc: AMASS magazine is a loud, 14-page publication made to capture the
   voices of those less heard and immortalize the infamous that wring them dry.
   It's focused on the divide between actions and consequences when they affect
   the average American instead of a fellow corporate partner.
+media:
+  use: false
+  file: 
 projImgs:
   - image: ../assets/p/amass-magazine/amass-w_f.png
     imageAlt: 'A magazine spread features the overline and headline of "Featured
