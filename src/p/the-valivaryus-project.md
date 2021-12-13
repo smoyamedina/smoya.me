@@ -6,7 +6,7 @@ projsHeroImg: ../assets/p/the-valivaryus-project/valivaryus-w_e.png
 projPrompt: How might we address the stigma against people who live with
   intellectual and developmental disabilities?
 projDesc: >-
-  It's a big ask.  
+  <p>It's a big ask.</p>
 
 
   The Valivaryus Project is an on-going project that I wish to use to tackle misunderstandings for various neurodivergent conditions. The initiative I created as a part of my degree project addresses Down Syndrome in particular due to my sister's personal experiences and my own observations over the course of our lives. Initially, this was a pointed effort to address the lack of funding in public education settings.  
