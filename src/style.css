@@ -850,10 +850,11 @@ img,
 }
 
 .video {
-  max-height: 90vh;
+  max-height: 80vh;
   aspect-ratio: 16 / 9;
   width: 100%;
   grid-column: 1 / -1;
+  margin-bottom: 10rem;
 }
 
 .p-outcome-img-list {
