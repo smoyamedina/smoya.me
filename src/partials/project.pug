@@ -13,8 +13,7 @@ section.slide.proj-prompt
 section.slide.proj-outcome
     .p-img-lead.left
         img(src=`../${projsFtImg}`) 
-    .proj-desc 
-        p!=`${projDesc}`
+    .proj-desc!=`${projDesc}`
 if media.use 
     section.slide.proj-media 
         video.video(src=`../${media.file}` controls)
