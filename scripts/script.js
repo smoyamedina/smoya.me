@@ -1,69 +1,81 @@
-// cursor
-
-
-
 // ▶ JS confirmed - adding init classes here ◀ 
+
 function initMain(){
 
 
-    //paul langton
-    jQuery(document).ready(function() {
-
-        var mouseX = 0, mouseY = 0;
-        var xp = 0, yp = 0;
-         
-        $(document).mousemove(function(e){
-          mouseX = e.pageX - 30;
-          mouseY = e.pageY - 30; 
-        });
-          
-        setInterval(function(){
-          xp += ((mouseX - xp)/8);
-          yp += ((mouseY - yp)/8);
-          $("#circle").css({left: xp +'px', top: yp +'px'});
-        }, 20);
-      
-    });
-
-
-    var el = document.getElementById("circle"),
-    elWidth = el.offsetWidth,
-    elHeight = el.offsetHeight,
-    width = window.innerWidth,
-    height = window.innerHeight,
-    target = {
-        x: width / 2,
-        y: height / 2
-    },
-    position = {
-        x: height,
-        y: width
-    },
-    ease = 0.085;
-
-    window.addEventListener("mousemove", function(event) {
-    target.x = event.clientX;
-    target.y = event.clientY;
-    });
-
-    function update() {
-    var dx = target.x - position.x,
-        dy = target.y - position.y,
-        vx = dx * ease,
-        vy = dy * ease;
-
-    position.x += vx;
-    position.y += vy;
-
-    el.style.left = (position.x - elWidth / 2).toFixed() + "px";
-    el.style.top = (position.y - elHeight / 2).toFixed() + "px";
-
-    requestAnimationFrame(update);
+    //cojea gabriel - cursor 
+    const cursor = document.querySelector('#cursor');
+    const cursorCircle = cursor.querySelector('.cursor__circle');
+    
+    const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+    const pos = { x: 0, y: 0 }; // cursor's coordinates
+    const speed = 0.4; // between 0 and 1
+    
+    const updateCoordinates = e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     }
-
-    update();
-
+    
+    window.addEventListener('mousemove', updateCoordinates);
+    
+    
+    function getAngle(diffX, diffY) {
+      return Math.atan2(diffY, diffX) * 180 / Math.PI;
+    }
+    
+    function getSqueeze(diffX, diffY) {
+      const distance = Math.sqrt(
+        Math.pow(diffX, 2) + Math.pow(diffY, 2)
+      );
+      const maxSqueeze = 0.45;
+      const accelerator = 1500;
+      return Math.min(distance / accelerator, maxSqueeze);
+    }
+    
+    
+    const updateCursor = () => {
+      const diffX = Math.round(mouse.x - pos.x);
+      const diffY = Math.round(mouse.y - pos.y);
       
+      pos.x += diffX * speed;
+      pos.y += diffY * speed;
+      
+      const angle = getAngle(diffX, diffY);
+      const squeeze = getSqueeze(diffX, diffY);
+      
+      const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+      const rotate = 'rotate(' + angle +'deg)';
+      const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+    
+      cursor.style.transform = translate;
+      cursorCircle.style.transform = rotate + scale;
+    };
+    
+    function loop() {
+      updateCursor();
+      requestAnimationFrame(loop);
+    }
+    
+    requestAnimationFrame(loop);
+    
+    
+    
+    const cursorModifiers = document.querySelectorAll('[cursor-class]');
+    
+    cursorModifiers.forEach(curosrModifier => {
+      curosrModifier.addEventListener('mouseenter', function() {
+        const className = this.getAttribute('cursor-class');
+        cursor.classList.add(className);
+      });
+      
+      curosrModifier.addEventListener('mouseleave', function() {
+        const className = this.getAttribute('cursor-class');
+        cursor.classList.remove(className);
+      });
+    });
+
+
+
 
     // mostly doing this to force myself to learn what I can do with CSS alone
     const initPairs = [
@@ -95,7 +107,7 @@ function initMain(){
 
     // ---------- bg blobbies
     gsap.to('canvas', {
-        y: '-70%',
+        y: '-60%',
         ease: 'power4.out',
         opacity: .5,
         scrollTrigger: {
@@ -114,6 +126,8 @@ function initMain(){
         scrollTrigger: {
             trigger: '.about',
             scrub: .75,
+            // scroller: ".container",
+            // markers: true,
             start: 'top bottom',
             end: 'top top',
             toggleActions: 'play reverse play reverse',
@@ -126,13 +140,13 @@ function initMain(){
         scrollTrigger: {
             trigger: `.projs-card:nth-child(${projNum})`,
             scrub: .75,
-            start: "top 60%",
+            start: "top bottom",
             end: endVals,
             toggleActions: 'play reverse play reverse',
         }
         })
         tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .5})
-        tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .1})
+        tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .15})
     }
     
     for (i=1; i <= projCardCount ; i++) {
@@ -202,7 +216,7 @@ function initMain(){
             duration: 2,
             scrollTrigger: {
                 trigger: `.${txtTrigger}`,
-                start: 'top 80%',
+                start: 'top 85%',
                 end: 'top 50%'
             }
         })

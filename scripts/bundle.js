@@ -45093,7 +45093,7 @@ class Orb {
       },
       y: {
         min: 0,
-        max: window.innerHeight * .4
+        max: window.innerHeight * .2
       }
     };
   }

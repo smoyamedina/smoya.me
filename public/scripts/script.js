@@ -107,7 +107,7 @@ function initMain(){
 
     // ---------- bg blobbies
     gsap.to('canvas', {
-        y: '-50%',
+        y: '-60%',
         ease: 'power4.out',
         opacity: .5,
         scrollTrigger: {
