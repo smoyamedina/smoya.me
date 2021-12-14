@@ -4,13 +4,13 @@ projsDscplne: Publication
 projsFtImg: ../assets/p/amass-magazine/amass-w_a.png
 projsHeroImg: ../assets/p/amass-magazine/amass-w_f.png
 projPrompt: I was challenged to create a visual hierarchy for a publication.
-projDesc: AMASS magazine is a loud, 14-page publication made to capture the
+projDesc: <p>AMASS magazine is a loud, 14-page publication made to capture the
   voices of those less heard and immortalize the infamous that wring them dry.
   It's focused on the divide between actions and consequences when they affect
-  the average American instead of a fellow corporate partner.
+  the average American instead of a fellow corporate partner.</p>
 media:
   use: false
-  file: 
+  file: null
 projImgs:
   - image: ../assets/p/amass-magazine/amass-w_f.png
     imageAlt: 'A magazine spread features the overline and headline of "Featured
