@@ -5,14 +5,14 @@ projsFtImg: ../assets/p/the-dinner-party/dinnerparty_splash.png
 projsHeroImg: ../assets/p/the-dinner-party/dinnerparty_splash.png
 projPrompt: How can we foster connections with our loved ones after a year apart?
 projDesc: >-
-  As a result of increased physical distancing during the pandemic, we've lost
-  the opportunity to connect with one another in person. 
+  <p>As a result of increased physical distancing during the pandemic, we've
+  lost the opportunity to connect with one another in person. </p>
 
 
-  In order to bridge the gap that has been created between us and those we wish we could see in person, I conceptualized and designed different items for an imaginary party based off of information I gathered from interviewing someone representative of the typical person at one of my gatherings. This includes something to announce the gathering, something to utilize during the gathering, and something to take home afterward.
+  <p>In order to bridge the gap that has been created between us and those we wish we could see in person, I conceptualized and designed different items for an imaginary party based off of information I gathered from interviewing someone representative of the typical person at one of my gatherings. This includes something to announce the gathering, something to utilize during the gathering, and something to take home afterward.</p>
 media:
   use: false
-  file: 
+  file: null
 projImgs:
   - image: ../assets/p/the-dinner-party/din-w_g.png
     imageAlt: An envelope with funky designs is laid out on a yellow background.
