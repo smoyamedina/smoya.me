@@ -8,14 +8,14 @@ section.slide.projhero
         h2.projs-name  #{projsName}
     .p-heroimg
         img(src=`../${projsFtImg}`)
-section.slide.proj-prompt 
+section.slide.proj-prompt
     h3.proj-prompt-txt #{projPrompt}
 section.slide.proj-outcome
     .p-img-lead.left
         img(src=`../${projsFtImg}`) 
     .proj-desc!=`${projDesc}`
 if media.use 
-    section.slide.proj-media 
+    section.slide.proj-media
         video.video(src=`../${media.file}` controls)
 section.slide.p-outcome-img-list
     each outcomeImg in projImgs

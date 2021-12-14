@@ -1,6 +1,82 @@
 // ▶ JS confirmed - adding init classes here ◀ 
 
 function initMain(){
+
+
+    //cojea gabriel - cursor 
+    const cursor = document.querySelector('#cursor');
+    const cursorCircle = cursor.querySelector('.cursor__circle');
+    
+    const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+    const pos = { x: 0, y: 0 }; // cursor's coordinates
+    const speed = 0.4; // between 0 and 1
+    
+    const updateCoordinates = e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }
+    
+    window.addEventListener('mousemove', updateCoordinates);
+    
+    
+    function getAngle(diffX, diffY) {
+      return Math.atan2(diffY, diffX) * 180 / Math.PI;
+    }
+    
+    function getSqueeze(diffX, diffY) {
+      const distance = Math.sqrt(
+        Math.pow(diffX, 2) + Math.pow(diffY, 2)
+      );
+      const maxSqueeze = 0.45;
+      const accelerator = 1500;
+      return Math.min(distance / accelerator, maxSqueeze);
+    }
+    
+    
+    const updateCursor = () => {
+      const diffX = Math.round(mouse.x - pos.x);
+      const diffY = Math.round(mouse.y - pos.y);
+      
+      pos.x += diffX * speed;
+      pos.y += diffY * speed;
+      
+      const angle = getAngle(diffX, diffY);
+      const squeeze = getSqueeze(diffX, diffY);
+      
+      const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+      const rotate = 'rotate(' + angle +'deg)';
+      const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+    
+      cursor.style.transform = translate;
+      cursorCircle.style.transform = rotate + scale;
+    };
+    
+    function loop() {
+      updateCursor();
+      requestAnimationFrame(loop);
+    }
+    
+    requestAnimationFrame(loop);
+    
+    
+    
+    const cursorModifiers = document.querySelectorAll('[cursor-class]');
+    
+    cursorModifiers.forEach(curosrModifier => {
+      curosrModifier.addEventListener('mouseenter', function() {
+        const className = this.getAttribute('cursor-class');
+        cursor.classList.add(className);
+      });
+      
+      curosrModifier.addEventListener('mouseleave', function() {
+        const className = this.getAttribute('cursor-class');
+        cursor.classList.remove(className);
+      });
+    });
+
+
+
+
     // mostly doing this to force myself to learn what I can do with CSS alone
     const initPairs = [
         ['proj-pg-desc', 'text-gradient-init'],
@@ -64,16 +140,13 @@ function initMain(){
         scrollTrigger: {
             trigger: `.projs-card:nth-child(${projNum})`,
             scrub: .75,
-            // scroller: ".container",
-            // markers: true,
             start: "top bottom",
             end: endVals,
             toggleActions: 'play reverse play reverse',
         }
         })
-        // tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, "clipPath": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: .2})
-        tl.fromTo(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-70vh'}, {y:'-0vh', duration: 4, ease: 'linear'}, '<-.75')
-        // tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .2}, '>-.75')
+        tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .5})
+        tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .15})
     }
     
     for (i=1; i <= projCardCount ; i++) {
@@ -113,7 +186,6 @@ function initMain(){
             gsap.fromTo(`.${imgClass}`, {scale: 2}, {scale: 1.125, duration: 2.5, ease: "power4.out"})
         
         }
-        // gsap.set(`.${imgWrapClass}`, {y: '100%', opacity: 0})
         gsap.fromTo(`.${imgWrapClass}`,
             {y: '100%', opacity: 0}, 
             {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, 
@@ -123,19 +195,6 @@ function initMain(){
                 }
             }
         )
-        // gsap.fromTo(`.${imgClass}`, {
-        //     'transform-origin':'50% 0%'}, {
-        //     'transform-origin':'50% 100%',
-        //     scrollTrigger: {
-        //             trigger: `.${imgTrigger}`,
-        //             start: 'top top',
-        //             end: 'bottom top',
-        //             scrub: 1,
-        //             // markers: true
-        //         }
-        //     }
-        // )
-
         ScrollTrigger.refresh()
     }
 
@@ -167,21 +226,8 @@ function initMain(){
         let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.5}, {scale: 1, duration: 2.5, ease: "expo.out"})}
         gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "expo.out", y: 0, scrollTrigger: {
             trigger: `.${imgTrigger}`,
-            // scroller: ".container",
             start: "top 85%"
         }})
-        // gsap.fromTo(`.${imgClass}`, {
-        //     'transform-origin':'50% 0%'}, {
-        //     'transform-origin':'50% 100%',
-        //     scrollTrigger: {
-        //             trigger: `.${imgTrigger}`,
-        //             start: 'top bottom',
-        //             end: 'bottom top',
-        //             scrub: 1,
-        //             markers: true
-        //         }
-        //     }
-        // )
         ScrollTrigger.refresh()
     }
 

@@ -6,15 +6,17 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="https://use.typekit.net/kby7upf.css")
         link(rel="stylesheet", href="/style.css")
-        title SMOYA.ME | #{title}
+        title SMOYA.ME | DESIGNER
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js")
     body
         canvas.orb-canvas
-        .container(data-scroll-container)
+        .container(data-scroll-container) 
             include _headerwithnav.pug
             main.main#swup.transition-fade(data-scroll-section)
                 !=content
             include _footer.pug
+        #cursor(aria-hidden="true")
+            .cursor__circle(aria-hidden="true")
         script. 
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
@@ -26,4 +28,3 @@ html(lang="en")
                 });
             }
         include _scripts.pug
-    

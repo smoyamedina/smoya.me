@@ -1,6 +1,70 @@
-// ▶ JS confirmed - adding init classes here ◀ 
+// cursor
 
+
+
+// ▶ JS confirmed - adding init classes here ◀ 
 function initMain(){
+
+
+    //paul langton
+    jQuery(document).ready(function() {
+
+        var mouseX = 0, mouseY = 0;
+        var xp = 0, yp = 0;
+         
+        $(document).mousemove(function(e){
+          mouseX = e.pageX - 30;
+          mouseY = e.pageY - 30; 
+        });
+          
+        setInterval(function(){
+          xp += ((mouseX - xp)/8);
+          yp += ((mouseY - yp)/8);
+          $("#circle").css({left: xp +'px', top: yp +'px'});
+        }, 20);
+      
+    });
+
+
+    var el = document.getElementById("circle"),
+    elWidth = el.offsetWidth,
+    elHeight = el.offsetHeight,
+    width = window.innerWidth,
+    height = window.innerHeight,
+    target = {
+        x: width / 2,
+        y: height / 2
+    },
+    position = {
+        x: height,
+        y: width
+    },
+    ease = 0.085;
+
+    window.addEventListener("mousemove", function(event) {
+    target.x = event.clientX;
+    target.y = event.clientY;
+    });
+
+    function update() {
+    var dx = target.x - position.x,
+        dy = target.y - position.y,
+        vx = dx * ease,
+        vy = dy * ease;
+
+    position.x += vx;
+    position.y += vy;
+
+    el.style.left = (position.x - elWidth / 2).toFixed() + "px";
+    el.style.top = (position.y - elHeight / 2).toFixed() + "px";
+
+    requestAnimationFrame(update);
+    }
+
+    update();
+
+      
+
     // mostly doing this to force myself to learn what I can do with CSS alone
     const initPairs = [
         ['proj-pg-desc', 'text-gradient-init'],
@@ -31,7 +95,7 @@ function initMain(){
 
     // ---------- bg blobbies
     gsap.to('canvas', {
-        y: '-50%',
+        y: '-70%',
         ease: 'power4.out',
         opacity: .5,
         scrollTrigger: {
@@ -50,8 +114,6 @@ function initMain(){
         scrollTrigger: {
             trigger: '.about',
             scrub: .75,
-            // scroller: ".container",
-            // markers: true,
             start: 'top bottom',
             end: 'top top',
             toggleActions: 'play reverse play reverse',
@@ -64,16 +126,13 @@ function initMain(){
         scrollTrigger: {
             trigger: `.projs-card:nth-child(${projNum})`,
             scrub: .75,
-            // scroller: ".container",
-            // markers: true,
-            start: "top bottom",
+            start: "top 60%",
             end: endVals,
             toggleActions: 'play reverse play reverse',
         }
         })
-        // tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, "clipPath": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: .2})
-        tl.fromTo(`.projs-card:nth-child(${projNum}) .projs-text`, {y:'-70vh'}, {y:'-0vh', duration: 4, ease: 'linear'}, '<-.75')
-        // tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {"clipPath": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",duration: .2}, '>-.75')
+        tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .5})
+        tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .1})
     }
     
     for (i=1; i <= projCardCount ; i++) {
@@ -113,7 +172,6 @@ function initMain(){
             gsap.fromTo(`.${imgClass}`, {scale: 2}, {scale: 1.125, duration: 2.5, ease: "power4.out"})
         
         }
-        // gsap.set(`.${imgWrapClass}`, {y: '100%', opacity: 0})
         gsap.fromTo(`.${imgWrapClass}`,
             {y: '100%', opacity: 0}, 
             {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, 
@@ -123,19 +181,6 @@ function initMain(){
                 }
             }
         )
-        // gsap.fromTo(`.${imgClass}`, {
-        //     'transform-origin':'50% 0%'}, {
-        //     'transform-origin':'50% 100%',
-        //     scrollTrigger: {
-        //             trigger: `.${imgTrigger}`,
-        //             start: 'top top',
-        //             end: 'bottom top',
-        //             scrub: 1,
-        //             // markers: true
-        //         }
-        //     }
-        // )
-
         ScrollTrigger.refresh()
     }
 
@@ -157,7 +202,7 @@ function initMain(){
             duration: 2,
             scrollTrigger: {
                 trigger: `.${txtTrigger}`,
-                start: 'top 85%',
+                start: 'top 80%',
                 end: 'top 50%'
             }
         })
@@ -167,21 +212,8 @@ function initMain(){
         let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.5}, {scale: 1, duration: 2.5, ease: "expo.out"})}
         gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "expo.out", y: 0, scrollTrigger: {
             trigger: `.${imgTrigger}`,
-            // scroller: ".container",
             start: "top 85%"
         }})
-        // gsap.fromTo(`.${imgClass}`, {
-        //     'transform-origin':'50% 0%'}, {
-        //     'transform-origin':'50% 100%',
-        //     scrollTrigger: {
-        //             trigger: `.${imgTrigger}`,
-        //             start: 'top bottom',
-        //             end: 'bottom top',
-        //             scrub: 1,
-        //             markers: true
-        //         }
-        //     }
-        // )
         ScrollTrigger.refresh()
     }
 
