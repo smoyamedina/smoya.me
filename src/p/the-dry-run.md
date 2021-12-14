@@ -8,8 +8,7 @@ projPrompt: I was challenged to conceptualize a broadsheet publication based on
 projDesc: <p>I was challenged to create a newspaper based on the content of a
   story I hold dear to me. The Dry Run is an experimental broadsheet publication
   that is inspired by Daniel Keyes' Flowers for Algernon. This 3-page dry run
-  explores Charlie's experiences in the form of complex typographical
-  hierarchy.</p>
+  explores Charlie's experiences in the form of a typographical hierarchy.</p>
 media:
   use: false
   file: https://via.placeholder.com/150
