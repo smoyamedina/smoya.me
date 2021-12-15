@@ -56,6 +56,7 @@ $headerC-wt: 400;
     --dark-cool: #{$dark-cool};
     --light-cool: #{$light-cool};
     --main-bright: #{$main-bright};
+    height: min-content;
 }
 
 * {
@@ -155,6 +156,7 @@ $headerC-wt: 400;
 
 body {
     background: $main-dark;
+    overflow: hidden;
 }
 
 .header {
@@ -167,18 +169,18 @@ body {
     display: inline-block;
 }
 
-// SWUP TEST
-.transition-fade {
-    transition: 1s;
-    opacity: 1;
-}
-
-html.is-animating .transition-fade {
-    opacity: 0;
-}
-
-
 // /*! locomotive-scroll v4.1.2 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+
+html.has-scroll-smooth {
+    // this helps with stopping images from unloading out of frame and seeing them reloading when scrolling fast?? idk why
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 html.has-scroll-smooth {
     overflow: hidden;
 }
@@ -197,6 +199,7 @@ html.has-scroll-dragging {
 .has-scroll-smooth [data-scroll-container] {
     min-height: 100vh;
 }
+
 
 [data-scroll-direction="horizontal"] [data-scroll-container] {
     height: 100vh;
@@ -551,8 +554,7 @@ img,
 }
 
 .hero h1 {
-    // position: fixed;
-    // bottom: 2rem;
+
     margin-bottom: 2.5rem;
 }
 

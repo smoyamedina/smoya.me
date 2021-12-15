@@ -6,6 +6,9 @@
   --dark-cool: #5448C8;
   --light-cool: #76E0AF;
   --main-bright: #e0e0e0;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 * {
@@ -106,6 +109,7 @@
 
 body {
   background: #000000;
+  overflow: hidden;
 }
 
 .header {
@@ -120,14 +124,13 @@ body {
   display: inline-block;
 }
 
-.transition-fade {
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
+html.has-scroll-smooth {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 html.has-scroll-smooth {

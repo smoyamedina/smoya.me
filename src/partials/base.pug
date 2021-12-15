@@ -10,12 +10,12 @@ html(lang="en")
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js")
     body
         canvas.orb-canvas
-        .container(data-scroll-container) 
+        .container(data-scroll-container)
             include _headerwithnav.pug
             main.main#swup.transition-fade(data-scroll-section)
                 !=content
             include _footer.pug
-        #cursor(aria-hidden="true")
+        #cursor(aria-hidden="true" data-scroll-sticky)
             .cursor__circle(aria-hidden="true")
         script. 
             if (window.netlifyIdentity) {

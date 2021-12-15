@@ -5,14 +5,14 @@ layout: 'base.pug'
 
 
 section.slide.hero
-    h1.hero-txt#hero-txt(data-scroll-sticky data-scroll-target="#hero-txt") A Designer who's here to help create & deliver change.
+    h1.hero-txt#hero-txt A Designer who's here to help create & deliver change.
 include partials/_about.pug
 section.slide.projs
     .projs-slide-gall(id="projects")
         each project, projNum in collections.project
             .projs-card
                 //- .projs-overline-all
-                a.projs-text(href=`${project.url}` cursor-class="arrow" data-scroll-sticky)
+                a.projs-text(href=`${project.url}` cursor-class="arrow")
                     //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
                     span.overline.projs-dscplne #{project.data.projsDscplne}
                     h2.projs-name #{project.data.projsName} 
