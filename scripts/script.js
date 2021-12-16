@@ -152,9 +152,6 @@ function initMain () {
 
     const projCardCount = document.getElementsByClassName('projs-card').length
 
-    let homeProjTxtRevealEndStd = "center 10%"
-    let homeProjTxtRevealEndLast = "center 10%"
-
     // ---------- bg blobbies
     gsap.to('canvas', {
         y: '-60%',
@@ -188,6 +185,8 @@ function initMain () {
         })
     }
     // ---------- proj text on home pg
+    const homeProjTxtRevealEndStd = "center top"
+    const homeProjTxtRevealEndLast = "center top"
 
     let homeProjTxtReveal = (projNum, endVals) => {
         const tl = gsap.timeline({
@@ -287,14 +286,14 @@ function initMain () {
         if (document.querySelector(`.${txtClass}`) !== null) {
             gsap.from(`.${txtClass}`, {
                 ease: 'expo.out',
-                y: '+=400',
+                y: '40vh',
                 opacity: 0,
                 duration: 2,
                 scrollTrigger: {
                     trigger: `.${txtTrigger}`,
                     scroller: ".container",
-                    start: 'top 75%',
-                    end: 'top 50%'
+                    start: 'top 65%',
+                    end: 'top 50%',
                 }
             })
         }
