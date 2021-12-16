@@ -601,7 +601,7 @@ img,
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: .25rem 0;
-  background: linear-gradient(115deg, #e0e0e0 33%, #ada5f5 40%, #EF476F 46%, #FEF6D0 49%, #BFF0D9 57%, #e0e0e0 61%);
+  background: linear-gradient(115deg, #e0e0e0 33%, #ada5f5 40%, #ffd9e2 46%, #FEF6D0 49%, #BFF0D9 57%, #e0e0e0 61%);
   background-size: 400%;
   background-position: right;
   -webkit-transition: color .125s ease-in-out;
@@ -612,8 +612,8 @@ img,
 
 .projs-card:hover .projs-text .projs-name {
   color: transparent;
-  -webkit-animation: projnameanim 0.75s cubic-bezier(1, 0.125, 1, 1) infinite;
-          animation: projnameanim 0.75s cubic-bezier(1, 0.125, 1, 1) infinite;
+  -webkit-animation: projnameanim 1.25s cubic-bezier(0.63, 0.07, 0.92, 0.38) infinite;
+          animation: projnameanim 1.25s cubic-bezier(0.63, 0.07, 0.92, 0.38) infinite;
   animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
 }

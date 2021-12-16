@@ -637,7 +637,7 @@ img,
     justify-content: space-between;
     margin: .25rem 0;
     // this is the set-up for gradient animation
-    background: linear-gradient(115deg, #{$main-bright} 33%, #{$dark-cool-half} 40%, #{$dark-warm} 46%, #{$light-warm-half} 49%, #{$light-cool-half} 57%, #{$main-bright} 61%);
+    background: linear-gradient(115deg, #{$main-bright} 33%, #{$dark-cool-half} 40%, #{$dark-warm-half} 46%, #{$light-warm-half} 49%, #{$light-cool-half} 57%, #{$main-bright} 61%);
     background-size: 400%;
     background-position: right;
     transition: color .125s ease-in-out;
@@ -647,7 +647,7 @@ img,
 
 .projs-card:hover .projs-text .projs-name {
     color: transparent;
-    animation: projnameanim .75s cubic-bezier(1, .125, 1, 1) infinite;
+    animation: projnameanim 1.25s cubic-bezier(.63, .07, .92, .38) infinite;
     animation-iteration-count: 1;
     -webkit-animation-iteration-count: 1;
 }
