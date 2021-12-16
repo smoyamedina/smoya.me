@@ -109,7 +109,6 @@
 
 body {
   background: #000000;
-  overflow: hidden;
 }
 
 .header {
@@ -401,7 +400,7 @@ h4,
 p {
   margin-bottom: .5rem;
   line-height: 130%;
-  letter-spacing: .021rem;
+  letter-spacing: .019rem;
 }
 
 /* width */
