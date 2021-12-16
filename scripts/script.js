@@ -117,23 +117,31 @@ function initMain () {
     const aboutID = document.querySelector('#about');
     const projsID = document.querySelector('#projects');
 
+
     if (document.querySelector('.proj-outcome') !== null) {
         $('.nav-item:first-of-type').on('click', function() {
             window.location.assign('/#about')
             locoScroll.scrollTo(aboutID)
         });
-        $('.nav-item:last-of-type' || '.fi-link:last-of-type').on('click', function() {
+        $('.nav-item:last-of-type').on('click', function() {
             window.location.assign('/#projects')
             locoScroll.scrollTo(projsID)
         });
-    } else {
+        $('.fi-link:last-of-type').on('click', function() {
+            window.location.assign('/#projects')
+            locoScroll.scrollTo(projsID)
+        });
+    } 
+    else {
         $('.nav-item:first-of-type').on('click', function() {
             locoScroll.scrollTo(aboutID)
         });
         $('.nav-item:last-of-type').on('click', function() {
             locoScroll.scrollTo(projsID)
         });
-        
+        $('.fi-link:last-of-type').on('click', function() {
+            locoScroll.scrollTo(projsID)
+        });
     }
 
 
