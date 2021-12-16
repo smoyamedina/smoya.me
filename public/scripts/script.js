@@ -265,7 +265,7 @@ function initMain () {
             scrollTrigger: {
                 trigger: '.proj-prompt',
                 scroller: ".container",
-                start: 'bottom top'
+                start: 'bottom 55%'
             }
         })
     }
