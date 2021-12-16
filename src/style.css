@@ -601,7 +601,7 @@ img,
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: .25rem 0;
-  background: linear-gradient(115deg, #e0e0e0 33%, #AEA8E5 40%, #EF476F 46%, #FEF6D0 49%, #BFF0D9 57%, #e0e0e0 61%);
+  background: linear-gradient(115deg, #e0e0e0 33%, #ada5f5 40%, #EF476F 46%, #FEF6D0 49%, #BFF0D9 57%, #e0e0e0 61%);
   background-size: 400%;
   background-position: right;
   -webkit-transition: color .125s ease-in-out;
@@ -965,7 +965,7 @@ img,
 }
 
 .text-gradient-init {
-  background: linear-gradient(115deg, #e0e0e0 33%, #AEA8E5 40%, #EF476F 46%, #FEF6D0 49%, #BFF0D9 57%, #e0e0e0 61%);
+  background: linear-gradient(115deg, #e0e0e0 33%, #ada5f5 40%, #ffd9e2 46%, #FEF6D0 49%, #BFF0D9 57%, #e0e0e0 61%);
   color: transparent;
   background-position: right;
   background-clip: text;

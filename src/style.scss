@@ -14,9 +14,9 @@ $dark-cool: #5448C8;
 $light-cool: #76E0AF;
 $main-bright: #e0e0e0;
 //lighter
-$dark-warm-half: #FFC3D1;
+$dark-warm-half: #ffd9e2;
 $light-warm-half: #FEF6D0;
-$dark-cool-half: #AEA8E5;
+$dark-cool-half: #ada5f5;
 $light-cool-half: #BFF0D9;
 
 
@@ -962,7 +962,7 @@ $delay: .25;
 }
 
 .text-gradient-init {
-    background: linear-gradient(115deg, #{$main-bright} 33%, #{$dark-cool-half} 40%, #{$dark-warm} 46%, #{$light-warm-half} 49%, #{$light-cool-half} 57%, #{$main-bright} 61%);
+    background: linear-gradient(115deg, #{$main-bright} 33%, #{$dark-cool-half} 40%, #{$dark-warm-half} 46%, #{$light-warm-half} 49%, #{$light-cool-half} 57%, #{$main-bright} 61%);
     color: transparent;
     background-position: right;
     background-clip: text;
