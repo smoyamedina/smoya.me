@@ -234,7 +234,7 @@ function initMain () {
             })
         }
     }
-
+    heroTxtReveal('proj-pg-desc', 'projhero')
 
     let heroImgReveal = (imgClass, imgWrapClass, imgTrigger) => {
         if ( document.querySelector(`.${imgClass}`) !== null && document.querySelector(`.${imgWrapClass}`) !== null && document.querySelector(`.${imgTrigger}`) !== null) {
@@ -251,19 +251,21 @@ function initMain () {
                     }
                 }
             )
-            // ScrollTrigger.refresh()
         }
     }
+    heroImgReveal('p-heroimg img', 'p-heroimg', 'projhero');
 
     const projDesc = document.querySelector('.proj-desc')
     if (projDesc !== null) {
         gsap.from('.proj-desc', {
+            ease: 'expo.out',
             y: '40vh',
             opacity: 0,
+            duration: 2,
             scrollTrigger: {
                 trigger: '.proj-prompt',
                 scroller: ".container",
-                start: 'top: 85%'
+                start: 'bottom top'
             }
         })
     }
@@ -307,19 +309,18 @@ function initMain () {
                 scroller: ".container",
                 start: "top 85%"
             }})
+            ScrollTrigger.refresh()
         }
+
     }
 
-    heroImgReveal('p-heroimg img', 'p-heroimg', 'projhero');
-    heroTxtReveal('proj-pg-desc', 'projhero');
+
 
 
     txtReveals('hero-txt', 'hero');
     txtReveals('slide-text-all h3', 'about .slide-text-all'); // why isn't this or the one below working ):
     txtReveals('slide-text-pwrap', 'about .slide-text-all');
     txtReveals('proj-prompt-txt', 'proj-prompt');
-    txtReveals('proj-desc', 'proj-outcome');
-
 
     imgReveals('p-img-lead img', 'p-img-lead', 'proj-outcome');
 
