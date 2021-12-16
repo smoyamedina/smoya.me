@@ -111,7 +111,7 @@ class Orb {
       },
       y: {
         min: 0,
-        max: window.innerHeight * .2
+        max: window.innerHeight * .3
       }
     };
   }
@@ -158,7 +158,6 @@ const app = new PIXI.Application({
   // auto adjust size to fit the current window
   resizeTo: window,
   // transparent background, we will be creating a gradient background later using CSS
-  backgroundAlpha: true
 });
 
 // Create colour palette
