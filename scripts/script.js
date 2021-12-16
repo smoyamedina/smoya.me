@@ -264,8 +264,7 @@ function initMain () {
             scrollTrigger: {
                 trigger: '.proj-prompt',
                 scroller: ".container",
-                start: 'top: 85%',
-                scrub: .75
+                start: 'top: 85%'
             }
         })
     }
@@ -278,24 +277,23 @@ function initMain () {
             scrollTrigger: {
                 trigger: '.proj-outcome',
                 scroller: ".container",
-                start: 'bottom 50%',
-                scrub: .75
+                start: 'bottom 50%'
             }
         })
     }
 
 
     let txtReveals = (txtClass, txtTrigger) => {
-        if (document.querySelector(`.${txtClass}`) !== null && document.querySelector(`.${txtTrigger}` !== null)) {
+        if (document.querySelector(`.${txtClass}`) !== null) {
             gsap.from(`.${txtClass}`, {
                 ease: 'expo.out',
-                y: '100%',
+                y: '+=400',
                 opacity: 0,
                 duration: 2,
                 scrollTrigger: {
                     trigger: `.${txtTrigger}`,
                     scroller: ".container",
-                    start: 'top 85%',
+                    start: 'top 75%',
                     end: 'top 50%'
                 }
             })
@@ -310,7 +308,6 @@ function initMain () {
                 scroller: ".container",
                 start: "top 85%"
             }})
-            ScrollTrigger.refresh()
         }
     }
 
