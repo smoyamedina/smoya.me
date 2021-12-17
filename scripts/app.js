@@ -3,7 +3,7 @@ import { KawaseBlurFilter } from '../node_modules/@pixi/filter-kawase-blur';
 import SimplexNoise from '../node_modules/simplex-noise';
 import debounce from '../node_modules/debounce';
 
-
+PIXI.utils.skipHello()
 // ▶ pixi.js orbies ◀ 
 // return a random number within a range 
 function random(min, max) {
@@ -191,3 +191,4 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   });
 }
 
+PIXI.utils.skipHello();
