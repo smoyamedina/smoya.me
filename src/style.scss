@@ -400,18 +400,18 @@ p {
     font-size: 22px;
 }
 
-h1,
-h2,
-h3,
-h4,
+.hero-txt,
+.projs-name,
+.about-header,
+.finds-header .finds-title,
 .proj-next-link {
     font-family: $main-f-display;
 }
 
 
 
-h1,
-h2,
+.hero-txt,
+.projs-name,
 .proj-next-link,
 .fi-link a {
     font-weight: $headerA-wt;
@@ -420,7 +420,7 @@ h2,
     line-height: 1.5rem;
 }
 
-h1,
+.hero-txt,
 .fi-link a,
 .proj-next-link {
     font-size: clamp(2.5rem, 7.145vw, 7.155vw);
@@ -428,20 +428,25 @@ h1,
     letter-spacing: -.025em;
 }
 
-h2 {
+.projects-header {
+    display: none;
+}
+
+.projs-name {
     font-size: clamp(2rem, 7.145vw, 7.155vw);
     line-height: 84%;
     letter-spacing: -.025em;
 }
 
-h3 {
+.about-header,
+.finds-header {
     font-weight: $headerB-wt;
     font-size: clamp(1.75rem, 3.9vw, 2.4rem);
     line-height: 100%;
     margin-bottom: 1.5rem;
 }
 
-h4,
+.finds-title,
 .proj-next-ol {
     font-weight: $headerC-wt;
     font-size: clamp(1.46rem, 3vw, 1.65rem);
@@ -578,7 +583,7 @@ img,
 }
 
 // give both flex-basis of 0% so they both have the same grow shrink priority and end up doing both at the same rate!
-.about .slide-text-all h3 {
+.about .slide-text-all .about-header {
     min-width: 13.5rem;
     display: inline-block;
     flex: 1 1 0%;
@@ -1026,7 +1031,7 @@ $num-of-projs: 5;
         padding-right: 2rem;
     }
 
-    h1,
+    .hero-txt,
     .fi-link a,
     .proj-next-link {
         font-size: clamp(2.75rem, 7.145vw, 7.155vw);
@@ -1039,7 +1044,7 @@ $num-of-projs: 5;
         padding: 2rem;
     }
 
-    .hero h1 {
+    .hero .hero-txt {
         margin-bottom: -.5rem;
     }
 

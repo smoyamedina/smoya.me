@@ -344,16 +344,16 @@ p {
   font-size: 22px;
 }
 
-h1,
-h2,
-h3,
-h4,
+.hero-txt,
+.projs-name,
+.about-header,
+.finds-header .finds-title,
 .proj-next-link {
   font-family: roc-grotesk-wide, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-h1,
-h2,
+.hero-txt,
+.projs-name,
 .proj-next-link,
 .fi-link a {
   font-weight: 600;
@@ -362,7 +362,7 @@ h2,
   line-height: 1.5rem;
 }
 
-h1,
+.hero-txt,
 .fi-link a,
 .proj-next-link {
   font-size: clamp(2.5rem, 7.145vw, 7.155vw);
@@ -370,20 +370,25 @@ h1,
   letter-spacing: -.025em;
 }
 
-h2 {
+.projects-header {
+  display: none;
+}
+
+.projs-name {
   font-size: clamp(2rem, 7.145vw, 7.155vw);
   line-height: 84%;
   letter-spacing: -.025em;
 }
 
-h3 {
+.about-header,
+.finds-header {
   font-weight: 600;
   font-size: clamp(1.75rem, 3.9vw, 2.4rem);
   line-height: 100%;
   margin-bottom: 1.5rem;
 }
 
-h4,
+.finds-title,
 .proj-next-ol {
   font-weight: 400;
   font-size: clamp(1.46rem, 3vw, 1.65rem);
@@ -518,7 +523,7 @@ img,
   max-width: 35ch;
 }
 
-.about .slide-text-all h3 {
+.about .slide-text-all .about-header {
   min-width: 13.5rem;
   display: inline-block;
   -webkit-box-flex: 1;
@@ -1007,7 +1012,7 @@ img,
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  h1,
+  .hero-txt,
   .fi-link a,
   .proj-next-link {
     font-size: clamp(2.75rem, 7.145vw, 7.155vw);
@@ -1017,7 +1022,7 @@ img,
   .slide.hero {
     padding: 2rem;
   }
-  .hero h1 {
+  .hero .hero-txt {
     margin-bottom: -.5rem;
   }
   .about .slide-text-all {
