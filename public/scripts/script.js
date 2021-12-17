@@ -55,15 +55,15 @@ function initMain () {
     }
     requestAnimationFrame(loop);
 
-    const cursorModifiers = document.querySelectorAll('[cursor-class]');
+    const cursorModifiers = document.querySelectorAll('[data-cursor-class]');
     cursorModifiers.forEach(curosrModifier => {
         curosrModifier.addEventListener('mouseenter', function() {
-            const className = this.getAttribute('cursor-class');
+            const className = this.getAttribute('data-cursor-class');
             cursor.classList.add(className);
         });
         
         curosrModifier.addEventListener('mouseleave', function() {
-            const className = this.getAttribute('cursor-class');
+            const className = this.getAttribute('data-cursor-class');
             cursor.classList.remove(className);
         });
     });
