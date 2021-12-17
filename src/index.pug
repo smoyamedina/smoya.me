@@ -8,6 +8,7 @@ section.slide.hero
     h1.hero-txt#hero-txt A Designer who's here to help create & deliver change.
 include partials/_about.pug
 section.slide.projs(id="projects")
+    h2.projects-header My projects
     .projs-slide-gall
         each project, projNum in collections.project
             .projs-card
@@ -15,7 +16,7 @@ section.slide.projs(id="projects")
                 a.projs-text(href=`${project.url}` data-cursor-class="arrow")
                     //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
                     span.overline.projs-dscplne #{project.data.projsDscplne}
-                    h2.projs-name #{project.data.projsName} 
+                    h3.projs-name #{project.data.projsName} 
                         //- proj-arrow will be taken care of with pseudo after element
                 a.projs-img-wrap(href=`${project.url}` data-cursor-class="arrow")
                     img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
