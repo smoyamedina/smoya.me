@@ -406,3 +406,15 @@ function initMain () {
 }
 
 initMain();
+
+// a message from our sponsor: me
+const textA = '%cWhat\'re you doing here?! Hope things are going well!'
+const styleA = 'font-family: Courier New, monospace; font-size: 22px; font-weight: 600; background: #e0e0e0; color: black; padding: 1em .75em;  border-top: .75em solid #5448C8;'
+const textB = '%cIf you\'re seeing this, I need you to know that I am currently in the process of refactoring pretty much everything! I learned a lot of this on the side during the past couple of months outside of my current contract position. i.e...'
+const styleB = 'font-family: Courier New, monospace; font-size: 16px; background: #e0e0e0; color: black; padding: 1em;'
+const textC = '%c✨ Pardon the mess, a tornado just flew through ✨'
+const styleC = 'font-family: Courier New, monospace; font-size: 16px; background: #e0e0e0; color: black; padding: 1em; border-bottom: .25em solid #5448C8;'
+// above should be an array or object or something but i'm kind of strapped for time atm, dog grooming appointment!!!
+
+console.log(textA, styleA);console.log(textB, styleB);console.log(textC, styleC);
+// I would love to help you and your organization's mission. 
