@@ -318,7 +318,7 @@ function initMain () {
 
 
     txtReveals('hero-txt', 'hero');
-    txtReveals('slide-text-all h3', 'about .slide-text-all'); // why isn't this or the one below working ):
+    txtReveals('slide-text-all .about-header', 'about .slide-text-all'); // why isn't this or the one below working ):
     txtReveals('slide-text-pwrap', 'about .slide-text-all');
     txtReveals('proj-prompt-txt', 'proj-prompt');
 
