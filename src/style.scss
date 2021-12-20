@@ -403,8 +403,10 @@ p {
 .hero-txt,
 .projs-name,
 .about-header,
-.finds-header .finds-title,
-.proj-next-link {
+.finds-header,
+.finds-title,
+.proj-next-link,
+.proj-prompt-txt {
     font-family: $main-f-display;
 }
 
@@ -439,7 +441,8 @@ p {
 }
 
 .about-header,
-.finds-header {
+.finds-header,
+.proj-prompt-txt {
     font-weight: $headerB-wt;
     font-size: clamp(1.75rem, 3.9vw, 2.4rem);
     line-height: 100%;
@@ -452,7 +455,6 @@ p {
     font-size: clamp(1.46rem, 3vw, 1.65rem);
     line-height: 115%;
     letter-spacing: -.015em;
-    // margin-bottom: 2rem;
 }
 
 .overline {
@@ -471,7 +473,6 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-    // outline: 1px solid $main-bright;
     width: .25rem;
     height: .25rem;
 }
@@ -626,8 +627,7 @@ img,
     order: 3;
     z-index: 90;
     margin-top: .75rem;
-    // transition: all 1s linear;
-    clip-path: polygon(0 0, 100% 0, 100% 105%, 0% 105%);
+    clip-path: polygon(0 0, 100% 0, 100% 105%, 0% 105%); //preset for anim, not in use atm due to bug to iron out
 }
 
 .projs-dscplne {
@@ -675,7 +675,7 @@ img,
     border-radius: .5em;
     display: inline-block;
     position: relative;
-    height: 78vh;
+    height: 70vh;
     width: 100%;
 }
 
@@ -834,7 +834,7 @@ img,
 }
 
 .marquee-txt::after {
-    content: "✦";
+    content: "+";
     display: inline-block;
     padding: 1rem 2rem;
 }
