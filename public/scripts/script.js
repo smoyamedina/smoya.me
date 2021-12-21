@@ -158,7 +158,7 @@ function initMain () {
         ease: 'power4.out',
         opacity: .5,
         scrollTrigger: {
-            trigger: '.about',
+            trigger: 'section:nth-child(2)',
             scroller: ".container",
             start: 'top 60%',
             toggleActions: 'play pause pause reverse',
