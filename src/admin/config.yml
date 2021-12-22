@@ -12,16 +12,16 @@ collections:
       label: Collection Order
       file: src/copy/collectionOrder.md
       fields:
-        - label: Collection
-          name: collection
+        - label: "Collection"
+          name: "collection"
           widget: list
           fields: 
-            - label: Collection Name 
-              name: collectionName 
+            - label: "Projects - Arrange the visual order used to render" 
+              name: "projectArrange"
               widget: relation
-              collection: project
-              searchFields: [projsName]
-              valueField: projsName
+              collection: "project"
+              searchFields: ["projsName"]
+              valueField: "projsName"
   - name: "info"
     label: "Your information, interests, and background!"
     format: json
