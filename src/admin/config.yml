@@ -20,8 +20,8 @@ collections:
               name: collectionName 
               widget: relation
               collection: project
-              searchFields: [title]
-              valueField: title
+              searchFields: [projsName]
+              valueField: projsName
   - name: "info"
     label: "Your information, interests, and background!"
     format: json
