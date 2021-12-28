@@ -801,6 +801,11 @@ img,
     white-space: normal;
 }
 
+.fi-link a:hover,
+.fi-link a:focus {
+    color: $light-cool;
+}
+
 .fcta-overline {
     color: $light-cool;
 }

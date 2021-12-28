@@ -792,6 +792,11 @@ img,
   white-space: normal;
 }
 
+.fi-link a:hover,
+.fi-link a:focus {
+  color: #76E0AF;
+}
+
 .fcta-overline {
   color: #76E0AF;
 }
