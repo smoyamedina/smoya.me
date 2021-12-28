@@ -91,7 +91,7 @@ class Orb {
       }, 250)
     );
   }
-
+ 
   setBounds() {
     // how far from the { x, y } origin should be generated
     const maxDist =
@@ -100,7 +100,7 @@ class Orb {
     const originX = window.innerWidth / 2;
     const originY =
       window.innerWidth < 1000
-        ? window.innerHeight
+        ? window.innerHeight / .5
         : window.innerHeight / 1.375;
 
     // allow each orb to move x distance away from it's x / y origin
@@ -163,7 +163,7 @@ const app = new PIXI.Application({
 // Create colour palette
 const colorPalette = new ColorPalette();
 
-app.stage.filters = [new KawaseBlurFilter(48, 10, true)];
+app.stage.filters = [new KawaseBlurFilter(47, 10, true)];
 
 // Create orbs
 const orbs = [];
