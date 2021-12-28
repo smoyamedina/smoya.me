@@ -804,6 +804,25 @@ img,
 .fi-link a:hover,
 .fi-link a:focus {
     color: $light-cool;
+    position: relative;
+}
+
+.fi-link a::after {
+    content: ' \1F865';
+    font-size: 50%;
+    line-height: 76%;
+    opacity: 0;
+    vertical-align: top;
+    transition: 100ms;
+}
+
+.fi-link a:hover::after,
+.fi-link a:focus::after {
+    content: ' \1F865';
+    font-size: 50%;
+    line-height: 76%;
+    opacity: 1;
+    vertical-align: top;
 }
 
 .fcta-overline {
