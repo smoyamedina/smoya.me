@@ -93,26 +93,26 @@ function initMain () {
     );
 
     // ▶ locomotive scroll ◀ 
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(scrollerWrapper),
-        smooth: true,
-        invalidateOnRefresh: true,
-        reloadOnContextChange: true,
-        mobile: {
-            smooth: false
-        }
-    });
-    locoScroll.on("scroll", ScrollTrigger.update);
-    ScrollTrigger.scrollerProxy(scrollerWrapper, {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-        getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-        },
-        // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-        pinType: document.querySelector(scrollerWrapper).style.transform ? "transform" : "fixed"
-    });
+    // const locoScroll = new LocomotiveScroll({
+    //     el: document.querySelector(scrollerWrapper),
+    //     smooth: true,
+    //     invalidateOnRefresh: true,
+    //     reloadOnContextChange: true,
+    //     mobile: {
+    //         smooth: false
+    //     }
+    // });
+    // locoScroll.on("scroll", ScrollTrigger.update);
+    // ScrollTrigger.scrollerProxy(scrollerWrapper, {
+    //     scrollTop(value) {
+    //         return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    //     }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    //     getBoundingClientRect() {
+    //         return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+    //     },
+    //     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    //     pinType: document.querySelector(scrollerWrapper).style.transform ? "transform" : "fixed"
+    // });
 
     const aboutID = document.querySelector('#about');
     const projsID = document.querySelector('#projects');
@@ -159,7 +159,7 @@ function initMain () {
         opacity: .5,
         scrollTrigger: {
             trigger: 'section:nth-child(2)',
-            scroller: ".container",
+            // scroller: ".container",
             start: 'top 60%',
             toggleActions: 'play pause pause reverse',
             scrub: .75
@@ -176,7 +176,7 @@ function initMain () {
             scrollTrigger: {
                 trigger: '.about',
                 scrub: .75,
-                scroller: ".container",
+                // scroller: ".container",
                 // markers: true,
                 start: 'top bottom',
                 end: 'top top',
@@ -193,7 +193,7 @@ function initMain () {
         scrollTrigger: {
             trigger: `.projs-card:nth-child(${projNum})`,
             scrub: .75,
-            scroller: ".container",
+            // scroller: ".container",
             start: "top bottom",
             end: endVals,
             toggleActions: 'play reverse play reverse',
@@ -227,7 +227,7 @@ function initMain () {
                 duration: 2,
                 scrollTrigger: {
                     trigger: `.${txtTrigger}`,
-                    scroller: ".container",
+                    // scroller: ".container",
                     start: 'top 85%',
                     end: 'top 50%'
                 }
@@ -246,7 +246,7 @@ function initMain () {
                 {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "power4.out", y: 0, 
                     scrollTrigger: {
                         trigger: `.${imgTrigger}`,
-                        scroller: ".container",
+                        // scroller: ".container",
                         start: "top 85%"
                     }
                 }
@@ -264,7 +264,7 @@ function initMain () {
             duration: 2,
             scrollTrigger: {
                 trigger: '.proj-prompt',
-                scroller: ".container",
+                // scroller: ".container",
                 start: 'bottom 55%'
             }
         })
@@ -277,7 +277,7 @@ function initMain () {
             opacity: 0,
             scrollTrigger: {
                 trigger: '.proj-outcome',
-                scroller: ".container",
+                // scroller: ".container",
                 start: 'bottom 50%'
             }
         })
@@ -293,7 +293,7 @@ function initMain () {
                 duration: 2,
                 scrollTrigger: {
                     trigger: `.${txtTrigger}`,
-                    scroller: ".container",
+                    // scroller: ".container",
                     start: 'top 65%',
                     end: 'top 50%',
                 }
@@ -306,10 +306,10 @@ function initMain () {
             let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.25}, {scale: 1, duration: 2.5, ease: "expo.out"})}
             gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "expo.out", y: 0, scrollTrigger: {
                 trigger: `.${imgTrigger}`,
-                scroller: ".container",
+                // scroller: ".container",
                 start: "top 85%"
             }})
-            ScrollTrigger.refresh()
+            // ScrollTrigger.refresh()
         }
 
     }
@@ -338,7 +338,7 @@ function initMain () {
 
             gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
                         trigger: `.${pOutcomeImgTrigger}`,
-                        scroller: ".container",
+                        // scroller: ".container",
                         // markers: true,
                         start: `${pOutcomeImgStart}`,
                         invalidateOnRefresh: true,
@@ -386,7 +386,7 @@ function initMain () {
     let footerTL = gsap.timeline({ease: "power4.out",
             scrollTrigger: {
                 trigger: 'footer',
-                scroller: ".container",
+                // scroller: ".container",
                 start: 'top 65%',
                 end: 'bottom bottom'
             }   
@@ -399,10 +399,10 @@ function initMain () {
 
     // locoscroll
     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    // ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-    ScrollTrigger.refresh();
+    // ScrollTrigger.refresh();
 }
 
 initMain();
@@ -417,4 +417,4 @@ const styleC = 'font-family: Courier New, monospace; font-size: 16px; background
 // above should be an array or object or something but i'm kind of strapped for time atm, dog grooming appointment!!!
 
 console.log(textA, styleA);console.log(textB, styleB);console.log(textC, styleC);
-// I would love to help you and your organization's mission. 
+// I would love to help you and your organization's mission! (:
