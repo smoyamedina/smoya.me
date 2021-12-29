@@ -715,7 +715,7 @@ $gap: $mb-gap;
 
 .extras-header {
     display: block;
-    width: clamp(11ch, 49%, calc(100vw - 4rem));
+    width: clamp(11ch, 48%, calc(100vw - 4rem));
     padding-left: $gap;
     // margin-bottom: clamp(calc(3rem - 10vw), 0);
 }
