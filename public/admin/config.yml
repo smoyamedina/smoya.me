@@ -114,7 +114,7 @@ collections:
         name: "item"
         widget: "list"
         summary: "{{altTxt}}"
-        allow_add: true
+        allow_add: true 
         label_singular: "Extra Project"
         fields:
           - {label: "Image", name: "img", widget: "image", media_folder: "../assets/extras/{{title}}", public_folder: "../assets/extras/{{title}}"}
