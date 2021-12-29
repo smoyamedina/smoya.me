@@ -113,11 +113,11 @@ collections:
       - label: "Extra Projects"
         name: "item"
         widget: "list"
-        summary: '{{altTxt}}'
+        summary: "{{altTxt}}"
         allow_add: true
-        label_singular: 'Extra Project'
+        label_singular: "Extra Project"
         fields:
           - {label: "Image", name: "img", widget: "image", media_folder: "../assets/extras/{{title}}", public_folder: "../assets/extras/{{title}}"}
-          - {label: 'Alt text', name: 'altTxt', widget: 'string'}
-          - {label: 'Title or Media', name: 'title', widget: 'string'}
-          - {label: 'Short description.', name: 'desc', widget: 'string'}
+          - {label: "Alt text", name: "altTxt", widget: "string"}
+          - {label: "Title or Media", name: "title", widget: "string"}
+          - {label: "Short description", name: "desc", widget: "string"}
