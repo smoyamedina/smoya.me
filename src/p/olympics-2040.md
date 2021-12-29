@@ -27,5 +27,9 @@ projImgs:
   - image: ../assets/p/olympics-2040/olymp-w_b.png
     imageAlt: A mock-up social media post features a promo for an event.
     position: right
+  - position: center
+    image: ../assets/p/olympics-2040/aide_mascot_transp.png
+    imageAlt: A small, egg-shaped bird holds out one wing. Her name is Aide and she
+      carries a green, blue, and pink color scheme to match these Olympic Games.
 projTag: Branding
 ---
