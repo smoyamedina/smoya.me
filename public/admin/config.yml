@@ -105,7 +105,7 @@ collections:
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "extras"
     label: "Extra Projects or Experiments"
-    file: "src/extras/extras.json"
+    files: "src/extras/extras.json"
     media_folder: "../assets/extras"
     create: true
     fields:
