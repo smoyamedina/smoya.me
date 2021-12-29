@@ -110,7 +110,7 @@ collections:
     create: true
     fields:
       - label: "Extra Projects"
-        name: "item"
+        name: "piece"
         widget: "list"
         summary: "{{altTxt}}"
         allow_add: true 
