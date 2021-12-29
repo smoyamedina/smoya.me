@@ -106,15 +106,18 @@ collections:
   - name: "extras"
     label: "Extra Projects or Experiments"
     files:
-      - label: "Extra Projects"
-        name: "piece"
+      - label: "List of extra pieces"
+        name: "pieces"
         file: "src/copy/extras.json"
-        widget: "list"
-        summary: "{{altTxt}}"
-        allow_add: true 
-        label_singular: "Extra Project"
         fields:
-          - {label: "Image", name: "img", widget: "image", media_folder: "../assets/extras/{{piece.title}}", public_folder: "../assets/extras/{{piece.title}}"}
-          - {label: "Alt text", name: "altTxt", widget: "string"}
-          - {label: "Title or Media", name: "title", widget: "string"}
-          - {label: "Short description", name: "desc", widget: "string"}
+          - label: "Extra Piece"
+            name: "piece"
+            widget: "list"
+            summary: "{{altTxt}}"
+            allow_add: true 
+            label_singular: "Extra Project"
+            fields:
+              - {label: "Image", name: "img", widget: "image", media_folder: "../assets/extras/{{piece.title}}", public_folder: "../assets/extras/{{piece.title}}"}
+              - {label: "Alt text", name: "altTxt", widget: "string"}
+              - {label: "Title or Media", name: "title", widget: "string"}
+              - {label: "Short description", name: "desc", widget: "string"}
