@@ -108,7 +108,7 @@ collections:
     folder: "src/extras"
     media_folder: "../assets/extras"
     create: true
-    slug: "{{piece.title}}"
+    slug: "{{fields.title}}"
     fields:
       - label: "Extra Projects"
         name: "piece"
