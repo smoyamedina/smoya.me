@@ -103,12 +103,20 @@ collections:
             options: ["full","left","center","right"]
             default: ["full"]
       - {label: "Tag", name: "projTag", widget: "string"}
-  - name: "extraimgs"
+  - name: "extras"
     label: "Extra Projects or Experiments"
-    folder: "src/assets/extra"
-    media_folder: "src/assets/extra"
-    media_library:
-      config:
-        multiple: true
+    folder: "src/extras"
+    media_folder: "../assets/extras"
+    create: true
     fields:
-      - {label: "Extra Project", name: "exImg", widget: "image"}
+      - label: "Extra Projects"
+        name: "item"
+        widget: "list"
+        summary: '{{altTxt}}'
+        allow_add: true
+        label_singular: 'Extra Project'
+        fields:
+          - {label: "Image", name: "img", widget: "image", media_folder: "../assets/extras", public_folder: "../assets/extras"}
+          - {label: 'Alt text', name: 'altTxt', widget: 'string'}
+          - {label: 'Title or Media', name: 'title', widget: 'string'}
+          - {label: 'Short description.', name: 'desc', widget: 'string'}
