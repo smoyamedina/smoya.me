@@ -105,13 +105,10 @@ collections:
       - {label: "Tag", name: "projTag", widget: "string"}
   - name: "extras"
     label: "Extra Projects or Experiments"
-    folder: "src/extras"
-    media_folder: "../assets/extras"
-    create: true
-    slug: "{{fields.title}}"
-    fields:
+    files:
       - label: "Extra Projects"
         name: "piece"
+        file: "src/copy/extras.json"
         widget: "list"
         summary: "{{altTxt}}"
         allow_add: true 
