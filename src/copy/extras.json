@@ -1,10 +1,22 @@
 {
   "piece": [
     {
-      "img": "../assets/extras/amass-w_b.png",
+      "img": "../assets/extras/friendship-day.gif",
       "altTxt": "The words 'Happy Friendship Day' are written onto a geometric and symmetrical background.",
       "title": "Text Motion Graphic",
       "desc": "Testing fluid text animation workflow through a social post."
+    },
+    {
+      "img": "../assets/extras/calvert_hillyershops.jpg",
+      "altTxt": "Stacked up beer cans branded 'Hillyer's Hops' with a gold text on black color scheme.",
+      "title": "Beer Labels",
+      "desc": "A branded beer label for a school fundraiser event."
+    },
+    {
+      "img": "../assets/extras/votersguide_4x3_1kw.png",
+      "altTxt": "A magazine-like spread that features voting information for the states of Rhode Island and South Carolina.",
+      "title": "Voter's guide.",
+      "desc": "Voter's guide made from raw information compiled from across the web."
     }
   ]
 }
