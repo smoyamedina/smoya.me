@@ -21,7 +21,7 @@ collections:
               widget: relation
               collection: "project"
               searchFields: ["projsName"]
-              valueField: ["projsName", "projsDscplne", "projsFtImg", "projsHeroImg", "projPrompt", "projDesc", "media", "projImgs.*", "projTag"]
+              valueField: "projsName"
   - name: "info"
     label: "Your information, interests, and background!"
     format: json
