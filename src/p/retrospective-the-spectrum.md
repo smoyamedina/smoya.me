@@ -13,7 +13,7 @@ projDesc: >-
   <p>During my time at Montgomery College, I was approached to serve as the Editor-In-Chief for our Student Art League. I was just a regular member at the time—helping set-up and take down events, filling in for a sick treasurer here and there—but I dove in and got to learning InDesign before I ever took my first Graphic Design class.</p>
 
 
-  <p>At times I filled in for writing articles or taking photographs close to their deadline. We were all volunteers who dealt with tests, sleepless study nights, and the like. Things happen, and I tried my best to make it work.</p>
+  <p>At times I filled in for writing articles or taking photographs close to their deadline. We were all volunteers who dealt with tests, sleepless study nights, and the like. Things happen, and I did my best to make it work.</p>
 projImgs:
   - position: full
     image: ../assets/p/retrospective-the-spectrum/spectrum_03.jpg
