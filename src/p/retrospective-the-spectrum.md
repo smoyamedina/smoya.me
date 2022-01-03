@@ -14,6 +14,8 @@ projDesc: >-
 
 
   <p>At times I filled in for writing articles or taking photographs close to their deadline. We were all volunteers who dealt with tests, sleepless study nights, and the like. Things happen, and I did my best to make it work.</p>
+media:
+  use: false
 projImgs:
   - position: full
     image: ../assets/p/retrospective-the-spectrum/spectrum_03.jpg
