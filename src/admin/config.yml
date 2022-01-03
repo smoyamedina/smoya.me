@@ -10,7 +10,7 @@ collections:
     files:
     - name: collectionOrder
       label: Collection Order
-      file: src/copy/collectionOrder.md
+      file: src/copy/collectionOrder.json
       fields:
         - label: "Collection"
           name: "collection"
@@ -21,7 +21,7 @@ collections:
               widget: relation
               collection: "project"
               searchFields: ["projsName"]
-              valueField: "projsName"
+              valueField: ["projsName", "projsDscplne", "projsFtImg", "projsHeroImg", "projPrompt", "projDesc", "media", "projImgs.*", "projTag"]
   - name: "info"
     label: "Your information, interests, and background!"
     format: json
@@ -72,7 +72,7 @@ collections:
     folder: "src/p"
     media_folder: "../assets/p"
     create: true
-    slug: "{{projsName}}"
+    slug: "{{projsName}}" 
     fields:
       - {label: "Project Name", name: "projsName", widget: "string"}
       - {label: "Medium, Discipline, or Type", name: "projsDscplne", widget: "string"}
