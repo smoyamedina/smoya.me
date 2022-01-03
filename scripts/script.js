@@ -119,7 +119,14 @@ function initMain () {
         for (currentItem of baseGet){
             currentItem.classList.add(addon)
         };
-    };    
+    };   
+    
+    const projPgEl = document.querySelector('.proj-outcome')
+    if ( projPgEl !== null) {
+        const container = document.querySelector('.container')
+        const overflowNo = 'overflow-no'
+        container.classList.add(overflowNo)
+    }
 
     initPairs.forEach((currentPair) => { 
             addInitClass(currentPair[0], currentPair[1]) }
@@ -170,7 +177,7 @@ function initMain () {
 
     // ---------- hero text
     let heroTxt = document.querySelector('.hero-txt')
-    if ( heroTxt !== null) {
+    if (heroTxt !== null) {
         gsap.to(heroTxt, {
             ease: 'none',
             y: '-70vh',
