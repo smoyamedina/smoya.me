@@ -36,7 +36,7 @@ projImgs:
     imageAlt: A shorter story is on a blue page, with a large image of the Turquoise
       Mountain exhibit's 'Geodesic Dome' by Nasser Mansouri taking up the next
       page beside it.
-  - position: left
+  - position: full
     imageAlt: A stark, black page with the text 'Select Student Work.' is to the
       left of a single picture of a student piece. The piece illustrates a
       plague-doctor-like figure with a face made of chainmail in pure black and
