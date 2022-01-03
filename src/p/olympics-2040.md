@@ -12,14 +12,14 @@ media:
   use: false
   file: null
 projImgs:
+  - image: ../assets/p/olympics-2040/olymp-w_c.png
+    imageAlt: Two tickets are featured for a Rhythmic Gymnastics event.
+    position: left
   - image: ../assets/p/olympics-2040/olymp-w_h.png
     imageAlt: "A proposal book spread for a hypothetical Olympics in the future. A
       martial artist flies through the air while kicking. A pink page features
       the headline: \"Athlete's Experience.\""
     position: center
-  - image: ../assets/p/olympics-2040/olymp-w_c.png
-    imageAlt: Two tickets are featured for a Rhythmic Gymnastics event.
-    position: left
   - image: ../assets/p/olympics-2040/olymp-w_a.png
     imageAlt: A couple of identification badges are featured with the Buenos Aires
       Olympics Branding.
@@ -31,5 +31,8 @@ projImgs:
     image: ../assets/p/olympics-2040/aide_mascot_transp.png
     imageAlt: A small, egg-shaped bird holds out one wing. Her name is Aide and she
       carries a green, blue, and pink color scheme to match these Olympic Games.
+  - position: full
+    image: ../assets/p/olympics-2040/pictogram_samples-03.png
+    imageAlt: 7 samples of pictograms for the Buenos Aires Olympic Games.
 projTag: Branding
 ---
