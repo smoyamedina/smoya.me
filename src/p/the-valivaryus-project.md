@@ -31,5 +31,12 @@ projImgs:
       misconceptions of people who live with Down Syndrome. There is a link to
       an external video.
     position: right
+  - position: center
+    image: ../assets/p/the-valivaryus-project/valivaryus-w_j.jpg
+    imageAlt: Two sides of the same card are featured. The Front has a quote from
+      bell hooks . The back reads 'Differences are more normal than you think.
+      To hear stories from others please visit ds.valivaryus.info' and a
+      personal note written thanking someone for listening in the blank space on
+      the bottom half of this side of the card.
 projTag: ongoing
 ---
