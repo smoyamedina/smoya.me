@@ -1,5 +1,5 @@
 ---
-projsName: "Retrospective: The Spectrum"
+projsName: The Spectrum
 projsDscplne: Publication
 projsFtImg: ../assets/p/retrospective-the-spectrum/spectrum-w_a.jpg
 projsHeroImg: ../assets/p/retrospective-the-spectrum/spectrum-w_a.jpg
@@ -36,11 +36,15 @@ projImgs:
     imageAlt: A shorter story is on a blue page, with a large image of the Turquoise
       Mountain exhibit's 'Geodesic Dome' by Nasser Mansouri taking up the next
       page beside it.
-  - position: full
+  - position: left
     imageAlt: A stark, black page with the text 'Select Student Work.' is to the
       left of a single picture of a student piece. The piece illustrates a
       plague-doctor-like figure with a face made of chainmail in pure black and
       white..
     image: ../assets/p/retrospective-the-spectrum/spectrum_06.jpg
+  - position: right
+    image: ../assets/p/the-spectrum/spectrum_07.jpg
+    imageAlt: A minimal spread featuring the front and back of a student's 3D work.
+      It's a metalsmithed brooch
 projTag: publication
 ---
