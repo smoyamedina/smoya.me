@@ -122,6 +122,10 @@ body {
   display: inline-block;
 }
 
+.overflow-no {
+  overflow: hidden;
+}
+
 .header {
   position: fixed;
   top: 1rem;
