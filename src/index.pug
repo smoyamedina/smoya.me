@@ -10,19 +10,25 @@ include partials/_about.pug
 section.slide.projs(id="projects")
     h2.projects-header My projects
     .projs-slide-gall
-        each project, projNum in collections.project
-            .projs-card
-                //- .projs-overline-all
-                a.projs-text(href=`${project.url}` data-cursor-class="arrow")
-                    //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
-                    span.overline.projs-dscplne #{project.data.projsDscplne}
-                    h3.projs-name #{project.data.projsName} 
-                        //- proj-arrow will be taken care of with pseudo after element
-                a.projs-img-wrap(href=`${project.url}` data-cursor-class="arrow")
-                    img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
-            //- include partials/_projsCard.pug
-        else 
-            .oops THERE WAS SOMETHING WRONG WITH the NAME! someone tell sami!
+        -   const order = collectionOrder.collection; 
+        -   const cmsGiven = collections.project
+        -   for (let i=0; i < order.length; i++ ) {
+        -   let wantedProj = order[i].projectArrange;
+        -       for (let j=0; j < cmsGiven.length; j++ ) {
+        -            const project = cmsGiven[j];
+        -           if ( project.data.projsName == wantedProj) {
+                        .projs-card
+                            //- .projs-overline-all
+                            a.projs-text(href=`${project.url}` data-cursor-class="arrow")
+                                //- span.overline.projs-order #{(projNum + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} / #{collections.project.length.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}
+                                span.overline.projs-dscplne #{project.data.projsDscplne}
+                                h3.projs-name #{project.data.projsName} 
+                                    //- proj-arrow will be taken care of with pseudo after element
+                            a.projs-img-wrap(href=`${project.url}` data-cursor-class="arrow")
+                                img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
+        -           }
+        -       }
+        -   }
 section.slide.extras 
     h2.extras-header ...along with other side projects and experiments.
     .extras-slide-gall
