@@ -1,16 +1,22 @@
 {
   "piece": [
     {
+      "img": "../assets/extras/votersguide_4x3_1kw.png",
+      "altTxt": "A magazine-like spread that features voting information for the states of Rhode Island and South Carolina.",
+      "title": "Voter's guide",
+      "desc": "Voter's guide made from raw information compiled from across the web."
+    },
+    {
       "img": "../assets/extras/spaceman_900w.png",
       "title": "Riso + Spaceman",
       "desc": "I ran a photo I took of an astronaut model through the risograph printing process.",
       "altTxt": "An image of a small astronaut model staring through the reflection on the ground. The color scheme is made of raw cyans, pinks, and yellows."
     },
     {
-      "img": "../assets/extras/friendship-day.gif",
-      "altTxt": "The words 'Happy Friendship Day' are written onto a geometric and symmetrical background.",
-      "title": "Text Motion Graphic",
-      "desc": "Testing fluid text animation workflow through a social post."
+      "img": "../assets/extras/seeme_400w_opt.gif",
+      "altTxt": "A looping animation that reads 'See me, hear me, know me.' with images of an eye, mouth, and rings from the mind in between.",
+      "title": "Analog GIF ",
+      "desc": "A test seeing how the artifacts from riso printing affects the typical GIF animation."
     },
     {
       "img": "../assets/extras/calvert_hillyershops.jpg",
@@ -19,22 +25,16 @@
       "desc": "A branded beer label for a school fundraiser event."
     },
     {
-      "img": "../assets/extras/votersguide_4x3_1kw.png",
-      "altTxt": "A magazine-like spread that features voting information for the states of Rhode Island and South Carolina.",
-      "title": "Voter's guide",
-      "desc": "Voter's guide made from raw information compiled from across the web."
+      "img": "../assets/extras/friendship-day.gif",
+      "altTxt": "The words 'Happy Friendship Day' are written onto a geometric and symmetrical background.",
+      "title": "Text Motion Graphic",
+      "desc": "Testing fluid text animation workflow through a social post."
     },
     {
       "img": "../assets/extras/graffiti_wall_900w.png",
       "altTxt": "A photo of stickers placed like graffiti along a wall. The lower height on the wall, the less stickers there are. Bright yellow and some reds and blacks dominate the scene.",
       "title": "Riso + Sticker Graffiti",
       "desc": "I ran a photo from my study abroad through the risograph printing process."
-    },
-    {
-      "img": "../assets/extras/seeme_400w_opt.gif",
-      "altTxt": "A looping animation that reads 'See me, hear me, know me.' with images of an eye, mouth, and rings from the mind in between.",
-      "title": "Analog GIF ",
-      "desc": "A test seeing how the artifacts from riso printing affects the typical GIF animation."
     }
   ]
 }
