@@ -1,8 +1,10 @@
-import * as $ from 'jquery'
 import { gsap } from '../node_modules/gsap'
 import { CSSRulePlugin } from '../node_modules/gsap/CSSRulePlugin';
 import { ScrollTrigger } from '../node_modules/gsap/ScrollTrigger';
- 
+
+
+
+
 // ▶ gradient bg - modified from firoznep's example for my usecase ◀
 //modified from firoznep's example for my usecase
 // gets the canvas element 
@@ -58,8 +60,8 @@ class Ball {
     // x and y velocity added to x and y coordinate
     // everytime updateBall func is called
     // divide this number to slow or pick up speed
-    this.x += this.velx / 45;
-    this.y += this.vely / 45;
+    this.x += this.velx / 40;
+    this.y += this.vely / 40;
   }
 }
 
@@ -73,11 +75,11 @@ let colorChoices = [
     getComputedStyle(document.body).getPropertyValue('--dark-warm'),
     getComputedStyle(document.body).getPropertyValue('--dark-warm'),
     getComputedStyle(document.body).getPropertyValue('--dark-warm'),
-    // getComputedStyle(document.body).getPropertyValue('--light-warm'),
+    getComputedStyle(document.body).getPropertyValue('--light-warm'),
     getComputedStyle(document.body).getPropertyValue('--dark-cool'),
     getComputedStyle(document.body).getPropertyValue('--dark-cool'),
     getComputedStyle(document.body).getPropertyValue('--dark-cool'),
-    getComputedStyle(document.body).getPropertyValue('--dark-cool'),
+    getComputedStyle(document.body).getPropertyValue('--light-cool'),
     getComputedStyle(document.body).getPropertyValue('--light-cool'),
     getComputedStyle(document.body).getPropertyValue('--light-cool')
     // I KNOW. IT's LATE. I'M SORRY. PLEASE FOR G IVE.
@@ -91,7 +93,7 @@ let randomColor = () => {
 const balls = [];
 
 while (balls.length < 12) {
-  let size = random(150, 400);
+  let size = random(150, 500);
 
   // create a new instance of Ball class
   // now replace static number with random number
@@ -395,7 +397,7 @@ function initMain () {
             scrollTrigger: {
                 trigger: '.proj-prompt',
                 // scroller: ".container",
-                start: 'bottom 55%'
+                start: 'bottom 75%'
             }
         })
     }
@@ -408,7 +410,7 @@ function initMain () {
             scrollTrigger: {
                 trigger: '.proj-outcome',
                 // scroller: ".container",
-                start: 'bottom 50%'
+                start: 'bottom 75%'
             }
         })
     }
@@ -424,7 +426,7 @@ function initMain () {
                 scrollTrigger: {
                     trigger: `.${txtTrigger}`,
                     // scroller: ".container",
-                    start: 'top 65%',
+                    start: 'top 75%',
                     end: 'top 50%',
                 }
             })
