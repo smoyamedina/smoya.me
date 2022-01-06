@@ -25,6 +25,93 @@
   transition: 100ms linear;
 }
 
+@-webkit-keyframes staticJump {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: 20% 25%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 15% 5%;
+  }
+  70% {
+    background-position: 0% 15%;
+  }
+  80% {
+    background-position: 25% 35%;
+  }
+  90% {
+    background-position: -10% 10%;
+  }
+}
+
+@keyframes staticJump {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: 20% 25%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 15% 5%;
+  }
+  70% {
+    background-position: 0% 15%;
+  }
+  80% {
+    background-position: 25% 35%;
+  }
+  90% {
+    background-position: -10% 10%;
+  }
+}
+
+.static-canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, right top, from(black), to(transparent)), url(https://grainy-gradients.vercel.app/noise.svg);
+  background: linear-gradient(to right, black, transparent), url(https://grainy-gradients.vercel.app/noise.svg);
+  mix-blend-mode: overlay;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-animation: staticJump 100ms linear;
+          animation: staticJump 100ms linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
 .bounce-canvas {
   background: #000000;
   position: fixed;
@@ -37,8 +124,8 @@
           animation: fade-in 1s cubic-bezier(0.1, 0.4, 0.6, 0.9);
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-filter: blur(4.5rem);
-          filter: blur(4.5rem);
+  -webkit-filter: blur(4.5rem) saturate(60%);
+          filter: blur(4.5rem) saturate(60%);
 }
 
 #cursor {
