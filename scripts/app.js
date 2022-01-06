@@ -73,9 +73,6 @@ let colorChoices = [
     getComputedStyle(document.body).getPropertyValue('--dark-warm'),
     getComputedStyle(document.body).getPropertyValue('--dark-warm'),
     getComputedStyle(document.body).getPropertyValue('--dark-warm'),
-    getComputedStyle(document.body).getPropertyValue('--dark-warm'),
-    getComputedStyle(document.body).getPropertyValue('--dark-warm'),
-    getComputedStyle(document.body).getPropertyValue('--dark-warm'),
     // getComputedStyle(document.body).getPropertyValue('--light-warm'),
     getComputedStyle(document.body).getPropertyValue('--dark-cool'),
     getComputedStyle(document.body).getPropertyValue('--dark-cool'),
@@ -93,8 +90,8 @@ let randomColor = () => {
 //   create some balls and store in an array
 const balls = [];
 
-while (balls.length < 14) {
-  let size = random(100, 300);
+while (balls.length < 12) {
+  let size = random(150, 400);
 
   // create a new instance of Ball class
   // now replace static number with random number
@@ -129,6 +126,23 @@ function loop() {
 
 // finally call the loop func once ot start
 loop();
+
+//animate canvas and have it wait for everything else to catch up
+gsap.registerPlugin(CSSRulePlugin);
+gsap.registerPlugin(ScrollTrigger);
+
+    // ---------- bg blobbies
+    gsap.to('canvas', {
+      y: '-80%',
+      ease: 'power4.out',
+      scrollTrigger: {
+          trigger: 'section:nth-child(2)',
+          // scroller: ".container",
+          start: 'top 60%',
+          toggleActions: 'play pause pause reverse',
+          scrub: 1.25
+      }
+  })
 
 function initMain () {
 
@@ -265,23 +279,22 @@ function initMain () {
     );
 
     // ▶ gsap ◀
-    gsap.registerPlugin(CSSRulePlugin);
-    gsap.registerPlugin(ScrollTrigger);
+
 
     const projCardCount = document.getElementsByClassName('projs-card').length
 
-    // ---------- bg blobbies
-    gsap.to('canvas', {
-        y: '-80%',
-        ease: 'power3.out',
-        scrollTrigger: {
-            trigger: 'section:nth-child(2)',
-            // scroller: ".container",
-            start: 'top 60%',
-            toggleActions: 'play pause pause reverse',
-            scrub: true
-        }
-    })
+    // // ---------- bg blobbies
+    // gsap.to('canvas', {
+    //     y: '-80%',
+    //     ease: 'power3.out',
+    //     scrollTrigger: {
+    //         trigger: 'section:nth-child(2)',
+    //         // scroller: ".container",
+    //         start: 'top 60%',
+    //         toggleActions: 'play pause pause reverse',
+    //         // scrub: true
+    //     }
+    // })
 
     // ---------- hero text
     let heroTxt = document.querySelector('.hero-txt')
