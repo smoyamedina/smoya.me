@@ -20,16 +20,17 @@ html(lang="en")
         noscript
             style.
                 .container, #cursor {
-                    visibility: visible;
+                    visibility: visible; 
                 }
     body
-        canvas.bounce-canvas
+        .static-canvas(aria-hidden="true")
+        canvas.bounce-canvas(aria-hidden="true")
         //- canvas.orb-canvas
         .container(data-scroll-container)
-            include _header.pug
+            include _header.pug 
             main.main#swup.transition-fade(data-scroll-section)
-                !=content
-            include _footer.pug
+                !=content 
+            include _footer.pug 
         #cursor(aria-hidden="true" data-scroll-sticky)
             .cursor__circle(aria-hidden="true")
         script. 
