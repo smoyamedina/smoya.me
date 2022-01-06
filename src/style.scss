@@ -71,17 +71,19 @@ $headerC-wt: 400;
     transition: 100ms linear;
 }
 
-.orb-canvas {
+.bounce-canvas {
     background: $main-dark;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     // pointer-events: none;
     z-index: -2;
-    animation: fade-in 2s cubic-bezier(0, 1, .75, 1);
+    // animation: fade-in 5s cubic-bezier(0, 1, .75, 1);
+    animation: fade-in 1s cubic-bezier(.1, .4, .6, .9);
     animation-fill-mode: forwards;
+    filter: blur(4.5rem);
 }
 
 //cursor
