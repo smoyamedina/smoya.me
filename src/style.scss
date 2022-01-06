@@ -81,6 +81,7 @@ $headerC-wt: 400;
     // pointer-events: none;
     z-index: -2;
     // animation: fade-in 5s cubic-bezier(0, 1, .75, 1);
+    // visibility: hidden;
     animation: fade-in 1s cubic-bezier(.1, .4, .6, .9);
     animation-fill-mode: forwards;
     filter: blur(4.5rem);
@@ -95,6 +96,8 @@ $headerC-wt: 400;
     pointer-events: none;
     will-change: transform;
     mix-blend-mode: lighten;
+    // for slow loading, will be toggled by GSAP or noscript tag
+    visibility: hidden;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -157,6 +160,12 @@ $headerC-wt: 400;
 
 body {
     background: $main-dark;
+}
+
+// FUOC, undone with GSAP or <noscript>
+
+.container {
+    visibility: hidden;
 }
 
 .header {

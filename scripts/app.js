@@ -132,7 +132,9 @@ loop();
 
 function initMain () {
 
-
+    gsap.from('.container', {ease: "linear", autoAlpha:0})
+    gsap.from('#cursor', {ease: "linear", autoAlpha:0})
+    // gsap.from('canvas', {ease: "linear", autoAlpha:0})
     
 
     // ▶ ionut daniel - much appreciated, you have no idea - draggable horizontal scrollable div ◀
@@ -272,7 +274,6 @@ function initMain () {
     gsap.to('canvas', {
         y: '-80%',
         ease: 'power3.out',
-        opacity: .5,
         scrollTrigger: {
             trigger: 'section:nth-child(2)',
             // scroller: ".container",
@@ -521,7 +522,11 @@ function initMain () {
     // ScrollTrigger.refresh();
 }
 
-initMain();
+// initMain();
+
+window.addEventListener("load", (event) => {
+  initMain();
+})
 
 // a message from our sponsor: me
 const textA = '%cWhat\'re you doing here?! Hope things are going well!'

@@ -17,6 +17,11 @@ html(lang="en")
         link(rel="stylesheet", href="/style.css")
         title SMOYA.ME | #{title}
         script(src="https://identity.netlify.com/v1/netlify-identity-widget.js")
+        noscript
+            style.
+                .container, #cursor {
+                    visibility: visible;    
+                }
     body
         canvas.bounce-canvas
         //- canvas.orb-canvas

@@ -49,6 +49,7 @@
   pointer-events: none;
   will-change: transform;
   mix-blend-mode: lighten;
+  visibility: hidden;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -110,6 +111,10 @@
 
 body {
   background: #000000;
+}
+
+.container {
+  visibility: hidden;
 }
 
 .header {
