@@ -326,6 +326,7 @@ body {
 .nav-item a,
 .marquee-txt,
 .marquee-txt::after,
+.extras-title,
 .overline,
 .overline *,
 p {
@@ -675,7 +676,7 @@ img,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 6rem;
+  margin-block: 6rem;
   padding-inline: 0;
 }
 
@@ -714,7 +715,18 @@ img,
 }
 
 .extras-slide-gall::-webkit-scrollbar {
-  width: 0;
+  height: .4rem;
+}
+
+.extras-slide-gall::-webkit-scrollbar-thumb {
+  border-inline: 1rem solid black;
+}
+
+.extras-slide-gall::-webkit-scrollbar-track {
+  background: none;
+  background-image: url("/assets/line.png");
+  background-repeat: repeat-x;
+  background-position: center center;
 }
 
 .extras-card {
@@ -885,8 +897,8 @@ img,
   font-size: 30%;
   line-height: 76%;
   opacity: 0;
-  -webkit-transition: 100ms;
-  transition: 100ms;
+  -webkit-transition: 150ms;
+  transition: 150ms;
   -ms-flex-item-align: start;
       align-self: flex-start;
   -webkit-box-sizing: border-box;
@@ -1154,6 +1166,9 @@ img,
   }
   .extras-slide-gall::before {
     margin-left: 2rem;
+  }
+  .extras-slide-gall::-webkit-scrollbar-thumb {
+    border-inline: 2rem solid #000000;
   }
   .extras-card {
     width: calc(100% - (2 * 2rem));

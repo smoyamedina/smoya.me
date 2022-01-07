@@ -360,6 +360,7 @@ body {
 .nav-item a,
 .marquee-txt,
 .marquee-txt::after,
+.extras-title,
 .overline,
 .overline *,
 p {
@@ -675,7 +676,7 @@ $gap: $mb-gap;
 .extras {
     display: flex;
     flex-direction: column;
-    margin-top: $pd-t-b;
+    margin-block: $pd-t-b;
     padding-inline: 0;
 }
 
@@ -706,7 +707,19 @@ $gap: $mb-gap;
 }
 
 .extras-slide-gall::-webkit-scrollbar {
-    width: 0;
+    height: .4rem;
+}
+
+.extras-slide-gall::-webkit-scrollbar-thumb {
+    border-inline: $gap solid black;
+    // border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAAAaklEQVR42u3PMREAAAgEID+50TWCuwcNyHS9EBERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERGRywL1OpWdVwPKBwAAAABJRU5ErkJggg==");
+}
+
+.extras-slide-gall::-webkit-scrollbar-track {
+    background: none;
+    background-image: url("/assets/line.png");
+    background-repeat: repeat-x;
+    background-position: center center;
 }
 
 // .extras-slide-gall::before,
@@ -865,7 +878,7 @@ $gap: $mb-gap;
     font-size: 30%;
     line-height: 76%;
     opacity: 0;
-    transition: 100ms;
+    transition: 150ms;
     //flex
     align-self: flex-start;
     //aes the tic for ext link visual
@@ -1151,6 +1164,14 @@ $num-of-projs: 5;
     .extras-slide-gall::before {
         margin-left: $gap;
     }
+
+    .extras-slide-gall::-webkit-scrollbar-thumb {
+        border-inline: $gap solid $main-dark;
+    }
+
+    // .extras-slide-gall::-webkit-scrollbar-track {
+    //     border-inline: $gap solid $main-dark;
+    // }
 
     .extras-card {
         width: calc(100% - (2 * #{$gap}));
