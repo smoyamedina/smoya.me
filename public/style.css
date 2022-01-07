@@ -106,10 +106,6 @@
   mix-blend-mode: overlay;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  -webkit-animation: staticJump 100ms linear;
-          animation: staticJump 100ms linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
 }
 
 .bounce-canvas {
@@ -872,6 +868,9 @@ img,
   font-family: roc-grotesk-wide, "Helvetica", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: block;
   white-space: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .fi-link a:hover,
@@ -881,22 +880,32 @@ img,
 }
 
 .fi-link a::after {
-  content: ' \1F865';
-  font-size: 50%;
+  content: '\2197';
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 30%;
   line-height: 76%;
   opacity: 0;
-  vertical-align: top;
   -webkit-transition: 100ms;
   transition: 100ms;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 2rem;
+  margin-left: 1rem;
+  margin-top: -.1125rem;
+  padding-left: .42rem;
+  padding-top: .275em;
+  aspect-ratio: 1;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
 }
 
 .fi-link a:hover::after,
 .fi-link a:focus::after {
-  content: ' \1F865';
-  font-size: 50%;
-  line-height: 76%;
+  border-color: #76E0AF;
   opacity: 1;
-  vertical-align: top;
 }
 
 .fcta-overline {

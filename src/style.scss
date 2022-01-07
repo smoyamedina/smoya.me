@@ -129,10 +129,11 @@ $headerC-wt: 400;
     mix-blend-mode: overlay;
     // opacity: .95;
     transform: scale(1.05);
-    animation: staticJump 100ms linear;
-    animation-iteration-count: infinite;
+    // animation: staticJump 100ms linear;
+    // animation-iteration-count: infinite;
 }
 
+//YES i DID get overzealous and used PIXI for something css/js could do... fun while it lasted!
 .bounce-canvas {
     background: $main-dark;
     position: fixed;
@@ -849,6 +850,7 @@ $gap: $mb-gap;
     font-family: $main-f-display;
     display: block;
     white-space: normal;
+    display: flex;
 }
 
 .fi-link a:hover,
@@ -858,21 +860,31 @@ $gap: $mb-gap;
 }
 
 .fi-link a::after {
-    content: ' \1F865';
-    font-size: 50%;
+    content: '\2197';
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 30%;
     line-height: 76%;
     opacity: 0;
-    vertical-align: top;
     transition: 100ms;
+    //flex
+    align-self: flex-start;
+    //aes the tic for ext link visual
+    box-sizing: border-box;
+    height: 2rem;
+    margin-left: 1rem;
+    margin-top: -.1125rem;
+    padding-left: .42rem;
+    padding-top: .275em;
+    aspect-ratio: 1;
+    border: 2px solid $main-bright;
+    border-radius: 50%;
 }
 
 .fi-link a:hover::after,
 .fi-link a:focus::after {
-    content: ' \1F865';
-    font-size: 50%;
-    line-height: 76%;
+    border-color: $light-cool;
     opacity: 1;
-    vertical-align: top;
 }
 
 .fcta-overline {
