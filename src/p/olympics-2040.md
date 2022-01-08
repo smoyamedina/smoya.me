@@ -3,11 +3,12 @@ projsName: Olympics 2040
 projsDscplne: Branding
 projsHeroImg: ../assets/p/olympics-2040/olymp-w_e.png
 projsFtImg: ../assets/p/olympics-2040/olymp-w_d.png
-projPrompt: I was challenged to brand an Olympic Games held at a future date.
-projDesc: <p>This project brands the 2040 olympics set in Buenos Aires,
-  Argentina. Visual callbacks to the Argentinian tradition of Fileteado Porteño
-  and modular indigenous patterns place an emphasis on unity and peace that the
-  Olympics tries to achieve through global sportsmanship.</p>
+projPrompt: I was challenged to brand a new Olympic Games held at a future date.
+projDesc: >-
+  <p>This project brands the 2040 olympics set in Buenos Aires, Argentina.</p>
+
+
+  <p>The Olympics is renowned&ndash;both for the featured atheletic feats on show and for the political, social, and economic ramifications hosting the Games has on the hosting country. I paid special attention to this when selecting a city to hypothetically host the games.</p>
 media:
   use: false
   file: null
