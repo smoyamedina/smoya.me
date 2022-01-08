@@ -414,7 +414,7 @@ p {
 .finds-header,
 .proj-prompt-txt {
     font-weight: $headerB-wt;
-    font-size: clamp(1.75rem, 3.9vw, 2.4rem);
+    font-size: clamp(1.75rem, 3.9vw, 2.2rem);
     line-height: 100%;
     margin-bottom: 1.5rem;
 }
@@ -682,7 +682,7 @@ $gap: $mb-gap;
 
 .extras-header {
     display: block;
-    width: clamp(11ch, 48%, calc(100vw - 4rem));
+    width: clamp(11ch, 40%, calc(100vw - 4rem));
     padding-left: $gap;
     // margin-bottom: clamp(calc(3rem - 10vw), 0);
 }
@@ -872,25 +872,12 @@ $gap: $mb-gap;
 }
 
 .fi-link a::after {
-    content: '\2197';
-    font-family: inherit;
-    font-weight: 400;
-    font-size: 30%;
-    line-height: 76%;
-    opacity: 0;
-    transition: 150ms;
-    //flex
-    align-self: flex-start;
-    //aes the tic for ext link visual
-    box-sizing: border-box;
-    height: 2rem;
-    margin-left: 1rem;
-    margin-top: -.1125rem;
-    padding-left: .42rem;
-    padding-top: .275em;
-    aspect-ratio: 1;
-    border: 2px solid $main-bright;
-    border-radius: 50%;
+    content: none;
+}
+
+.fi-link a::after:hover,
+.fi-link a::after:focus {
+    content: none;
 }
 
 .fi-link a:hover::after,
@@ -1216,6 +1203,30 @@ $num-of-projs: 5;
         padding-left: 0;
         padding-right: 0;
     }
+
+    .fi-link a::after {
+        content: '\2197';
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 30%;
+        line-height: 76%;
+        opacity: 0;
+        transition: 150ms;
+        //flex
+        align-self: flex-start;
+        //aes the tic for ext link visual
+        box-sizing: border-box;
+        height: 1.6em;
+        margin-left: .5em;
+        margin-top: -.1em;
+        padding-left: .42em;
+        padding-top: .46em;
+        aspect-ratio: 1;
+        border: 2px solid $main-bright;
+        border-radius: 50%;
+    }
+
+
 
     // __ dedicated project pages
 

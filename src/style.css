@@ -378,7 +378,7 @@ p {
 .finds-header,
 .proj-prompt-txt {
   font-weight: 600;
-  font-size: clamp(1.75rem, 3.9vw, 2.4rem);
+  font-size: clamp(1.75rem, 3.9vw, 2.2rem);
   line-height: 100%;
   margin-bottom: 1.5rem;
 }
@@ -682,7 +682,7 @@ img,
 
 .extras-header {
   display: block;
-  width: clamp(11ch, 48%, calc(100vw - 4rem));
+  width: clamp(11ch, 40%, calc(100vw - 4rem));
   padding-left: 1rem;
 }
 
@@ -891,26 +891,12 @@ img,
 }
 
 .fi-link a::after {
-  content: '\2197';
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 30%;
-  line-height: 76%;
-  opacity: 0;
-  -webkit-transition: 150ms;
-  transition: 150ms;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 2rem;
-  margin-left: 1rem;
-  margin-top: -.1125rem;
-  padding-left: .42rem;
-  padding-top: .275em;
-  aspect-ratio: 1;
-  border: 2px solid #e0e0e0;
-  border-radius: 50%;
+  content: none;
+}
+
+.fi-link a::after:hover,
+.fi-link a::after:focus {
+  content: none;
 }
 
 .fi-link a:hover::after,
@@ -1204,6 +1190,28 @@ img,
   .footer-info {
     padding-left: 0;
     padding-right: 0;
+  }
+  .fi-link a::after {
+    content: '\2197';
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 30%;
+    line-height: 76%;
+    opacity: 0;
+    -webkit-transition: 150ms;
+    transition: 150ms;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 1.6em;
+    margin-left: .5em;
+    margin-top: -.1em;
+    padding-left: .42em;
+    padding-top: .46em;
+    aspect-ratio: 1;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
   }
   .projhero {
     padding-top: 0;
