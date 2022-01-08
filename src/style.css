@@ -1158,6 +1158,10 @@ img,
   }
   .extras-card {
     width: calc(100% - (2 * 2rem));
+    opacity: .5;
+  }
+  .extras-card:hover {
+    opacity: 1;
   }
   .extras-card:first-of-type {
     margin-left: 2rem;

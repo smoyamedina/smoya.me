@@ -1162,6 +1162,11 @@ $num-of-projs: 5;
 
     .extras-card {
         width: calc(100% - (2 * #{$gap}));
+        opacity: .5;
+    }
+
+    .extras-card:hover {
+        opacity: 1;
     }
 
     .extras-card:first-of-type {
