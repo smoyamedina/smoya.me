@@ -1,8 +1,8 @@
 ---
 projsName: AMASS Magazine
 projsDscplne: Publication
-projsFtImg: ../assets/p/amass-magazine/amass-w_a.png
-projsHeroImg: ../assets/p/amass-magazine/amass-w_f.png
+projsHeroImg: ../assets/p/amass-magazine/amass-w_a.png
+projsFtImg: ../assets/p/amass-magazine/amass-w_f.png
 projPrompt: I was challenged to create a visual hierarchy for a publication.
 projDesc: <p>AMASS magazine is a 14-page publication concept made to capture the
   voices of those less heard and immortalize the infamous that wring them dry.
