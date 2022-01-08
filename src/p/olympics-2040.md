@@ -1,8 +1,8 @@
 ---
 projsName: Olympics 2040
 projsDscplne: Branding
-projsFtImg: ../assets/p/olympics-2040/olymp-w_e.png
-projsHeroImg: ../assets/p/olympics-2040/olymp-w_d.png
+projsHeroImg: ../assets/p/olympics-2040/olymp-w_e.png
+projsFtImg: ../assets/p/olympics-2040/olymp-w_d.png
 projPrompt: I was challenged to brand an Olympic Games held at a future date.
 projDesc: <p>This project brands the 2040 olympics set in Buenos Aires,
   Argentina. Visual callbacks to the Argentinian tradition of Fileteado Porteño
