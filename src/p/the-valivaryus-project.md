@@ -2,7 +2,7 @@
 projsName: The Valivaryus Project
 projsDscplne: On-Going
 projsFtImg: ../assets/p/the-valivaryus-project/valivaryus_splash-01.png
-projsHeroImg: ../assets/p/the-valivaryus-project/valivaryus-w_e.png
+projsHeroImg: ../assets/p/the-valivaryus-project/desktop.jpg
 projPrompt: How might we address the stigma against people who live with
   intellectual and developmental disabilities?
 projDesc: >-
