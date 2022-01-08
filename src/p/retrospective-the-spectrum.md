@@ -1,8 +1,8 @@
 ---
 projsName: The Spectrum
 projsDscplne: Publication
+projsHeroImg: ../assets/p/the-spectrum/spectrum_splash.jpg
 projsFtImg: ../assets/p/retrospective-the-spectrum/spectrum-w_a.jpg
-projsHeroImg: ../assets/p/retrospective-the-spectrum/spectrum-w_a.jpg
 projPrompt: A look back on my first volunteer design position, using my
   present-day design sensibilities.
 projDesc: >-
