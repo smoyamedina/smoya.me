@@ -76,8 +76,8 @@ collections:
     fields:
       - {label: "Project Name", name: "projsName", widget: "string"}
       - {label: "Medium, Discipline, or Type", name: "projsDscplne", widget: "string"}
-      - {label: "Feature Image", name: "projsFtImg", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
       - {label: "Hero Image for project page.", name: "projsHeroImg", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
+      - {label: "Feature Image", name: "projsFtImg", widget: "image", media_folder: "../assets/p/{{projsName}}", public_folder: "../assets/p/{{projsName}}"}
       - {label: "Prompt, challenge, or guiding question statement.", name: "projPrompt", widget: "string"}
       - {label: "Leading summary", name: "projDesc", widget: "markdown"}
       - label: "Project Multimedia"

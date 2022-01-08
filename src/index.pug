@@ -25,7 +25,7 @@ section.slide.projs(id="projects")
                                 h3.projs-name #{project.data.projsName} 
                                     //- proj-arrow will be taken care of with pseudo after element
                             a.projs-img-wrap(href=`${project.url}` data-cursor-class="arrow")
-                                img.projs-img(src=`${project.data.projsFtImg}` alt="A white background with an all-in-one desktop computer.")
+                                img.projs-img(src=`${project.data.projsHeroImg}` alt=`${project.data.projsName}`)
         -           }
         -       }
         -   }
