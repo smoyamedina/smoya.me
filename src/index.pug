@@ -8,7 +8,7 @@ section.slide.hero
     h1.hero-txt#hero-txt A Designer who's here to help create & deliver change.
 include partials/_about.pug
 section.slide.projs(id="projects")
-    h2.projects-header My projects
+    h2.projects-header Some of my projects include...
     .projs-slide-gall
         -   const order = collectionOrder.collection; 
         -   const cmsGiven = collections.project
@@ -24,8 +24,9 @@ section.slide.projs(id="projects")
                                 span.overline.projs-dscplne #{project.data.projsDscplne}
                                 h3.projs-name #{project.data.projsName} 
                                     //- proj-arrow will be taken care of with pseudo after element
-                            a.projs-img-wrap(href=`${project.url}` data-cursor-class="arrow")
-                                img.projs-img(src=`${project.data.projsHeroImg}` alt=`${project.data.projsName}`)
+                            a.projs-img-contain(href=`${project.url}` data-cursor-class="arrow")
+                                .projs-img-wrap
+                                    img.projs-img(src=`${project.data.projsHeroImg}` alt=`${project.data.projsName}`)
         -           }
         -       }
         -   }
