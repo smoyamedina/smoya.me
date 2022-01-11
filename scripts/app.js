@@ -322,14 +322,16 @@ function initMain () {
 
     let projCardReveal = (projNum) => {
         const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: `.projs-card:nth-child(${projNum})`,
-            start: "top 85%",
-            // end: endVals,
-            toggleActions: 'play pause play reverse',
-        }
+            duration: 2,
+            scrollTrigger: {
+                trigger: `.projs-card:nth-child(${projNum})`,
+                start: "top 85%",
+                // end: endVals,
+                toggleActions: 'play pause play reverse',
+            }
         })
-        tl.from (`.projs-card:nth-child(${projNum})`, {opacity: 0, duration: .5})
+        tl.from (`.projs-card:nth-child(${projNum})`, {opacity: 0}, '<')
+        tl.from (`.projs-card:nth-child(${projNum}) .projs-img-contain .projs-img-wrap img`, {y: 100, ease: 'circ.out'}, '<' )
     }
     for (let i=1; i <= projCardCount ; i++) {
         const projNameContain = document.querySelector(`.projs-card:nth-child(${i}) .projs-text`)
