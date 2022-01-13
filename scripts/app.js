@@ -1,5 +1,6 @@
 import { gsap } from '../node_modules/gsap'
 import { CSSRulePlugin } from '../node_modules/gsap/CSSRulePlugin';
+import { CustomEase } from '../node_modules/gsap/CustomEase';
 import { ScrollTrigger } from '../node_modules/gsap/ScrollTrigger';
 
 
@@ -138,19 +139,23 @@ loop();
 //animate canvas and have it wait for everything else to catch up
 gsap.registerPlugin(CSSRulePlugin);
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CustomEase);
+CustomEase.create("growSoft", "M0,0 C0,0.604 0.161,0.752 0.214,0.804 0.265,0.855 0.396,1 1,1 ");
+//init custom ease
 
-    // ---------- bg blobbies
-    gsap.to('canvas', {
-      y: '-80%',
-      ease: 'power4.out',
-      scrollTrigger: {
-          trigger: 'section:nth-child(2)',
-          // scroller: ".container",
-          start: 'top 60%',
-          toggleActions: 'play pause pause reverse',
-          scrub: 1.25
-      }
-  })
+
+// ---------- bg blobbies
+gsap.to('canvas', {
+    y: '-80%',
+    ease: 'power3.out',
+    scrollTrigger: {
+        trigger: 'section:nth-child(2)',
+        // scroller: ".container",
+        start: 'top 95%',
+        toggleActions: 'play pause pause reverse',
+        scrub: 1.25
+    }
+})
 
 function initMain () {
 
@@ -285,24 +290,12 @@ function initMain () {
 
     const projCardCount = document.getElementsByClassName('projs-card').length
 
-    // // ---------- bg blobbies
-    // gsap.to('canvas', {
-    //     y: '-80%',
-    //     ease: 'power3.out',
-    //     scrollTrigger: {
-    //         trigger: 'section:nth-child(2)',
-    //         // scroller: ".container",
-    //         start: 'top 60%',
-    //         toggleActions: 'play pause pause reverse',
-    //         // scrub: true
-    //     }
-    // })
 
     // ---------- hero text
     let heroTxt = document.querySelector('.hero-txt')
     if (heroTxt !== null) {
         gsap.to(heroTxt, {
-            ease: 'none',
+            ease: 'linear',
             y: '-70vh',
             opacity: 0,
             scrollTrigger: {
@@ -322,16 +315,34 @@ function initMain () {
 
     let projCardReveal = (projNum) => {
         const tl = gsap.timeline({
-            duration: 2,
-            scrollTrigger: {
-                trigger: `.projs-card:nth-child(${projNum})`,
-                start: "top 85%",
-                // end: endVals,
-                toggleActions: 'play pause play reverse',
+            defaults: {duration: 1.25, ease: "growSoft"},
+                scrollTrigger: {
+                    trigger: `.projs-card:nth-child(${projNum})`,
+                    start: "top 95%",
+                    // end: endVals,
+                    toggleActions: 'play pause play reverse',
+                }
             }
-        })
+        )
         tl.from (`.projs-card:nth-child(${projNum})`, {opacity: 0}, '<')
-        tl.from (`.projs-card:nth-child(${projNum}) .projs-img-contain .projs-img-wrap img`, {y: 100, ease: 'circ.out'}, '<' )
+        tl.from (`.projs-card:nth-child(${projNum}) .projs-img-contain .projs-img-wrap`, {y: 200}, '<' )
+        tl.from (`.projs-card:nth-child(${projNum}) .projs-img-contain .projs-img-wrap img`, {scale: 1.2}, '<' )
+        tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {y: 200}, '<' )
+
+        gsap.fromTo(`.projs-card:nth-child(${projNum}) .projs-img-contain .projs-img-wrap img`, {
+            ease: 'linear',
+            'object-position': '50% 0%',
+        },
+        {
+            'object-position': '50% 100%',
+            scrollTrigger: {
+                trigger: `.projs`,
+                scrub: 1.5,
+                start: 'top bottom',
+                end: 'bottom top'
+            }
+        }
+    )
     }
     for (let i=1; i <= projCardCount ; i++) {
         const projNameContain = document.querySelector(`.projs-card:nth-child(${i}) .projs-text`)
@@ -340,64 +351,14 @@ function initMain () {
             projCardReveal(i);
         }
     } 
-
-    // let homeProjTxtReveal = (projNum, endVals) => {
-    //     const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: `.projs-card:nth-child(${projNum})`,
-    //         // scrub: .75,
-    //         // scroller: ".container",
-    //         start: "top bottom",
-    //         end: endVals,
-    //         toggleActions: 'play pause play reverse',
-    //     }
-    //     })
-    //     tl.from (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, y: '50%', duration: .5})
-    //     // tl.to (`.projs-card:nth-child(${projNum}) .projs-text`, {opacity: 0, duration: .15})
-    // }
-
-    // for (let i=1; i <= projCardCount ; i++) {
-    //     const projNameContain = document.querySelector(`.projs-card:nth-child(${i}) .projs-text`)
-    //     //check if div exists to avoid warnings in console
-    //     if (projNameContain !== null) {
-    //         if (i < projCardCount === true) {
-    //             homeProjTxtReveal(i, homeProjTxtRevealEndStd)
-    //         } else {
-    //             homeProjTxtReveal(i, homeProjTxtRevealEndLast)
-    //         }
-    //     }
-    // } 
-
-    // let projImgReveals = (pImgClass, pImgWrapClass, pImgTrigger) => {
-    //     if (pImgClass !== null) {
-    //         let imgScaleDown = () => {    
-    //             gsap.fromTo(`.${pImgClass}`, {scale: 1.5}, {scale: 1, duration: 2, ease: "power4.out"})
-    //         }
-
-    //         gsap.fromTo(`.${pImgWrapClass}`,{y: '50%', opacity: 0}, {onStart: imgScaleDown, duration: 1, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
-    //                     trigger: `.${pImgTrigger}`,
-    //                     // scroller: ".container",
-    //                     markers: true,
-    //                     start: 'top 100%',
-    //                     // invalidateOnRefresh: true,
-    //                     toggleActions: 'play pause play reverse'
-    //                     // onLeave: refreshTriggers
-    //                     // iOR to refresh preceeding div's position + therefore scrollTrigger location!!
-    //                 }
-    //             }
-    //         )
-    //     }
-    // }
-    // for (let i=1; i <= projCardCount ; i++) {
-    //     projImgReveals(`projs-card:nth-child(${i}) .projs-img-contain .projs-img-wrap img`, `projs-card:nth-child(${i}) .projs-img-contain .projs-img-wrap img`, `projs-card:nth-child(${i})`)
-    // }
+   
     // -- Indiv Proj page -- //
 
     // ---------- General Reveals 
     let heroTxtReveal = (txtClass, txtTrigger) => {
         if (document.querySelector(`.${txtClass}`) !== null && document.querySelector(`.${txtTrigger}`) !== null) {
             gsap.from(`.${txtClass}`, {
-                ease: 'power4.out',
+                ease: 'growSoft',
                 y: '25vh',
                 opacity: 0,
                 duration: 2,
@@ -431,10 +392,74 @@ function initMain () {
     }
     heroImgReveal('p-heroimg img', 'p-heroimg', 'projhero');
 
+    const projHeader = document.querySelector('.projects-header')
+    if (projHeader !== null) {
+        gsap.from(projHeader, {
+            y: '30vh',
+            ease: 'growSoft',
+            opacity: 0,
+            duration: 2,
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'bottom 90%'
+            }
+        })
+    }
+
+    const extrasHeader = document.querySelector('.extras-header')
+    if (extrasHeader !== null) {
+        gsap.from(extrasHeader, {
+            y: '30vh',
+            ease: 'growSoft',
+            opacity: 0,
+            duration: 2,
+            scrollTrigger: {
+                trigger: '.projs',
+                start: 'bottom 80%'
+            }
+        })
+        gsap.from('.extras-slide-gall', {
+            y: '30vh',
+            ease: 'growSoft',
+            opacity: 0,
+            duration: 2,
+            delay: .25,
+            scrollTrigger: {
+                trigger: '.projs',
+                start: 'bottom 80%'
+            }
+        })
+    }
+
+    const findsIntro = document.querySelector('.finds-intro')
+    if (findsIntro !== null) {
+        gsap.from(findsIntro, {
+            y: '30vh',
+            ease: 'growSoft',
+            opacity: 0,
+            duration: 2,
+            scrollTrigger: {
+                trigger: '.extras',
+                start: 'bottom 80%'
+            }
+        })
+        gsap.from('.finds-card-contain', {
+            y: '30vh',
+            ease: 'growSoft',
+            opacity: 0,
+            duration: 2,
+            delay: .25,
+            scrollTrigger: {
+                trigger: '.extras',
+                start: 'bottom 80%'
+            }
+        })
+    }
+
     const projDesc = document.querySelector('.proj-desc')
     if (projDesc !== null) {
         gsap.from('.proj-desc', {
-            ease: 'expo.out',
+            ease: 'growSoft',
             y: '40vh',
             opacity: 0,
             duration: 2,
@@ -449,8 +474,10 @@ function initMain () {
     const projMedia = document.querySelector('.video')
     if (projMedia !== null) {
         gsap.from('.video', {
+            ease: 'growSoft',
             y: '40vh',
             opacity: 0,
+            duration: 2,
             scrollTrigger: {
                 trigger: '.proj-outcome',
                 // scroller: ".container",
@@ -463,8 +490,8 @@ function initMain () {
     let txtReveals = (txtClass, txtTrigger) => {
         if (document.querySelector(`.${txtClass}`) !== null) {
             gsap.from(`.${txtClass}`, {
-                ease: 'expo.out',
-                y: '40vh',
+                ease: 'growSoft',
+                y: '30vh',
                 opacity: 0,
                 duration: 2,
                 scrollTrigger: {
@@ -480,11 +507,11 @@ function initMain () {
     let imgReveals = (imgClass, imgWrapClass, imgTrigger) => {
         if (document.querySelector(`.${imgClass}`) !== null && document.querySelector(`.${imgWrapClass}`) !== null && document.querySelector(`.${imgTrigger}`) !== null) {
             ScrollTrigger.refresh();
-            let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.25}, {scale: 1, duration: 2.5, ease: "expo.out"})}
-            gsap.fromTo(`.${imgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "expo.out", y: 0, scrollTrigger: {
+            let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.25}, {scale: 1, duration: 2, ease: "growSoft"})}
+            gsap.fromTo(`.${imgWrapClass}`,{y: '30vh', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "growSoft", y: 0, scrollTrigger: {
                 trigger: `.${imgTrigger}`,
                 // scroller: ".container",
-                start: "top 85%"
+                start: "top 75%"
             }})
             // ScrollTrigger.refresh()
         }
@@ -493,7 +520,7 @@ function initMain () {
 
 
     txtReveals('hero-txt', 'hero');
-    txtReveals('slide-text-all .about-header', 'about .slide-text-all'); // why isn't this or the one below working ):
+    txtReveals('slide-text-all .about-header', 'about .slide-text-all');
     txtReveals('slide-text-pwrap', 'about .slide-text-all');
     txtReveals('proj-prompt-txt', 'proj-prompt');
 
@@ -514,7 +541,7 @@ function initMain () {
             gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
                         trigger: `.${pOutcomeImgTrigger}`,
                         // scroller: ".container",
-                        markers: true,
+                        // markers: true,
                         start: `${pOutcomeImgStart}`,
                         invalidateOnRefresh: true,
                         onLeave: refreshTriggers
