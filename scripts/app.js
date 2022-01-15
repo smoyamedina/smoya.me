@@ -486,7 +486,6 @@ function initMain () {
         })
     }
 
-
     let txtReveals = (txtClass, txtTrigger) => {
         if (document.querySelector(`.${txtClass}`) !== null) {
             gsap.from(`.${txtClass}`, {
@@ -507,8 +506,8 @@ function initMain () {
     let imgReveals = (imgClass, imgWrapClass, imgTrigger) => {
         if (document.querySelector(`.${imgClass}`) !== null && document.querySelector(`.${imgWrapClass}`) !== null && document.querySelector(`.${imgTrigger}`) !== null) {
             ScrollTrigger.refresh();
-            let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.25}, {scale: 1, duration: 2, ease: "growSoft"})}
-            gsap.fromTo(`.${imgWrapClass}`,{y: '30vh', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: "growSoft", y: 0, scrollTrigger: {
+            let imgScaleDown = () => {gsap.fromTo(`.${imgClass}`, {scale: 1.25}, {scale: 1, duration: 2, ease: 'growSoft'})}
+            gsap.fromTo(`.${imgWrapClass}`,{y: '30vh', opacity: 0}, {onStart: imgScaleDown, duration: 2, opacity: 1, ease: 'growSoft', y: 0, scrollTrigger: {
                 trigger: `.${imgTrigger}`,
                 // scroller: ".container",
                 start: "top 75%"
@@ -535,12 +534,12 @@ function initMain () {
     let projOutcomeImgReveals = (pOutcomeImgClass, pOutcomeImgWrapClass, pOutcomeImgTrigger, pOutcomeImgStart) => {
         if (pOutcomeImgClass !== null) {
             let imgScaleDown = () => {    
-                gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 1.5}, {scale: 1, duration: 2, ease: "power4.out"})
+                gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 1.5}, {scale: 1, duration: 2, ease:'growSoft'})
             }
-            gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
+            gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: 'growSoft', y: 0, scrollTrigger: {
                         trigger: `.${pOutcomeImgTrigger}`,
                         // scroller: ".container",
-                        markers: true,
+                        // markers: true,
                         // scrub: true,
                         start: `${pOutcomeImgStart}`,
                         invalidateOnRefresh: true,
@@ -565,24 +564,9 @@ function initMain () {
         const nxtClass = projOutcomeImgWrap(i + 1)
         //leftover from prev wrapper nest levels
         if (projOutcomeImg !== null) {
-            if (i == 1 
-                // || ( 
-
-                // prvClass.contains('left') && crtClass.contains('right') ||
-                // prvClass.contains('right') && crtClass.contains('left') ||
-                // crtClass.contains('left') && nxtClass.contains('right') ||
-                // crtClass.contains('right') && nxtClass.contains('left') 
-                // || 
-                // (
-                //     prvClass.contains('center') && crtClass.contains('left') ||
-                //     prvClass.contains('center') && crtClass.contains('right')
-                // )
-                // )
-            ) {
-                
+            if (i == 1) {
                 projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper img`, `p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper`, `p-outcome-img:nth-child(${i})`, pOutcomeImgFirst)     
                 ScrollTrigger.update()
-                //i < 3 || (
             } else if (prvClass.contains('left') && crtClass.contains('right')) {
                 projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper img`, `p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper`, `p-outcome-img:nth-child(${i - 1})`, pOutcomeImgFirst)
                 ScrollTrigger.update()
@@ -626,7 +610,7 @@ window.addEventListener("load", (event) => {
 // a message from our sponsor: me
 const textA = '%cWhat\'re you doing here?! Hope things are going well!'
 const styleA = 'font-family: Courier New, monospace; font-size: 22px; font-weight: 600; background: #e0e0e0; color: black; padding: 1em .75em;  border-top: .75em solid #5448C8;'
-const textB = '%cIf you\'re seeing this, I need you to know that I am currently in the process of refactoring pretty much everything! I learned a lot of this on the side during the past couple of months outside of my current contract position. i.e...'
+const textB = '%cIf you\'re seeing this, I need you to know that I am currently in the process of refactoring pretty much everything! I\'ve learned a lot but I want to keep learning how to make experiences even better. In other words...'
 const styleB = 'font-family: Courier New, monospace; font-size: 16px; background: #e0e0e0; color: black; padding: 1em;'
 const textC = '%c✨ Pardon the mess, a tornado just flew through ✨'
 const styleC = 'font-family: Courier New, monospace; font-size: 16px; background: #e0e0e0; color: black; padding: 1em; border-bottom: .25em solid #5448C8;'
