@@ -537,11 +537,11 @@ function initMain () {
             let imgScaleDown = () => {    
                 gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 1.5}, {scale: 1, duration: 2, ease: "power4.out"})
             }
-
             gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: "power4.out", y: 0, scrollTrigger: {
                         trigger: `.${pOutcomeImgTrigger}`,
                         // scroller: ".container",
-                        // markers: true,
+                        markers: true,
+                        // scrub: true,
                         start: `${pOutcomeImgStart}`,
                         invalidateOnRefresh: true,
                         onLeave: refreshTriggers
@@ -552,8 +552,6 @@ function initMain () {
         }
     }
         
-
-
     const projOutcomeImgCount = document.querySelectorAll('.p-outcome-img-wrapper img').length;
     //1 bc of nth-child's starting interger 
     for (let i=1; i <= projOutcomeImgCount ; i++) {
@@ -567,18 +565,30 @@ function initMain () {
         const nxtClass = projOutcomeImgWrap(i + 1)
         //leftover from prev wrapper nest levels
         if (projOutcomeImg !== null) {
-            if (i == 1 || (
-                prvClass.contains('left') && crtClass.contains('right') ||
-                prvClass.contains('right') && crtClass.contains('left') ||
-                crtClass.contains('left') && nxtClass.contains('right') ||
-                crtClass.contains('right') && nxtClass.contains('left')
-                )
+            if (i == 1 
+                // || ( 
+
+                // prvClass.contains('left') && crtClass.contains('right') ||
+                // prvClass.contains('right') && crtClass.contains('left') ||
+                // crtClass.contains('left') && nxtClass.contains('right') ||
+                // crtClass.contains('right') && nxtClass.contains('left') 
+                // || 
+                // (
+                //     prvClass.contains('center') && crtClass.contains('left') ||
+                //     prvClass.contains('center') && crtClass.contains('right')
+                // )
+                // )
             ) {
-                ScrollTrigger.refresh()
-                projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper img`, `p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper`, `p-outcome-img-list`, pOutcomeImgFirst)     
+                
+                projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper img`, `p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper`, `p-outcome-img:nth-child(${i})`, pOutcomeImgFirst)     
+                ScrollTrigger.update()
+                //i < 3 || (
+            } else if (prvClass.contains('left') && crtClass.contains('right')) {
+                projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper img`, `p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper`, `p-outcome-img:nth-child(${i - 1})`, pOutcomeImgFirst)
+                ScrollTrigger.update()
             } else {
-                ScrollTrigger.refresh()
                 projOutcomeImgReveals(`p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper img`, `p-outcome-img:nth-child(${i}) .p-outcome-img-wrapper`, `p-outcome-img:nth-child(${i - 1})`, pOutcomeImgStd)
+                ScrollTrigger.update()
             }
         }
     }
