@@ -9,10 +9,10 @@ projDesc: >-
   <p>It's a big ask.</p>
 
 
-  <p>The initiative I created as a part of my degree project addresses Down Syndrome in particular due to my sister's personal experiences and my own observations over the course of our lives. Initially, this was a pointed effort to address the lack of funding in public education settings.</p>
+  <p>The initiative I created as a part of my degree project addresses Down Syndrome in particular due to my sister's personal experiences and my own observations over the course of our lives. </p>
 
 
-  <p>My research and interviews led me to develop and design a piece that would address common-day pain points to tackle where the lack of awareness and funding shortfalls really start to rear their heads.</p>
+  <p>My research and interviews led my initial concept to shift and morph from its original 3 separate pieces into this one initiative.</p>
 media:
   use: true
   file: ../assets/p/the-valivaryus-project/valivaryus.webm
@@ -32,9 +32,10 @@ projImgs:
       To hear stories from others please visit ds.valivaryus.info' and a
       personal note written thanking someone for listening in the blank space on
       the bottom half of this side of the card.
-  - image: ../assets/p/the-valivaryus-project/valivaryus-w_b.png
-    imageAlt: A wall of text highlights the different skills and occupations held by
-      people with Down Syndrome.
+  - image: ../assets/p/the-valivaryus-project/bag.png
+    imageAlt: A tote uses a motif of organic blobs to adorn the bottom half, with
+      the top corners sporting the initiative logo and link to the
+      initiative&apos;s website
     position: left
   - image: ../assets/p/the-valivaryus-project/experts_anim.gif
     imageAlt: A call to action that encourages people to review common
