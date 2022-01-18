@@ -32,19 +32,16 @@ projImgs:
       To hear stories from others please visit ds.valivaryus.info' and a
       personal note written thanking someone for listening in the blank space on
       the bottom half of this side of the card.
-  - image: ../assets/p/the-valivaryus-project/valivaryus-w_a.png
-    imageAlt: "The opening of a website. The headline reads: Just as capable, Just
-      built different. and the subheadline reads: Down Syndrome is a genetic
-      condition that causes differences in one's appearance and development."
-    position: center
   - image: ../assets/p/the-valivaryus-project/valivaryus-w_b.png
     imageAlt: A wall of text highlights the different skills and occupations held by
       people with Down Syndrome.
     position: left
-  - image: ../assets/p/the-valivaryus-project/valivaryus-w_c.png
+  - image: ../assets/p/the-valivaryus-project/experts_anim.gif
     imageAlt: A call to action that encourages people to review common
       misconceptions of people who live with Down Syndrome. There is a link to
-      an external video.
+      an external video. An image fades in from a larger scale to a smaller
+      scale and flashes through pairs of people with Down Syndrome screencapped
+      from the video being linked.
     position: right
 projTag: ongoing
 ---
