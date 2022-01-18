@@ -12,7 +12,7 @@ projDesc: >-
   <p>The initiative I created as a part of my degree project addresses Down Syndrome in particular due to my sister's personal experiences and my own observations over the course of our lives. </p>
 
 
-  <p>My research and interviews led me to develop and design a piece that would address common-day pain points to tackle where the lack of awareness and funding shortfalls really start to rear their heads.</p>
+  <p>My research and interviews led my initial concept to shift and morph from its original 3 separate pieces into this one initiative.</p>
 media:
   use: true
   file: ../assets/p/the-valivaryus-project/valivaryus.webm
