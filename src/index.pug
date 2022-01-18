@@ -37,7 +37,8 @@ section.slide.extras
             .extras-card 
                 .extras-img-wrap 
                     img.extras-img(src=`${extra.img}` alt=`${extra.altTxt}`)
-                h3.extras-title #{extra.title}
-                p.extras-desc #{extra.desc}
+                .extras-text-wrap
+                    h3.extras-title #{extra.title}
+                    p.extras-desc #{extra.desc}
 include partials/_finds.pug
 
