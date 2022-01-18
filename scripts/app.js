@@ -406,27 +406,36 @@ function initMain () {
         })
     }
 
-    const extrasHeader = document.querySelector('.extras-header')
-    if (extrasHeader !== null) {
-        gsap.from(extrasHeader, {
-            y: '30vh',
-            ease: 'growSoft',
-            opacity: 0,
-            duration: 2,
+    const extrasSection = document.querySelector('.extras')
+    if (extrasSection !== null) {
+        let extrasTL = gsap.timeline({})
+        // ScrollTrigger.refresh()
+        // ScrollTrigger.update()
+        // extrasTL.from('.extras-header', 
+        //     {
+        //         ease: 'growSoft',
+        //         x: '30vh',
+        //         opacity: 0,
+        //         duration: 2,
+        //         scrub: 1,
+        //         // markers:true,
+        //         scrollTrigger: {
+        //             trigger: '.projs',
+        //             start: 'bottom 75%'
+        //         }
+        //     }
+        // )
+        extrasTL.to('.extras-slide-gall', {
+            xPercent: '-190',
             scrollTrigger: {
-                trigger: '.projs',
-                start: 'bottom 80%'
-            }
-        })
-        gsap.from('.extras-slide-gall', {
-            y: '30vh',
-            ease: 'growSoft',
-            opacity: 0,
-            duration: 2,
-            delay: .25,
-            scrollTrigger: {
-                trigger: '.projs',
-                start: 'bottom 80%'
+                trigger: '.extras',
+                // endTrigger: '.finds',
+                anticipatePin: 1,
+                start: 'top top',
+                pin: true,
+                // markers:true,
+                invalidateOnRefresh: true,
+                scrub: 1
             }
         })
     }
@@ -536,7 +545,7 @@ function initMain () {
             let imgScaleDown = () => {    
                 gsap.fromTo(`.${pOutcomeImgClass}`, {scale: 1.5}, {scale: 1, duration: 2, ease:'growSoft'})
             }
-            gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart:       imgScaleDown, duration: 1.5, opacity: 1, ease: 'growSoft', y: 0, scrollTrigger: {
+            gsap.fromTo(`.${pOutcomeImgWrapClass}`,{y: '100%', opacity: 0}, {onStart: imgScaleDown, duration: 1.5, opacity: 1, ease: 'growSoft', y: 0, scrollTrigger: {
                         trigger: `.${pOutcomeImgTrigger}`,
                         // scroller: ".container",
                         // markers: true,
