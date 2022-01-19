@@ -426,16 +426,18 @@ function initMain () {
         //     }
         // )
         extrasTL.to('.extras-slide-gall', {
-            xPercent: '-190',
+            xPercent: '-158',
             scrollTrigger: {
                 trigger: '.extras',
                 // endTrigger: '.finds',
                 anticipatePin: 1,
                 start: 'top top',
+                //this below makes the animation take longer...
+                end: "+=4000",
                 pin: true,
                 // markers:true,
                 invalidateOnRefresh: true,
-                scrub: 1
+                scrub: .3
             }
         })
     }
