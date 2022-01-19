@@ -13,16 +13,28 @@
       "altTxt": "An image of a small astronaut model staring through the reflection on the ground. The color scheme is made of raw cyans, pinks, and yellows."
     },
     {
+      "img": "../assets/extras/calvert_hillyershops.jpg",
+      "altTxt": "Stacked up beer cans branded 'Hillyer's Hops' with a gold text on black color scheme.",
+      "title": "Beer Labels",
+      "desc": "A branded beer label for a school fundraiser event."
+    },
+    {
+      "img": "../assets/extras/illus_5.png",
+      "altTxt": "A young boy in a red coat and red hat is caught in the middle of running. Bolts of electricity surround his energized gait.",
+      "title": "Illustration",
+      "desc": "Sometimes a quick doodle jolts the rest of my day."
+    },
+    {
       "img": "../assets/extras/seeme_400w_opt.gif",
       "altTxt": "A looping animation that reads 'See me, hear me, know me.' with images of an eye, mouth, and rings from the mind in between.",
       "title": "Analog GIF ",
       "desc": "A test seeing how the artifacts from riso printing affects the typical GIF animation."
     },
     {
-      "img": "../assets/extras/calvert_hillyershops.jpg",
-      "altTxt": "Stacked up beer cans branded 'Hillyer's Hops' with a gold text on black color scheme.",
-      "title": "Beer Labels",
-      "desc": "A branded beer label for a school fundraiser event."
+      "img": "../assets/extras/illus_3.png",
+      "altTxt": "A person with glasses and short hair holds up an arm while holding a typical rock concert hand gesture. The clothes folds are delicately detailed throughout the shirt, pants, and shirt tied around the waist.",
+      "title": "Illustration",
+      "desc": "A study of how clothes folds and body parts behave in space."
     },
     {
       "img": "../assets/extras/friendship-day.gif",
@@ -31,10 +43,34 @@
       "desc": "Testing fluid text animation workflow through a social post."
     },
     {
+      "img": "../assets/extras/illus_2.png",
+      "altTxt": "A person with short hair looks off to the left. The linework is black and speckled with noise. The colors behind the linework are rectilinear. A blue box shows a text field with an ellipses.",
+      "title": "Illustration",
+      "desc": "A short test of color blocking."
+    },
+    {
       "img": "../assets/extras/graffiti_wall_900w.png",
       "altTxt": "A photo of stickers placed like graffiti along a wall. The lower height on the wall, the less stickers there are. Bright yellow and some reds and blacks dominate the scene.",
       "title": "Riso + Sticker Graffiti",
       "desc": "I ran a photo from my study abroad through the risograph printing process."
+    },
+    {
+      "img": "../assets/extras/pardee.png",
+      "altTxt": "A publication spread shows a map of Afro-eurasia. Spread design by Sami, Creative and Art Direction by Ambica Prakash and Emily Cohane-Mann from Eighty2Degrees.",
+      "title": "Pardee-DU Annual Report",
+      "desc": "A spread from Pardee Center of Denver University's Annual Report for 2021."
+    },
+    {
+      "img": "../assets/extras/illus_4.png",
+      "altTxt": "A person with long hair holds up two fingers in a v shape in front of their eyes. They are wearing a mask and are staring in the direction of the viewer.",
+      "title": "Illustration",
+      "desc": "Remember to keep wearing you masks, everyone!"
+    },
+    {
+      "img": "../assets/extras/illus_1.png",
+      "altTxt": "A red background has the subject in the middle. The subject is a golden yellow with long hair, their head topped with a bushels of blue flowers. A burning flower appears from the bottom.",
+      "title": "Illustration",
+      "desc": "A study of some of my favorite flowers from the old family garden."
     }
   ]
 }
