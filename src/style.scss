@@ -729,6 +729,7 @@ $transition: .125s ease-in-out;
 
 .extras-card {
     width: calc(100% - (5 * #{$gap}));
+    height: min-content;
     max-width: 15rem;
     flex-shrink: 0;
     position: relative;
@@ -742,32 +743,32 @@ $transition: .125s ease-in-out;
     backdrop-filter: blur(.36rem);
 }
 
-.extras-card:nth-of-type(1) {
+.extras-card:nth-of-type(6n) {
     align-self: flex-end;
 }
 
-.extras-card:nth-of-type(2n) {
+.extras-card:nth-of-type(6n+1) {
     align-self: flex-start;
     margin-top: 3vh;
 }
 
-.extras-card:nth-of-type(3n) {
+.extras-card:nth-of-type(6n+2) {
     align-self: flex-end;
     margin-bottom: 10vh;
 }
 
-.extras-card:nth-of-type(4n) {
+.extras-card:nth-of-type(6n+3) {
     align-self: flex-start;
     margin-top: 8vh;
 }
 
-.extras-card:nth-of-type(5n) {
+.extras-card:nth-of-type(6n+4) {
     align-self: flex-end;
     margin-block: 0;
 }
 
-.extras-card:nth-of-type(6n) {
-    align-self: flex-start;
+.extras-card:nth-of-type(6n+5) {
+    align-self: center;
     margin-block: 0;
 }
 
